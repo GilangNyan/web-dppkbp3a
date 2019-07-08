@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed.');
 
 class Auth extends CI_Controller
 {
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
         $this->load->model('auth_model');
@@ -13,7 +13,7 @@ class Auth extends CI_Controller
         }
     }
 
-    function index()
+    public function index()
     {
         $rules = [
             [
@@ -51,7 +51,7 @@ class Auth extends CI_Controller
         }
     }
 
-    function register()
+    public function register()
     {
         $rules = [
             [
@@ -91,7 +91,7 @@ class Auth extends CI_Controller
         }
     }
 
-    function logout()
+    public function logout()
     {
         // $this->session->unset_userdata('username');
         // $this->session->unset_userdata('role');

@@ -10,6 +10,8 @@
 
         <?php $this->load->view('templates/_partials/navbar') ?>
 
+        <div class="msg" id="msg" data-flashdata="<?= $this->session->flashdata('message') ?>"></div>
+
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->

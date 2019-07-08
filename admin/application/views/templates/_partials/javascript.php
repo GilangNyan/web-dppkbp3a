@@ -28,9 +28,13 @@
 <script src="<?= base_url('assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') ?>"></script>
 <!-- FastClick -->
 <script src="<?= base_url('assets/plugins/fastclick/fastclick.js') ?>"></script>
+<!-- SweetAlert2 -->
+<script src="<?= base_url('assets/plugins/sweetalert2/sweetalert2.all.min.js') ?>"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url('assets/dist/js/adminlte.js') ?>"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?= base_url('assets/dist/js/pages/dashboard.js') ?>"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?= base_url('assets/dist/js/demo.js') ?>"></script>
+<!-- Custom Scripts -->
+<script src="<?= base_url('assets/dist/js/alert.js') ?>"></script>

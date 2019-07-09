@@ -1,3 +1,5 @@
+<?php $this->load->view('templates/_partials/modal') ?>
+
 <?php $this->load->view('templates/_partials/footer') ?>
 
 <?php $this->load->view('templates/_partials/controlsidebar') ?>

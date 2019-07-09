@@ -26,10 +26,15 @@
 <script src="<?= base_url('assets/plugins/summernote/summernote-bs4.min.js') ?>"></script>
 <!-- overlayScrollbars -->
 <script src="<?= base_url('assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') ?>"></script>
+<!-- DataTables -->
+<script src="<?= base_url('assets/plugins/datatables/jquery.dataTables.js') ?>"></script>
+<script src="<?= base_url('assets/plugins/datatables/dataTables.bootstrap4.js') ?>"></script>
 <!-- FastClick -->
 <script src="<?= base_url('assets/plugins/fastclick/fastclick.js') ?>"></script>
 <!-- SweetAlert2 -->
 <script src="<?= base_url('assets/plugins/sweetalert2/sweetalert2.all.min.js') ?>"></script>
+<!-- CKEditor5 -->
+<script src="<?= base_url('assets/plugins/ckeditor5/ckeditor.js') ?>"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url('assets/dist/js/adminlte.js') ?>"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
@@ -38,3 +43,5 @@
 <script src="<?= base_url('assets/dist/js/demo.js') ?>"></script>
 <!-- Custom Scripts -->
 <script src="<?= base_url('assets/dist/js/alert.js') ?>"></script>
+<script src="<?= base_url('assets/dist/js/table.js') ?>"></script>
+<script src="<?= base_url('assets/dist/js/ckeditor.js') ?>"></script>

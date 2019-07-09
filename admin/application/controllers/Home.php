@@ -16,8 +16,9 @@ class Home extends CI_Controller
     public function index()
     {
         $data['user'] = $this->home_model->get_current_user();
+        $data['pagename'] = 'Dashboard';
         $this->load->view('templates/header', $data);
-        $this->load->view('pages/dashboard');
+        $this->load->view('pages/dashboard', $data);
         $this->load->view('templates/footer');
     }
 }

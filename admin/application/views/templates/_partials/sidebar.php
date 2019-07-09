@@ -15,15 +15,21 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
             <li class="nav-item">
-                <a href="<?= base_url() ?>" class="nav-link active">
+                <a href="<?= base_url() ?>" class="nav-link <?php if ($pagename == 'Dashboard') {
+                                                                echo 'active';
+                                                            } ?>">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                         Dashboard
                     </p>
                 </a>
             </li>
-            <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
+            <li class="nav-item has-treeview <?php if ($pagename == 'Semua Post' || $pagename == 'Post Diterbitkan') {
+                                                    echo 'menu-open';
+                                                } ?>">
+                <a href="#" class="nav-link <?php if ($pagename == 'Semua Post' || $pagename == 'Post Diterbitkan') {
+                                                echo 'active';
+                                            } ?>">
                     <i class="nav-icon fas fa-file-alt"></i>
                     <p>
                         Postingan
@@ -32,21 +38,29 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?= base_url('post') ?>" class="nav-link">
+                        <a href="<?= base_url('post') ?>" class="nav-link <?php if ($pagename == 'Semua Post') {
+                                                                                echo 'active';
+                                                                            } ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Semua</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="<?= base_url('post/published') ?>" class="nav-link <?php if ($pagename == 'Post Diterbitkan') {
+                                                                                        echo 'active';
+                                                                                    } ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Diterbitkan</p>
                         </a>
                     </li>
                 </ul>
             </li>
-            <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
+            <li class="nav-item has-treeview <?php if ($pagename == 'Komentar' || $pagename == 'Spam') {
+                                                    echo 'menu-open';
+                                                } ?>">
+                <a href="#" class="nav-link <?php if ($pagename == 'Komentar' || $pagename == 'Spam') {
+                                                echo 'active';
+                                            } ?>">
                     <i class="nav-icon fas fa-comment"></i>
                     <p>
                         Komentar
@@ -55,21 +69,29 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link <?php if ($pagename == 'Komentar') {
+                                                        echo 'active';
+                                                    } ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Diterbitkan</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link <?php if ($pagename == 'Spam') {
+                                                        echo 'active';
+                                                    } ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Spam</p>
                         </a>
                     </li>
                 </ul>
             </li>
-            <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
+            <li class="nav-item has-treeview <?php if ($pagename == 'Halaman' || $pagename == 'Halaman Diterbitkan') {
+                                                    echo 'menu-open';
+                                                } ?>">
+                <a href="#" class="nav-link <?php if ($pagename == 'Halaman' || $pagename == 'Halaman Diterbitkan') {
+                                                echo 'active';
+                                            } ?>">
                     <i class="nav-icon fas fa-file"></i>
                     <p>
                         Halaman
@@ -78,13 +100,17 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link <?php if ($pagename == 'Halaman') {
+                                                        echo 'active';
+                                                    } ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Semua</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link <?php if ($pagename == 'Halaman Diterbitkan') {
+                                                        echo 'active';
+                                                    } ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Diterbitkan</p>
                         </a>
@@ -92,7 +118,9 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="#" class="nav-link <?php if ($pagename == 'Kelola Pengguna') {
+                                                echo 'active';
+                                            } ?>">
                     <i class="nav-icon fas fa-user"></i>
                     <p>
                         Kelola Pengguna

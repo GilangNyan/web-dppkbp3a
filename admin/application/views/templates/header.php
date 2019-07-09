@@ -16,7 +16,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="<?= base_url() ?>" class="brand-link">
-                <img src="<?= base_url('assets/dist/img/Logo_Kota_Tasikmalaya.png') ?>" alt="Logo Kota Tasik" class="brand-image elevation-3" style="opacity: .8">
+                <img src="<?= base_url('assets/dist/img/Logo_Kota_Tasikmalaya.png') ?>" alt="Logo Kota Tasik" class="brand-image" style="opacity: .8">
                 <span class="brand-text font-weight-bolder text-white">DPPKBP3A</span>
             </a>
 

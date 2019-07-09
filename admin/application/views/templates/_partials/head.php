@@ -1,6 +1,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?= SITE_NAME . " | " . ucfirst($this->uri->segment(1)) . " - " . ucfirst($this->uri->segment(2)) ?></title>
+    <title><?= SITE_NAME . " | " . (($this->uri->segment(1) == null) ? 'Dashboard' : ucfirst($this->uri->segment(1))) . " - " . ucfirst($this->uri->segment(2)) ?></title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->

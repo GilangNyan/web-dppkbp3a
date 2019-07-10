@@ -119,7 +119,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
                 <a href="#" class="dropdown-item">
-                    <i class="fas fa-envelope mr-2"></i> Profil
+                    <i class="fas fa-stream mr-2"></i> Profil
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item">

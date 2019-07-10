@@ -112,11 +112,30 @@
                 <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
             </div>
         </li>
-        <li class="nav-item">
+        <!-- User Dropdown Menu -->
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-user"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
+                <a href="#" class="dropdown-item">
+                    <i class="fas fa-envelope mr-2"></i> Profil
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                    <i class="fas fa-cog mr-2"></i> Setelan
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                    <i class="fas fa-sign-out-alt mr-2"></i> Keluar
+                </a>
+            </div>
+        </li>
+        <!-- <li class="nav-item">
             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
                 <i class="fas fa-th-large"></i>
             </a>
-        </li>
+        </li> -->
     </ul>
 </nav>
 <!-- /.navbar -->

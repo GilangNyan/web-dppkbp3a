@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="<?= base_url('assets/dist/css/adminlte.min.css') ?>">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="<?= base_url('assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') ?>">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="<?= base_url('assets/plugins/dataTables/dataTables.bootstrap4.css') ?>">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="<?= base_url('assets/plugins/daterangepicker/daterangepicker.css') ?>">
     <!-- summernote -->

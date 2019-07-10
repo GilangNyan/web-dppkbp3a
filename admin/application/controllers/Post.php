@@ -32,4 +32,25 @@ class Post extends CI_Controller
         $this->load->view('pages/posting', $data);
         $this->load->view('templates/footer');
     }
+
+    public function savePost()
+    {
+        $judul = $this->input->post('judul');
+        $isi = $this->input->post('isi');
+        //Membuat slug
+        $string = preg_replace('/[^a-zA-Z0-9 \&%|{.}=,?!*()"-_+$@;<>\']/', '', $judul);
+        $trim = trim($string);
+        $pre_slug = strtolower(str_replace(" ", "-", $trim));
+        $slug = $pre_slug . '.html';
+        $status = $this->input->post('status');
+
+        $this->post_model->simpanPost($judul, $isi, $slug, $status);
+        if ($status == 0) {
+            $this->session->set_flashdata('message', 'Artikel berhasil disimpan!');
+            redirect('post');
+        } else if ($status == 1) {
+            $this->session->set_flashdata('message', 'Artikel berhasil diterbitkan!');
+            redirect('post');
+        }
+    }
 }

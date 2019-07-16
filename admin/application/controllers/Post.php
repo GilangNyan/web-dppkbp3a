@@ -1,4 +1,7 @@
 <?php
+
+use function GuzzleHttp\json_encode;
+
 defined('BASEPATH') or exit('No direct script access allowed.');
 
 class Post extends CI_Controller
@@ -33,6 +36,15 @@ class Post extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+    function getSpecificPost()
+    {
+        $id = $this->input->post('id');
+        // $query = $this->post_model->getSpecificPost($id);
+        // echo json_encode($query);
+        $query = $this->post_model->getSpecificPost($id);
+        json_encode($query);
+    }
+
     public function savePost()
     {
         $judul = $this->input->post('judul');
@@ -51,6 +63,30 @@ class Post extends CI_Controller
         } else if ($status == 1) {
             $this->session->set_flashdata('message', 'Artikel berhasil diterbitkan!');
             redirect('post');
+        }
+    }
+
+    public function updatePost()
+    {
+        $postId = $this->input->post('id');
+        $judul = $this->input->post('judul');
+        //Membuat slug
+        $string = preg_replace('/[^a-zA-Z0-9 \&%|{.}=,?!*()"-_+$@;<>\']/', '', $judul);
+        $trim = trim($string);
+        $pre_slug = strtolower(str_replace(" ", "-", $trim));
+        $slug = $pre_slug . '.html';
+
+        $this->post_model->updatePost($postId, $slug);
+        $this->session->set_flashdata('message', 'Artikel berhasil diedit!');
+        redirect('post');
+    }
+
+    public function deletePost($id)
+    {
+        if (!isset($id)) show_404();
+
+        if ($this->post_model->deletePost($id)) {
+            redirect(site_url('post'));
         }
     }
 }

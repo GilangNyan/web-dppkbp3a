@@ -1,5 +1,3 @@
-ClassicEditor.create(
-	document.querySelector('#isi')
-).catch(error => {
-	console.error(error);
-});
+CKFinder.setupCKEditor();
+CKEDITOR.replace('isi');
+CKEDITOR.replace('isi2');

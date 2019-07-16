@@ -71,6 +71,7 @@
 			<!-- /.row -->
 		</div><!-- /.container-fluid -->
 	</section>
+	<?php var_dump($this->session->all_userdata()) ?>
 	<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->

@@ -33,8 +33,10 @@
 <script src="<?= base_url('assets/plugins/fastclick/fastclick.js') ?>"></script>
 <!-- SweetAlert2 -->
 <script src="<?= base_url('assets/plugins/sweetalert2/sweetalert2.all.min.js') ?>"></script>
-<!-- CKEditor5 -->
-<script src="<?= base_url('assets/plugins/ckeditor5/ckeditor.js') ?>"></script>
+<!-- CKEditor -->
+<script src="<?= base_url('assets/plugins/ckeditor/ckeditor.js') ?>"></script>
+<!-- CKEditor -->
+<script src="<?= base_url('assets/plugins/ckfinder/ckfinder.js') ?>"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url('assets/dist/js/adminlte.js') ?>"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
@@ -45,3 +47,4 @@
 <script src="<?= base_url('assets/dist/js/alert.js') ?>"></script>
 <script src="<?= base_url('assets/dist/js/table.js') ?>"></script>
 <script src="<?= base_url('assets/dist/js/ckeditor.js') ?>"></script>
+<script src="<?= base_url('assets/dist/js/modal.js') ?>"></script>

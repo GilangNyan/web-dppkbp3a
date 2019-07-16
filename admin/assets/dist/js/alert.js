@@ -12,3 +12,29 @@ if (flashData.includes('berhasil') || flashData.includes('Berhasil')) {
 		text: flashData
 	});
 }
+
+$(document).ready(function () {
+	$('.btn-hapus').click(function (e) {
+		e.preventDefault();
+		const href = $(this).attr('href');
+		Swal.fire({
+			type: 'warning',
+			title: 'Apakah anda yakin?',
+			text: 'Post yang dihapus tidak bisa dikembalikan!',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Ya, hapus',
+			cancelButtonText: "Batal"
+		}).then((result) => {
+			if (result.value) {
+				window.location = href;
+				Swal.fire(
+					'Dihapus!',
+					'Post telah dihapus.',
+					'success'
+				);
+			}
+		});
+	})
+})

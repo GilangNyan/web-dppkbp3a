@@ -42,15 +42,33 @@ class Post_model extends CI_Model
         return $this->db->get()->result();
     }
 
-    function updatePost($postId)
+    function updatePost($postId, $slug)
     {
-        //
+        if (!empty($_FILES['gambar']['name'])) {
+            $image = $this->_uploadImage($postId);
+        } else {
+            $image = $this->input->post('gambarlama');
+        }
+
+        $author = $author = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
+
+        $data = array(
+            'judul' => $this->input->post('judul'),
+            'isi' => $this->input->post('isi2'),
+            'slug' => $slug,
+            'image' => $image,
+            'author' => $author['id'],
+            'status' => $this->input->post('status')
+        );
+
+        $this->db->update('post', $data, ['id' => $postId]);
     }
 
     function deletePost($postId)
     {
         $this->_deleteImage($postId);
         $this->db->delete('post', ['id' => $postId]);
+        redirect('post');
     }
 
     private function _uploadImage($id)
@@ -70,9 +88,9 @@ class Post_model extends CI_Model
         } else {
             $error = $this->upload->display_errors();
             echo $error;
-            print_r($_POST);
-            print_r($this->upload->data());
-            exit();
+            // print_r($_POST);
+            // print_r($this->upload->data());
+            // exit();
             return "post_default.jpg";
         }
     }

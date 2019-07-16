@@ -9,7 +9,7 @@ class Auth extends CI_Controller
         $this->load->model('auth_model');
 
         if ($this->session->userdata('username') != null) {
-            redirect('auth');
+            redirect('home');
         }
     }
 
@@ -93,10 +93,8 @@ class Auth extends CI_Controller
 
     public function logout()
     {
-        // $this->session->unset_userdata('username');
-        // $this->session->unset_userdata('role');
-        session_destroy();
-        redirect('auth');
+        $this->session->sess_destroy();
         $this->session->set_flashdata('message', 'Berhasil logout!');
+        redirect('auth');
     }
 }

@@ -126,7 +126,7 @@
                     <i class="fas fa-cog mr-2"></i> Setelan
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
+                <a href="<?= base_url('auth/logout') ?>" class="dropdown-item">
                     <i class="fas fa-sign-out-alt mr-2"></i> Keluar
                 </a>
             </div>

@@ -21,10 +21,10 @@
                         <table class="table table-bordered table-hover" id="allPost" width="100%">
                             <thead>
                                 <tr>
-                                    <th style="width: 40%">Judul Post</th>
+                                    <th style="width: 35%">Judul Post</th>
                                     <th style="width: 25%">Author</th>
                                     <th style="width: 15%">Dibuat Pada</th>
-                                    <th style="width: 20%">Opsi</th>
+                                    <th style="width: 25%">Opsi</th>
                                 </tr>
                             </thead>
                             <tbody>

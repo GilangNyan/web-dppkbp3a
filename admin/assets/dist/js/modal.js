@@ -23,7 +23,7 @@ $(document).ready(function () {
 			data: {
 				id: postId
 			},
-			// dataType: 'JSON',
+			dataType: 'JSON',
 			success: function (data) {
 				$('#id').val(postId);
 				$('#judul').val(data.judul);

@@ -25,6 +25,7 @@ class Post_model extends CI_Model
         $this->db->select('post.*, user.username, user.nama, user.role');
         $this->db->from('post');
         $this->db->join('user', 'post.author = user.id', 'inner');
+        $this->db->order_by('tanggal', 'DESC');
         return $this->db->get()->result();
     }
 
@@ -68,7 +69,7 @@ class Post_model extends CI_Model
     {
         $this->_deleteImage($postId);
         $this->db->delete('post', ['id' => $postId]);
-        redirect('post');
+        redirect('admin/post');
     }
 
     private function _uploadImage($id)

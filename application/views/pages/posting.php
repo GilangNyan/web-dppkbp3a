@@ -37,7 +37,7 @@
                                             <button type="button" class="btn btn-sm text-success" data-postid="<?= $post->id ?>"><i class="fas fa-eye"></i> Lihat</button>
                                             <?php if ($post->role == 'ADMIN' || $post->username == $this->session->userdata('username')) : ?>
                                                 <button type="button" class="btn-edit btn btn-sm text-primary" data-toggle="modal" data-target="#modalEditPost" data-postid="<?= $post->id ?>" data-judul="<?= $post->judul ?>" data-isi="<?= $post->isi ?>" data-gambar="<?= $post->image ?>" data-status="<?= $post->status ?>"><i class="fas fa-edit"></i> Edit</button>
-                                                <button type="button" class="btn-hapus btn btn-sm text-danger"><i class="fas fa-trash-alt"></i> Hapus</button>
+                                                <a href="<?= base_url('admin/post/deletePost/') . $post->id ?>" class="btn-hapus btn btn-sm text-danger"><i class="fas fa-trash-alt"></i> Hapus</a>
                                             <?php endif ?>
                                         </td>
                                     </tr>

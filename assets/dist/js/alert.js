@@ -28,7 +28,7 @@ $(document).ready(function () {
 			cancelButtonText: "Batal"
 		}).then((result) => {
 			if (result.value) {
-				window.location = href;
+				document.location.href = href;
 				Swal.fire(
 					'Dihapus!',
 					'Post telah dihapus.',

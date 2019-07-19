@@ -70,6 +70,7 @@ class Post_model extends CI_Model
         $this->_deleteImage($postId);
         $this->db->delete('post', ['id' => $postId]);
         redirect('admin/post');
+        $this->session->set_flashdata('message', 'Post berhasil dihapus!');
     }
 
     private function _uploadImage($id)

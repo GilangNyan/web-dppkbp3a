@@ -14,27 +14,43 @@
 // });
 
 $(document).ready(function () {
-	$(document).on('click', '.btn-edit', function () {
+	$('.btn-edit').click(function (e) {
+		e.preventDefault();
 		var postId = $(this).data('postid');
+		const href = $(this).attr('href');
 		console.log(postId);
-		$.ajax({
-			url: "post/getSpecificPost",
-			method: "POST",
-			data: {
-				id: postId
-			},
-			dataType: 'JSON',
-			success: function (data) {
-				$('#id').val(postId);
-				$('#judul').val(data.judul);
-				CKEDITOR.instances.isi2.setData(data.isi);
-				$('#gambarlama').val(data.image);
-				$('#status').val(data.status);
-				console.log(data);
-			},
-			error: function (data) {
-				console.log(data);
-			}
-		});
+		var tr = $(this).closest('tr');
+		var judul = tr.find('.val-judul').val();
+		var isi = tr.find('.val-isi').val();
+		var gambar = tr.find('.val-gambar').val();
+		var status = tr.find('.val-status').val();
+		console.log(judul);
+
+		$(".modal-body #id").val(postId);
+		$(".modal-body #judul").val(judul);
+		// $(".modal-body #isi2").val(isi);
+		CKEDITOR.instances.isi2.setData(isi);
+		$(".modal-body #gambarlama").val(gambar);
+		$(".modal-body #status").val(status);
+		// $.ajax({
+		// 	url: href,
+		// 	method: "POST",
+		// 	data: {
+		// 		id: postId
+		// 	},
+		// 	dataType: 'json',
+		// 	success: function (data) {
+		// 		$('#id').val(postId);
+		// 		$('#judul').val(data.judul);
+		// 		CKEDITOR.instances.isi2.setData(data.isi);
+		// 		$('#gambarlama').val(data.image);
+		// 		$('#status').val(data.status);
+		// 		console.log(data);
+		// 	},
+		// 	error: function (data) {
+		// 		console.log(data);
+		// 	}
+		// });
+
 	});
 });

@@ -29,11 +29,6 @@ $(document).ready(function () {
 		}).then((result) => {
 			if (result.value) {
 				document.location.href = href;
-				Swal.fire(
-					'Dihapus!',
-					'Post telah dihapus.',
-					'success'
-				);
 			}
 		});
 	})

@@ -39,8 +39,6 @@ class Post extends CI_Controller
     function getSpecificPost()
     {
         $id = $this->input->post('id');
-        // $query = $this->post_model->getSpecificPost($id);
-        // echo json_encode($query);
         $query = $this->post_model->getSpecificPost($id);
         json_encode($query);
     }

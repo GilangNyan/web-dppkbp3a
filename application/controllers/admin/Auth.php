@@ -9,7 +9,7 @@ class Auth extends CI_Controller
         $this->load->model('auth_model');
 
         if ($this->session->userdata('username') != null) {
-            redirect('admin/home');
+            redirect('admin');
         }
     }
 

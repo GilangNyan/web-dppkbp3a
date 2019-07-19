@@ -12,7 +12,7 @@ class Post extends CI_Controller
         $this->load->model('post_model');
 
         if ($this->session->userdata('username') == null) {
-            redirect('auth');
+            redirect('admin/auth');
         }
     }
 
@@ -59,10 +59,10 @@ class Post extends CI_Controller
         $this->post_model->simpanPost($judul, $isi, $slug, $status);
         if ($status == 0) {
             $this->session->set_flashdata('message', 'Artikel berhasil disimpan!');
-            redirect('post');
+            redirect('admin/post');
         } else if ($status == 1) {
             $this->session->set_flashdata('message', 'Artikel berhasil diterbitkan!');
-            redirect('post');
+            redirect('admin/post');
         }
     }
 
@@ -78,7 +78,7 @@ class Post extends CI_Controller
 
         $this->post_model->updatePost($postId, $slug);
         $this->session->set_flashdata('message', 'Artikel berhasil diedit!');
-        redirect('post');
+        redirect('admin/post');
     }
 
     public function deletePost($id)
@@ -86,7 +86,7 @@ class Post extends CI_Controller
         if (!isset($id)) show_404();
 
         if ($this->post_model->deletePost($id)) {
-            redirect(site_url('post'));
+            redirect(site_url('admin/post'));
         }
     }
 }

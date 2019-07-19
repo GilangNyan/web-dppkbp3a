@@ -16,7 +16,7 @@
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
 
-                <form action="<?= base_url('auth') ?>" method="post">
+                <form action="<?= base_url('admin/auth') ?>" method="post">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Username" name="username" value="<?= set_value('username') ?>" required minlength="3" maxlength="12">
                         <div class="input-group-append input-group-text">
@@ -52,7 +52,7 @@
                     <a href="#">I forgot my password</a>
                 </p>
                 <p class="mb-0">
-                    <a href="<?= base_url('auth/register') ?>" class="text-center">Register a new membership</a>
+                    <a href="<?= base_url('admin/auth/register') ?>" class="text-center">Register a new membership</a>
                 </p>
             </div>
             <!-- /.login-card-body -->

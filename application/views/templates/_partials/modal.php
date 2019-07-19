@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('post/savePost') ?>" method="post" name="formtambah" id="formtambah" enctype="multipart/form-data">
+                <form action="<?= base_url('admin/post/savePost') ?>" method="post" name="formtambah" id="formtambah" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="judul">Judul Post</label>
                         <input type="text" class="form-control" name="judul" id="judul" aria-describedby="judul" placeholder="">
@@ -53,7 +53,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('post/updatePost') ?>" method="post" name="formedit" id="formedit" enctype="multipart/form-data">
+                <form action="<?= base_url('admin/post/updatePost') ?>" method="post" name="formedit" id="formedit" enctype="multipart/form-data">
                     <input type="hidden" name="id" id="id">
                     <div class="form-group">
                         <label for="judul">Judul Post</label>

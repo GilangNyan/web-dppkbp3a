@@ -9,7 +9,7 @@ class Auth extends CI_Controller
         $this->load->model('auth_model');
 
         if ($this->session->userdata('username') != null) {
-            redirect('home');
+            redirect('admin/home');
         }
     }
 
@@ -39,14 +39,14 @@ class Auth extends CI_Controller
                 if (password_verify($password, $user['password'])) {
                     $this->auth_model->login($user);
                     $this->session->set_flashdata('message', 'Login berhasil. Selamat datang!');
-                    redirect('home');
+                    redirect('admin/home');
                 } else {
                     $this->session->set_flashdata('message', 'Password tidak cocok!');
-                    redirect('auth');
+                    redirect('admin/auth');
                 }
             } else {
                 $this->session->set_flashdata('message', 'User tidak ditemukan!');
-                redirect('auth');
+                redirect('admin/auth');
             }
         }
     }
@@ -87,7 +87,7 @@ class Auth extends CI_Controller
         } else {
             $this->auth_model->register();
             $this->session->set_flashdata('message', 'User berhasil didaftarkan!');
-            redirect('auth');
+            redirect('admin/auth');
         }
     }
 }

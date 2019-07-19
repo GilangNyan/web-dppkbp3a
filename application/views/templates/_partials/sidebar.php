@@ -15,9 +15,9 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
             <li class="nav-item">
-                <a href="<?= base_url() ?>" class="nav-link <?php if ($pagename == 'Dashboard') {
-                                                                echo 'active';
-                                                            } ?>">
+                <a href="<?= base_url('admin/home') ?>" class="nav-link <?php if ($pagename == 'Dashboard') {
+                                                                            echo 'active';
+                                                                        } ?>">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                         Dashboard
@@ -38,17 +38,17 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?= base_url('post') ?>" class="nav-link <?php if ($pagename == 'Semua Post') {
-                                                                                echo 'active';
-                                                                            } ?>">
+                        <a href="<?= base_url('admin/post') ?>" class="nav-link <?php if ($pagename == 'Semua Post') {
+                                                                                    echo 'active';
+                                                                                } ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Semua</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('post/published') ?>" class="nav-link <?php if ($pagename == 'Post Diterbitkan') {
-                                                                                        echo 'active';
-                                                                                    } ?>">
+                        <a href="<?= base_url('admin/post/published') ?>" class="nav-link <?php if ($pagename == 'Post Diterbitkan') {
+                                                                                                echo 'active';
+                                                                                            } ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Diterbitkan</p>
                         </a>

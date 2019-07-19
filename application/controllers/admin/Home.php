@@ -9,7 +9,7 @@ class Home extends CI_Controller
         $this->load->model('home_model');
 
         if ($this->session->userdata('username') == null) {
-            redirect('auth');
+            redirect('admin/auth');
         }
     }
 

@@ -16,7 +16,7 @@
             <div class="card-body register-card-body">
                 <p class="login-box-msg">Register a new membership</p>
 
-                <form action="<?= base_url('auth/register') ?>" method="post">
+                <form action="<?= base_url('admin/auth/register') ?>" method="post">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Full name" name="nama" value="<?= set_value('nama') ?>" required>
                         <div class="input-group-append input-group-text">
@@ -69,7 +69,7 @@
                     </div>
                 </form>
 
-                <a href="<?= base_url('auth') ?>" class="text-center">I already have a membership</a>
+                <a href="<?= base_url('admin/auth') ?>" class="text-center">I already have a membership</a>
             </div>
             <!-- /.form-box -->
         </div><!-- /.card -->

@@ -41,7 +41,7 @@
                                             <?php endif ?>
                                         </td>
                                         <input type="hidden" name="val-judul" class="val-judul" value="<?= $post->judul ?>">
-                                        <input type="hidden" name="val-isi" class="val-isi" value="<?= $post->isi ?>">
+                                        <input type="hidden" name="val-isi" class="val-isi" value="<?= htmlspecialchars($post->isi) ?>">
                                         <input type="hidden" name="val-gambar" class="val-gambar" value="<?= $post->image ?>">
                                         <input type="hidden" name="val-status" class="val-status" value="<?= $post->status ?>">
                                     </tr>

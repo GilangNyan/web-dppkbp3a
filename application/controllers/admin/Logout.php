@@ -7,6 +7,6 @@ class Logout extends CI_Controller
     {
         $this->session->sess_destroy();
         $this->session->set_flashdata('message', 'Berhasil logout!');
-        redirect('admin/auth', 'refresh');
+        redirect('login', 'refresh');
     }
 }

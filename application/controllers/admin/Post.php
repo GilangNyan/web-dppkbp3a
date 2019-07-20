@@ -12,7 +12,7 @@ class Post extends CI_Controller
         $this->load->model('post_model');
 
         if ($this->session->userdata('username') == null) {
-            redirect('admin/auth');
+            redirect('login');
         }
     }
 

@@ -3,6 +3,7 @@
     <title><?= SITE_NAME . " | " . (($this->uri->segment(1) == null) ? 'Dashboard' : ucfirst($this->uri->segment(1))) . " - " . ucfirst($this->uri->segment(2)) ?></title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="<?= base_url('assets/favico.ico') ?>" type="image/gif">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome-free/css/all.min.css') ?>">
     <!-- Ionicons -->

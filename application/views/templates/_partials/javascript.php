@@ -18,7 +18,7 @@
 <!-- jQuery Knob Chart -->
 <script src="<?= base_url('assets/plugins/jquery-knob/jquery.knob.min.js') ?>"></script>
 <!-- daterangepicker -->
-<script src="<?= base_url('assets/plugins/moment/moment.min.js') ?>"></script>
+<script src="<?= base_url('assets/plugins/moment/moment-with-locales.min.js') ?>"></script>
 <script src="<?= base_url('assets/plugins/daterangepicker/daterangepicker.js') ?>"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="<?= base_url('assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') ?>"></script>
@@ -48,3 +48,4 @@
 <script src="<?= base_url('assets/dist/js/table.js') ?>"></script>
 <script src="<?= base_url('assets/dist/js/ckeditor.js') ?>"></script>
 <script src="<?= base_url('assets/dist/js/modal.js') ?>"></script>
+<script src="<?= base_url('assets/dist/js/tanggal.js') ?>"></script>

@@ -15,6 +15,8 @@ class Home_model extends CI_Model
         $ip = $_SERVER['REMOTE_ADDR'];
         $tanggal = date('Ymd');
         $waktu = time();
+        $browser = $this->agent->browser();
+        $platform = $this->agent->platform();
 
         $this->db->select('*');
         $this->db->from('visitor');
@@ -27,12 +29,16 @@ class Home_model extends CI_Model
                 'ip' => $ip,
                 'tanggal' => $tanggal,
                 'hits' => 1,
-                'online' => $waktu
+                'online' => $waktu,
+                'browser' => $browser,
+                'platform' => $platform
             );
             $this->db->insert('visitor', $data);
         } else {
             $this->db->set('hits', 'hits+1', false);
             $this->db->set('online', $waktu);
+            $this->db->set('browser', $browser);
+            $this->db->set('platform', $platform);
             $this->db->where('ip', $ip);
             $this->db->where('tanggal', $tanggal);
             $this->db->update('visitor');

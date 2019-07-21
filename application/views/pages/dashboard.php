@@ -65,6 +65,57 @@
 				<!-- /.col -->
 			</div>
 			<!-- /.row -->
+			<div class="row">
+				<!-- Performa Artikel -->
+				<div class="col-12 col-sm-12 col-md-8">
+					<div class="card">
+						<div class="card-header d-flex p-0">
+							<h3 class="card-title p-3">
+								<i class="fas fa-file mr-1"></i>
+								Performa Artikel
+							</h3>
+						</div>
+						<div class="card-body">
+							<div class="tab-content p-0">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th style="width: 70%">Entri</th>
+											<th>Penayangan</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php foreach ($postperf as $row) : ?>
+											<tr>
+												<td><?= $row->judul ?></td>
+												<td><?= $row->views ?></td>
+											</tr>
+										<?php endforeach; ?>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.Performa Artikel -->
+				<!-- Penggunaan Browser -->
+				<div class="col-12 col-sm-12 col-md-4">
+					<div class="card">
+						<div class="card-header d-flex p-0">
+							<h3 class="card-title p-3">
+								<i class="fab fa-chrome mr-1"></i>
+								Penggunaan Browser
+							</h3>
+						</div>
+						<div class="card-body">
+							<div class="tab-content p-0">
+								<canvas id="browserchart"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.Penggunaan Browser -->
+			</div>
 		</div><!-- /.container-fluid -->
 	</section>
 	<!-- /.content -->

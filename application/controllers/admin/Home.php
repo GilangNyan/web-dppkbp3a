@@ -22,8 +22,16 @@ class Home extends CI_Controller
         $data['onlinevisitor'] = $this->home_model->getOnlineVisitor();
         $data['totalvisitor'] = $this->home_model->getTotalVisitor();
         $data['totalpages'] = $this->home_model->getTotalPost();
+        $data['postperf'] = $this->home_model->postPerformance();
+
         $this->load->view('templates/header', $data);
         $this->load->view('pages/dashboard', $data);
         $this->load->view('templates/footer');
+    }
+
+    public function getChartData()
+    {
+        $query = $this->home_model->chartBrowser();
+        echo json_encode($query);
     }
 }

@@ -10,41 +10,6 @@ class Home_model extends CI_Model
         return $this->db->get_where('user', ['username' => $username])->row_array();
     }
 
-    public function countVisitor()
-    {
-        $ip = $_SERVER['REMOTE_ADDR'];
-        $tanggal = date('Ymd');
-        $waktu = time();
-        $browser = $this->agent->browser();
-        $platform = $this->agent->platform();
-
-        $this->db->select('*');
-        $this->db->from('visitor');
-        $this->db->where('ip', $ip);
-        $this->db->where('tanggal', $tanggal);
-        $s = $this->db->count_all_results();
-
-        if ($s == 0) {
-            $data = array(
-                'ip' => $ip,
-                'tanggal' => $tanggal,
-                'hits' => 1,
-                'online' => $waktu,
-                'browser' => $browser,
-                'platform' => $platform
-            );
-            $this->db->insert('visitor', $data);
-        } else {
-            $this->db->set('hits', 'hits+1', false);
-            $this->db->set('online', $waktu);
-            $this->db->set('browser', $browser);
-            $this->db->set('platform', $platform);
-            $this->db->where('ip', $ip);
-            $this->db->where('tanggal', $tanggal);
-            $this->db->update('visitor');
-        }
-    }
-
     public function getTodayVisitor()
     {
         $tanggal = date('Ymd');
@@ -77,5 +42,22 @@ class Home_model extends CI_Model
         $this->db->from('post');
         $this->db->where('status', 1);
         return $this->db->count_all_results();
+    }
+
+    public function postPerformance()
+    {
+        $this->db->select('*');
+        $this->db->from('post');
+        $this->db->order_by('views', 'DESC');
+        $this->db->limit(5, 0);
+        return $this->db->get()->result();
+    }
+
+    public function chartBrowser()
+    {
+        $this->db->select('browser, SUM(hits) as jumlah');
+        $this->db->from('visitor');
+        $this->db->group_by('browser');
+        return $this->db->get()->result();
     }
 }

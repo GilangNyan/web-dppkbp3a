@@ -5,16 +5,15 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-8">
-                                <h3 class="card-title">Post</h3>
-                            </div>
-                            <div class="col-4">
-                                <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#modalPost">
-                                    Tambah Post
-                                </button>
-                            </div>
+                    <div class="card-header d-flex p-0">
+                        <h3 class="card-title p-3">
+                            <i class="fas fa-file-alt mr-1"></i>
+                            Post
+                        </h3>
+                        <div class="sisi ml-auto p-2">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPost">
+                                Tambah Post
+                            </button>
                         </div>
                     </div>
                     <div class="card-body">

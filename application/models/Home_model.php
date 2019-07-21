@@ -14,10 +14,13 @@ class Home_model extends CI_Model
     {
         $tanggal = date('Ymd');
 
-        $this->db->select('*');
+        $this->db->select('SUM(hits) as total');
         $this->db->from('visitor');
         $this->db->where('tanggal', $tanggal);
-        return $this->db->count_all_results();
+        $hasil = $this->db->get()->result();
+        foreach ($hasil as $row) {
+            return $row->total;
+        }
     }
 
     public function getOnlineVisitor()
@@ -31,9 +34,12 @@ class Home_model extends CI_Model
 
     public function getTotalVisitor()
     {
-        $this->db->select('*');
+        $this->db->select('SUM(hits) as total');
         $this->db->from('visitor');
-        return $this->db->count_all_results();
+        $hasil = $this->db->get()->result();
+        foreach ($hasil as $row) {
+            return $row->total;
+        }
     }
 
     public function getTotalPost()

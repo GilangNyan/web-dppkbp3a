@@ -72,8 +72,13 @@
 						<div class="card-header d-flex p-0">
 							<h3 class="card-title p-3">
 								<i class="fas fa-file mr-1"></i>
-								Performa Artikel
+								Tayangan Artikel
 							</h3>
+							<div class="card-tools">
+								<button type="button" class="btn btn-tool pt-2" data-widget="collapse">
+									<i class="fas fa-minus"></i>
+								</button>
+							</div>
 						</div>
 						<div class="card-body">
 							<div class="tab-content p-0">
@@ -87,7 +92,12 @@
 									<tbody>
 										<?php foreach ($postperf as $row) : ?>
 											<tr>
-												<td><?= $row->judul ?></td>
+												<?php
+												$pisah1 = explode("-", $row->tanggal);
+												$tahun = $pisah1[0];
+												$bulan = $pisah1[1];
+												?>
+												<td><a class="text-reset" href="<?= base_url() . $tahun . '/' . $bulan . '/' . $row->slug ?>" target="_blank"><?= $row->judul ?></a></td>
 												<td><?= $row->views ?></td>
 											</tr>
 										<?php endforeach; ?>
@@ -106,6 +116,11 @@
 								<i class="fab fa-chrome mr-1"></i>
 								Penggunaan Browser
 							</h3>
+							<div class="card-tools">
+								<button type="button" class="btn btn-tool pt-2" data-widget="collapse">
+									<i class="fas fa-minus"></i>
+								</button>
+							</div>
 						</div>
 						<div class="card-body">
 							<div class="tab-content p-0">

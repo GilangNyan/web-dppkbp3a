@@ -17,10 +17,14 @@ $(function () {
 			labels: dataBrowser,
 			datasets: [{
 				data: dataJumlah,
-				backgroundColor: [dynamicColors(), dynamicColors(), dynamicColors(), dynamicColors(), dynamicColors(), dynamicColors(), dynamicColors(), dynamicColors()],
+				backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
 			}]
 		}
 		var donutOptions = {
+			legend: {
+				// display: false,
+				position: 'right',
+			},
 			maintainAspectRatio: false,
 			responsive: true,
 		}
@@ -34,9 +38,9 @@ $(function () {
 	})
 });
 
-var dynamicColors = function () {
-	var r = Math.floor(Math.random() * 255);
-	var g = Math.floor(Math.random() * 255);
-	var b = Math.floor(Math.random() * 255);
-	return "rgb(" + r + "," + g + "," + b + ")";
-}
+// var dynamicColors = function () {
+// 	var r = Math.floor(Math.random() * 255);
+// 	var g = Math.floor(Math.random() * 255);
+// 	var b = Math.floor(Math.random() * 255);
+// 	return "rgb(" + r + "," + g + "," + b + ")";
+// }

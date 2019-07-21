@@ -1,15 +1,21 @@
 var flashData = $('.msg').data('flashdata');
 if (flashData.includes('berhasil') || flashData.includes('Berhasil')) {
 	Swal.fire({
+		position: 'top-end',
 		type: 'success',
-		title: 'Pesan',
-		text: flashData
+		title: flashData,
+		toast: true,
+		showConfirmButton: false,
+		timer: 3000
 	});
 } else if (flashData.includes('tidak')) {
 	Swal.fire({
+		position: 'top-end',
 		type: 'error',
-		title: 'Pesan',
-		text: flashData
+		title: flashData,
+		toast: true,
+		showConfirmButton: false,
+		timer: 3000
 	});
 }
 
@@ -29,6 +35,15 @@ $(document).ready(function () {
 		}).then((result) => {
 			if (result.value) {
 				document.location.href = href;
+			} else {
+				Swal.fire({
+					position: 'top-end',
+					type: 'error',
+					title: 'Post tidak jadi dihapus.',
+					toast: true,
+					showConfirmButton: false,
+					timer: 3000
+				});
 			}
 		});
 	})

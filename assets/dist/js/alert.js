@@ -1,7 +1,7 @@
 var flashData = $('.msg').data('flashdata');
 if (flashData.includes('berhasil') || flashData.includes('Berhasil')) {
 	Swal.fire({
-		position: 'top-end',
+		position: 'top',
 		type: 'success',
 		title: flashData,
 		toast: true,
@@ -10,7 +10,7 @@ if (flashData.includes('berhasil') || flashData.includes('Berhasil')) {
 	});
 } else if (flashData.includes('tidak')) {
 	Swal.fire({
-		position: 'top-end',
+		position: 'top',
 		type: 'error',
 		title: flashData,
 		toast: true,
@@ -37,7 +37,7 @@ $(document).ready(function () {
 				document.location.href = href;
 			} else {
 				Swal.fire({
-					position: 'top-end',
+					position: 'top',
 					type: 'error',
 					title: 'Post tidak jadi dihapus.',
 					toast: true,

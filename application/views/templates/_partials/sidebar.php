@@ -94,10 +94,10 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item has-treeview <?php if ($pagename == 'Halaman' || $pagename == 'Halaman Diterbitkan') {
+            <li class="nav-item has-treeview <?php if ($pagename == 'Halaman' || $pagename == 'Menu') {
                                                     echo 'menu-open';
                                                 } ?>">
-                <a href="#" class="nav-link <?php if ($pagename == 'Halaman' || $pagename == 'Halaman Diterbitkan') {
+                <a href="#" class="nav-link <?php if ($pagename == 'Halaman' || $pagename == 'Menu') {
                                                 echo 'active';
                                             } ?>">
                     <i class="nav-icon fas fa-file"></i>
@@ -108,19 +108,19 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="#" class="nav-link <?php if ($pagename == 'Halaman') {
-                                                        echo 'active';
-                                                    } ?>">
+                        <a href="<?= base_url('admin/menu') ?>" class="nav-link <?php if ($pagename == 'Menu') {
+                                                                                    echo 'active';
+                                                                                } ?>">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Semua</p>
+                            <p>Menu</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link <?php if ($pagename == 'Halaman Diterbitkan') {
-                                                        echo 'active';
-                                                    } ?>">
+                        <a href="<?= base_url('admin/halaman') ?>" class="nav-link <?php if ($pagename == 'Halaman') {
+                                                                                        echo 'active';
+                                                                                    } ?>">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Diterbitkan</p>
+                            <p>Halaman</p>
                         </a>
                     </li>
                 </ul>

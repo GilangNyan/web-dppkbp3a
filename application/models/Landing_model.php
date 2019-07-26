@@ -48,4 +48,14 @@ class Landing_model extends CI_Model
         $this->db->where('slug', $slug);
         $this->db->update('post');
     }
+
+    public function getRecentPost()
+    {
+        $this->db->select('*');
+        $this->db->from('post');
+        $this->db->where('status', 1);
+        $this->db->order_by('tanggal', 'DESC');
+        $this->db->limit(3, 0);
+        return $this->db->get()->result();
+    }
 }

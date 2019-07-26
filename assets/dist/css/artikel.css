@@ -1,0 +1,15 @@
+.crop-text {
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
+@media only screen and (min-width: 750px) {
+	.card-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}

@@ -62,3 +62,6 @@ $route['admin'] = 'admin/home';
 $route['login'] = 'admin/auth';
 $route['register'] = 'admin/auth/register';
 $route['logout'] = 'admin/logout';
+$route['admin/menu'] = 'admin/halaman/menu';
+$route['artikel'] = 'blog/artikel/index';
+$route['artikel/:num'] = 'blog/artikel/index/:num';

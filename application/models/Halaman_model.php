@@ -20,4 +20,24 @@ class Halaman_model extends CI_Model
         );
         $this->db->insert('menu', $data);
     }
+
+    public function getHalaman()
+    {
+        $this->db->select('halaman.*, menu.*');
+        $this->db->from('halaman');
+        $this->db->join('menu', 'halaman.parent = menu.id_menu', 'inner');
+        return $this->db->get()->result();
+    }
+
+    public function addPages($judul, $isi, $slug, $menu)
+    {
+        $data = array(
+            'id_halaman' => uniqid('page-'),
+            'judul' => $judul,
+            'isi' => $isi,
+            'slug' => $slug,
+            'parent' => $menu
+        );
+        $this->db->insert('halaman', $data);
+    }
 }

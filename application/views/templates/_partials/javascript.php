@@ -50,3 +50,37 @@
 <script src="<?= base_url('assets/dist/js/modal.js') ?>"></script>
 <script src="<?= base_url('assets/dist/js/tanggal.js') ?>"></script>
 <script src="<?= base_url('assets/dist/js/chart.js') ?>"></script>
+<script>
+    $(document).ready(function() {
+        $('.menu tbody').sortable({
+            update: function(event, ui) {
+                $(this).children().each(function(index) {
+                    if ($(this).attr('data-position') != (index + 1)) {
+                        $(this).attr('data-position', (index + 1)).addClass('updated');
+                    }
+                });
+                saveNewPositions();
+            }
+        });
+    });
+
+    function saveNewPositions() {
+        var positions = [];
+        $('.updated').each(function() {
+            positions.push([$(this).attr('data-index'), $(this).attr('data-position')]);
+            $(this).removeClass('updated');
+        });
+        $.ajax({
+            url: 'halaman/updatePosisi',
+            method: 'POST',
+            dataType: 'text',
+            data: {
+                update: 1,
+                posisi: positions
+            },
+            success: function(response) {
+                console.log(response);
+            }
+        });
+    }
+</script>

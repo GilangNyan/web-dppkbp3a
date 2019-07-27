@@ -86,3 +86,30 @@
         </div>
     </div>
 </div>
+
+<!-- Modal Tambah Menu -->
+<div class="modal fade" id="tambahMenu" tabindex="-1" role="dialog" aria-labelledby="tambahMenu" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tambahkan Menu</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url('admin/halaman/simpanMenu') ?>" method="post" name="modalmenu" id="modalmenu">
+                    <div class="form-group">
+                        <label for="nama">Nama Menu</label>
+                        <input type="text" class="form-control" name="nama" id="nama" aria-describedby="namaMenu" placeholder="Masukkan nama menu">
+                        <small id="namaMenu" class="form-text text-muted">Tentukan nama menu yang akan ditambahkan.</small>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                <button type="submit" class="btn btn-primary" form="modalmenu">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -17,6 +17,9 @@
                         </div>
                     </div>
                     <div class="card-body">
+                        <div class="alert alert-primary" role="alert">
+                            Bagian menu ini digunakan untuk membuat menu yang berfungsi menampung submenu halaman dan tidak akan mempunyai link. Jadi disarankan jangan terlalu banyak membuat menu jika tidak terlalu dibutuhkan.
+                        </div>
                         <table class="table table-bordered table-hover menu">
                             <thead>
                                 <tr>

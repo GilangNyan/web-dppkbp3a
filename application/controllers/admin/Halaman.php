@@ -64,4 +64,14 @@ class Halaman extends CI_Controller
         $this->session->set_flashdata('message', 'Halaman berhasil ditambahkan!');
         redirect('admin/halaman');
     }
+
+    public function deletePage($id)
+    {
+        if (!isset($id)) show_404();
+
+        if ($this->halaman_model->deletePage($id)) {
+            $this->session->set_flashdata('message', 'Halaman berhasil dihapus!');
+            redirect('admin/halaman');
+        }
+    }
 }

@@ -40,4 +40,9 @@ class Halaman_model extends CI_Model
         );
         $this->db->insert('halaman', $data);
     }
+
+    public function deletePage($postId)
+    {
+        return $this->db->delete('halaman', ['id_halaman' => $postId]);
+    }
 }

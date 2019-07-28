@@ -21,7 +21,7 @@ $(document).ready(function () {
 		"order": [
 			[groupColumn, 'asc']
 		],
-		"displayLength": 15,
+		// "displayLength": 10,
 		"drawCallback": function (settings) {
 			var api = this.api();
 			var rows = api.rows({

@@ -84,7 +84,8 @@ class Post extends CI_Controller
         if (!isset($id)) show_404();
 
         if ($this->post_model->deletePost($id)) {
-            redirect(site_url('admin/post'));
+            $this->session->set_flashdata('message', 'Post berhasil dihapus!');
+            redirect('admin/post');
         }
     }
 }

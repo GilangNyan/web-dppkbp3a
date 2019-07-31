@@ -18,7 +18,7 @@
 
 <body>
     <!-- NAVBAR START -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
         <!-- brand -->
         <a class="navbar-brand" href="index.html">
             <img src="img/kotatasikmalaya.png" width="30" height="30" class="d-inline-block align-top" alt="">

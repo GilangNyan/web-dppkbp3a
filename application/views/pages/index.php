@@ -80,28 +80,28 @@
             <!-- carousel-item -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img style="max-height: 476pt" src="assets/img/1.jpg" class="d-block w-100" alt="...">
+                    <img style="max-height: 476pt" <?= base_url('assets/img/1.jpg') ?> class="d-block w-100" alt="...">
                     <div class="carousel-caption d-md-block">
                         <h5>Ngetes coooyyy</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque doloribus, similique, consectetur natus labore rerum dolores, non earum corrupti asperiores aperiam impedit repudiandae quisquam debitis accusamus. Voluptatibus, minima? Non, nihil.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img style="max-height: 476pt" src="assets/img/2.jpg" class="d-block w-100" alt="...">
+                    <img style="max-height: 476pt" <?= base_url('assets/img/2.jpg') ?> class="d-block w-100" alt="...">
                     <div class="carousel-caption d-md-block">
                         <h5>Second slide label</h5>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium nihil, nostrum quas mollitia sint fugiat omnis architecto inventore id repudiandae cum dolorum ab iusto magnam eligendi repellendus. Officia, consequuntur voluptate!</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img style="max-height: 476pt" src="assets/img/3.jpg" class="d-block w-100" alt="...">
+                    <img style="max-height: 476pt" <?= base_url('assets/img/3.jpg') ?> class="d-block w-100" alt="...">
                     <div class="carousel-caption d-md-block">
                         <h5>Third slide label</h5>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta cum quasi neque earum sint exercitationem aspernatur, commodi officia? Totam quos esse veniam quia alias velit dignissimos dicta facere nesciunt atque.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img style="max-height: 476pt" src="assets/img/4.jpg" class="d-block w-100" alt="...">
+                    <img style="max-height: 476pt" <?= base_url('assets/img/4.jpg') ?> class="d-block w-100" alt="...">
                     <div class="carousel-caption d-md-block">
                         <h5>Third slide label</h5>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta cum quasi neque earum sint

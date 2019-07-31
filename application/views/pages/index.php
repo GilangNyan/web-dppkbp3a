@@ -21,7 +21,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
         <!-- brand -->
         <a class="navbar-brand" href="index.html">
-            <img src="img/kotatasikmalaya.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            <img src="<?= base_url('assets/img/kotatasikmalaya.png') ?>" width="30" height="30" class="d-inline-block align-top" alt="">
             <span class="text-warning">DPPKBP3A</span> Tasikmalaya
         </a>
         <!-- toggler -->

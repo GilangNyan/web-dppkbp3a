@@ -80,28 +80,28 @@
             <!-- carousel-item -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img style="max-height: 476pt" <?= base_url('assets/img/1.jpg') ?> class="d-block w-100" alt="...">
+                    <img style="max-height: 476pt" src="<?= base_url('assets/img/1.jpg') ?>" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-md-block">
                         <h5>Ngetes coooyyy</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque doloribus, similique, consectetur natus labore rerum dolores, non earum corrupti asperiores aperiam impedit repudiandae quisquam debitis accusamus. Voluptatibus, minima? Non, nihil.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img style="max-height: 476pt" <?= base_url('assets/img/2.jpg') ?> class="d-block w-100" alt="...">
+                    <img style="max-height: 476pt" src="<?= base_url('assets/img/2.jpg') ?>" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-md-block">
                         <h5>Second slide label</h5>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium nihil, nostrum quas mollitia sint fugiat omnis architecto inventore id repudiandae cum dolorum ab iusto magnam eligendi repellendus. Officia, consequuntur voluptate!</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img style="max-height: 476pt" <?= base_url('assets/img/3.jpg') ?> class="d-block w-100" alt="...">
+                    <img style="max-height: 476pt" src="<?= base_url('assets/img/3.jpg') ?>" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-md-block">
                         <h5>Third slide label</h5>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta cum quasi neque earum sint exercitationem aspernatur, commodi officia? Totam quos esse veniam quia alias velit dignissimos dicta facere nesciunt atque.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img style="max-height: 476pt" <?= base_url('assets/img/4.jpg') ?> class="d-block w-100" alt="...">
+                    <img style="max-height: 476pt" src="<?= base_url('assets/img/4.jpg') ?>" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-md-block">
                         <h5>Third slide label</h5>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta cum quasi neque earum sint
@@ -156,7 +156,7 @@
             <!-- LEFT CONTENT START -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="img/1.jpg" class="card-img-top" alt="...">
+                    <img src="<?= base_url('assets/img/1.jpg') ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Card Title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -172,7 +172,7 @@
                     <div class="card mb-2">
                         <div class="row no-gutters">
                             <div class="col-md-4">
-                                <img src="img/1.jpg" class="card-img" alt="..." style="size: auto">
+                                <img src="<?= base_url('assets/img/1.jpg') ?>" class="card-img" alt="..." style="size: auto">
                             </div>
                             <div class="col-md-8">
                                 <div class="ml-2 mt-2">
@@ -187,7 +187,7 @@
                     <div class="card mb-2">
                         <div class="row no-gutters">
                             <div class="col-md-4">
-                                <img src="img/2.jpg" class="card-img" alt="...">
+                                <img src="<?= base_url('assets/img/2.jpg') ?>" class="card-img" alt="...">
                             </div>
                         </div>
                     </div>
@@ -196,7 +196,7 @@
                     <div class="card mb-2">
                         <div class="row no-gutters">
                             <div class="col-md-4">
-                                <img src="img/3.jpg" class="card-img" alt="...">
+                                <img src="<?= base_url('assets/img/3.jpg') ?>" class="card-img" alt="...">
                             </div>
                         </div>
                     </div>
@@ -205,7 +205,7 @@
                     <div class="card mb-2">
                         <div class="row no-gutters">
                             <div class="col-md-4">
-                                <img src="img/3.jpg" class="card-img" alt="...">
+                                <img src="<?= base_url('assets/img/4.jpg') ?>" class="card-img" alt="...">
                             </div>
                         </div>
                     </div>
@@ -216,7 +216,7 @@
             <!-- SIDEBAR START -->
             <div class="col-4 justify-content-center" style="width: 100%">
                 <div class="card">
-                    <img class="card-img-top" src="img/logo.png" alt="Card image cap">
+                    <img class="card-img-top" src="<?= base_url('assets/img/logo.png') ?>" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's

@@ -6,11 +6,9 @@ class Index extends CI_Controller{
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Index_model');
     }
 
     public function index(){
-        $this->load->view('pages/index', $data);
+        $this->load->view('pages/index');
     }
 }
-?>

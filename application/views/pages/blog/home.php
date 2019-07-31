@@ -24,41 +24,37 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand ml-lg-3" href="<?= base_url() ?>">
+            <img src="<?= base_url('assets/dist/img/Logo_Kota_Tasikmalaya.png') ?>" width="30" height="30" class="d-inline-block align-top" alt="Logo Kota Tasik">
+            <span class="text-warning">DPPKBP3A</span> Tasikmalaya
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0 mr-2">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home"></i> <span class="sr-only">(current)</span></a>
+                </li>
+                <?php foreach ($menu as $menus) : ?>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="<?= $menus->id_menu ?>" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= strtoupper($menus->nama_menu) ?></a>
+                        <div class="dropdown-menu" aria-labelledby="<?= $menus->id_menu ?>">
+                            <?php foreach ($submenu as $submenus) : ?>
+                                <?php if ($menus->id_menu == $submenus->parent) : ?>
+                                    <a class="dropdown-item" href="<?= base_url('pages/') . $submenus->slug ?>"><?= $submenus->judul ?></a>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
+                    </div>
+                <?php endforeach; ?>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 mr-lg-3">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
     </nav>
     <div id="carouselId" class="carousel slide" data-ride="carousel">
@@ -79,7 +75,7 @@
                     <div class="carousel-caption d-none d-md-block">
                         <h3><?= $row->judul ?></h3>
                         <div class="container">
-                            <p class="text-truncate"><?= strip_tags($row->isi) ?></p>
+                            <p class="crop-text"><?= strip_tags($row->isi) ?></p>
                         </div>
                     </div>
                 </div>
@@ -94,61 +90,118 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <div class="card" style="width: 18rem;">
+
+    <div class="container pt-3">
+        <div class="row justify-content-center">
+            <!-- LEFT CONTENT START -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="<?= base_url('assets/img/1.jpg') ?>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card Title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                            content.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- LEFT CONTENT END -->
+
+            <!-- CONTENT CENTER START -->
+            <div class="col-md-4 justify-content-center">
+                <div class="row mb-1">
+                    <div class="card mb-2">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="<?= base_url('assets/img/1.jpg') ?>" class="card-img" alt="..." style="size: auto">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="ml-2 mt-2">
+                                    <h5>Juduulll</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="card mb-2">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="<?= base_url('assets/img/2.jpg') ?>" class="card-img" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="card mb-2">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="<?= base_url('assets/img/3.jpg') ?>" class="card-img" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="card mb-2">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="<?= base_url('assets/img/4.jpg') ?>" class="card-img" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CONTENT CENTER END -->
+
+            <!-- SIDEBAR START -->
+            <div class="col-4 justify-content-center" style="width: 100%">
+                <div class="card">
+                    <img class="card-img-top" src="<?= base_url('assets/img/logo.png') ?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                            content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <!-- SIDEBAR END -->
+        </div>
+    </div>
+
+    <div class="card mb-3">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
     </div>
-    <div class="card text-center">
-        <div class="card-header">
-            Featured
-        </div>
+    <div class="card mb-3">
+        <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-            2 days ago
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
     </div>
-    <div class="card text-center">
-        <div class="card-header">
-            Featured
-        </div>
+    <div class="card mb-3">
+        <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-            2 days ago
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
     </div>
-    <div class="card text-center">
-        <div class="card-header">
-            Featured
-        </div>
+    <div class="card mb-3">
+        <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-            2 days ago
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
     </div>
+
     <!-- jQuery -->
     <script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
     <!-- jQuery UI 1.11.4 -->

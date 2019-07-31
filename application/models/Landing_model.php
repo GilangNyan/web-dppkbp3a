@@ -58,4 +58,19 @@ class Landing_model extends CI_Model
         $this->db->limit(3, 0);
         return $this->db->get()->result();
     }
+
+    public function getMenu()
+    {
+        $this->db->select('*');
+        $this->db->from('menu');
+        $this->db->order_by('posisi', 'asc');
+        return $this->db->get()->result();
+    }
+
+    public function getSubMenu()
+    {
+        $this->db->select('*');
+        $this->db->from('halaman');
+        return $this->db->get()->result();
+    }
 }

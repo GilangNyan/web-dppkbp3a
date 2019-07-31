@@ -13,7 +13,7 @@
     <link rel="icon" href="assets/img/kotatasikmalaya.png">
     <link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.css">
 
-    <title class="f">DPPKBP3A Tasikmalaya</title>
+    <title>DPPKBP3A Tasikmalaya</title>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html"><i class="fas fa-home"></i> <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php"><i class="fas fa-home"></i> <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">SEJARAH</a>

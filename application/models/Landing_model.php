@@ -73,4 +73,11 @@ class Landing_model extends CI_Model
         $this->db->from('halaman');
         return $this->db->get()->result();
     }
+
+    public function getKepala()
+    {
+        $this->db->select('*');
+        $this->db->from('kepala_dinas');
+        return $this->db->get()->result();
+    }
 }

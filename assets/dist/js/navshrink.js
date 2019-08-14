@@ -10,6 +10,6 @@
 // 	});
 // });
 $(window).scroll(function () {
-	var height = $(window).height() / 2;
+	var height = $(window).height() / 4;
 	$('.navbar').toggleClass('shrink', $(this).scrollTop() > height);
 });

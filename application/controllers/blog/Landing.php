@@ -14,6 +14,7 @@ class Landing extends CI_Controller
         $data['carousel'] = $this->landing_model->getRecentPost();
         $data['menu'] = $this->landing_model->getMenu();
         $data['submenu'] = $this->landing_model->getSubMenu();
+        $data['kepala'] = $this->landing_model->getKepala();
         $this->landing_model->countVisitor();
         $this->load->view('pages/blog/home', $data);
     }

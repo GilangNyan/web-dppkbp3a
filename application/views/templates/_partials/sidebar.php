@@ -135,6 +135,16 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="<?= base_url('admin/preferences') ?>" class="nav-link <?php if ($pagename == 'Preferensi') {
+                                                                                    echo 'active';
+                                                                                } ?>">
+                    <i class="nav-icon fas fa-cog"></i>
+                    <p>
+                        Preferensi
+                    </p>
+                </a>
+            </li>
         </ul>
     </nav>
     <!-- /.sidebar-menu -->

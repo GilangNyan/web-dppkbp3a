@@ -52,8 +52,12 @@
                 <?php endforeach; ?>
             </ul>
             <form class="form-inline my-2 my-lg-0 mr-lg-3">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Cari..." aria-label="Cari..." aria-describedby="basic-addon">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon"><i class="fas fa-search"></i></span>
+                    </div>
+                </div>
             </form>
         </div>
     </nav>
@@ -156,13 +160,14 @@
             <!-- SIDEBAR START -->
             <div class="col-4 justify-content-center" style="width: 100%">
                 <div class="card">
-                    <img class="card-img-top" src="<?= base_url('assets/img/logo.png') ?>" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
+                    <?php foreach ($kepala as $head) : ?>
+                        <img class="card-img-top" src="<?= base_url('assets/dist/img/') . $head->foto ?>" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $head->nama ?></h5>
+                            <p class="card-text"><?= $head->jabatan ?></p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
             <!-- SIDEBAR END -->

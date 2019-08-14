@@ -94,12 +94,13 @@
                     </li>
                 </ul>
             </li>
+            <?php if ($this->session->userdata('role') == 'ADMIN' || $this->session->userdata('role') == 'GOD') : ?>
             <li class="nav-item has-treeview <?php if ($pagename == 'Halaman' || $pagename == 'Menu') {
-                                                    echo 'menu-open';
-                                                } ?>">
+                                                        echo 'menu-open';
+                                                    } ?>">
                 <a href="#" class="nav-link <?php if ($pagename == 'Halaman' || $pagename == 'Menu') {
-                                                echo 'active';
-                                            } ?>">
+                                                    echo 'active';
+                                                } ?>">
                     <i class="nav-icon fas fa-file"></i>
                     <p>
                         Halaman
@@ -109,16 +110,16 @@
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="<?= base_url('admin/menu') ?>" class="nav-link <?php if ($pagename == 'Menu') {
-                                                                                    echo 'active';
-                                                                                } ?>">
+                                                                                        echo 'active';
+                                                                                    } ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Menu</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="<?= base_url('admin/halaman') ?>" class="nav-link <?php if ($pagename == 'Halaman') {
-                                                                                        echo 'active';
-                                                                                    } ?>">
+                                                                                            echo 'active';
+                                                                                        } ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Halaman</p>
                         </a>
@@ -126,9 +127,9 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link <?php if ($pagename == 'Kelola Pengguna') {
-                                                echo 'active';
-                                            } ?>">
+                <a href="<?= base_url('admin/user') ?>" class="nav-link <?php if ($pagename == 'Kelola Pengguna') {
+                                                                                echo 'active';
+                                                                            } ?>">
                     <i class="nav-icon fas fa-user"></i>
                     <p>
                         Kelola Pengguna
@@ -137,14 +138,15 @@
             </li>
             <li class="nav-item">
                 <a href="<?= base_url('admin/preferences') ?>" class="nav-link <?php if ($pagename == 'Preferensi') {
-                                                                                    echo 'active';
-                                                                                } ?>">
+                                                                                        echo 'active';
+                                                                                    } ?>">
                     <i class="nav-icon fas fa-cog"></i>
                     <p>
                         Preferensi
                     </p>
                 </a>
             </li>
+            <?php endif; ?>
         </ul>
     </nav>
     <!-- /.sidebar-menu -->

@@ -53,4 +53,12 @@ $(document).ready(function () {
 		// });
 
 	});
+	$('.btn-editmenu').click(function (e) {
+		e.preventDefault();
+		var id = $(this).data('id');
+		var nama = $(this).data('nama');
+
+		$(".modal-body #idmenu").val(id);
+		$(".modal-body #namaedit").val(nama);
+	})
 });

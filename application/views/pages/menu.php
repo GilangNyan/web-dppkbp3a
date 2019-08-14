@@ -29,13 +29,13 @@
                             </thead>
                             <tbody>
                                 <?php foreach ($menu as $menus) : ?>
-                                    <tr data-index="<?= $menus->id_menu ?>" data-position="<?= $menus->posisi ?>">
-                                        <td><?= $menus->nama_menu ?></td>
-                                        <td style="width: 30%">
-                                            <a href="<?= base_url('admin/halaman/getMenu/') . $menus->id_menu ?>" class="btn-edit btn btn-sm text-primary" data-toggle="modal" data-target="#modalEditPost"><i class="fas fa-edit"></i> Edit</a>
-                                            <a href="<?= base_url('admin/halaman/deleteMenu/') . $menus->id_menu ?>" class="btn-hapus btn btn-sm text-danger"><i class="fas fa-trash-alt"></i> Hapus</a>
-                                        </td>
-                                    </tr>
+                                <tr data-index="<?= $menus->id_menu ?>" data-position="<?= $menus->posisi ?>">
+                                    <td><?= $menus->nama_menu ?></td>
+                                    <td style="width: 30%">
+                                        <a href="<?= base_url('admin/halaman/getMenu/') . $menus->id_menu ?>" class="btn-editmenu btn btn-sm text-primary" data-toggle="modal" data-target="#editMenu" data-id="<?= $menus->id_menu ?>" data-nama="<?= $menus->nama_menu ?>"><i class="fas fa-edit"></i> Edit</a>
+                                        <a href="<?= base_url('admin/halaman/deleteMenu/') . $menus->id_menu ?>" class="btn-hapusmenu btn btn-sm text-danger"><i class="fas fa-trash-alt"></i> Hapus</a>
+                                    </td>
+                                </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>

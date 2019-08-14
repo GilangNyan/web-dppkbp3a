@@ -41,6 +41,12 @@ $(document).ready(function () {
 			});
 		}
 	});
+	$('#allUser').DataTable({
+		"language": {
+			"url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json",
+			"sEmptyTable": "Tidads"
+		},
+	});
 	//Order Grouping
 	$('#allPages tbody').on('click', 'tr.group', function () {
 		var currentOrder = table.order()[0];

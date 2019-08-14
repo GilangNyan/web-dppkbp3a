@@ -38,6 +38,25 @@ class Halaman extends CI_Controller
         redirect('admin/menu');
     }
 
+    public function editMenu()
+    {
+        $id = $this->input->post('idmenu');
+        $namamenu = $this->input->post('namaedit');
+        $this->halaman_model->editMenu($id, $namamenu);
+        $this->session->set_flashdata('message', 'Menu berhasil diedit!');
+        redirect('admin/menu');
+    }
+
+    public function deleteMenu($id)
+    {
+        if (!isset($id)) show_404();
+
+        if ($this->halaman_model->deleteMenu($id)) {
+            $this->session->set_flashdata('message', 'Menu berhasil dihapus!');
+            redirect('admin/menu');
+        }
+    }
+
     public function updatePosisi()
     {
         foreach ($this->input->post('posisi') as $position) {

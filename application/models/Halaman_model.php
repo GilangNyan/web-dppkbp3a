@@ -21,6 +21,20 @@ class Halaman_model extends CI_Model
         $this->db->insert('menu', $data);
     }
 
+    public function editMenu($id, $nama)
+    {
+        $data = array(
+            'nama_menu' => $nama
+        );
+
+        return $this->db->update('menu', $data, ['id_menu' => $id]);
+    }
+
+    public function deleteMenu($id)
+    {
+        return $this->db->delete('menu', ['id_menu' => $id]);
+    }
+
     public function getHalaman()
     {
         $this->db->select('halaman.*, menu.*');

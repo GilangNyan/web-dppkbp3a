@@ -114,6 +114,34 @@
     </div>
 </div>
 
+<!-- Modal Edit Menu -->
+<div class="modal fade" id="editMenu" tabindex="-1" role="dialog" aria-labelledby="editMenu" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Menu</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url('admin/halaman/editMenu') ?>" method="post" name="editmenu" id="editmenu">
+                    <input type="hidden" name="idmenu" id="idmenu">
+                    <div class="form-group">
+                        <label for="nama">Nama Menu</label>
+                        <input type="text" class="form-control" name="namaedit" id="namaedit" aria-describedby="namaMenu" placeholder="Masukkan nama menu">
+                        <small id="namaMenu" class="form-text text-muted">Ganti nama menu sebelumnya.</small>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                <button type="submit" class="btn btn-primary" form="editmenu">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Modal Create -->
 <div class="modal fade" id="modalPage" tabindex="-1" role="dialog" aria-labelledby="modalPage" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
@@ -139,7 +167,7 @@
                         <label for="parent">Simpan di Menu</label>
                         <select class="form-control" name="parent" id="parent">
                             <?php foreach ($menu as $menus) : ?>
-                                <option value="<?= $menus->id_menu ?>"><?= $menus->nama_menu ?></option>
+                            <option value="<?= $menus->id_menu ?>"><?= $menus->nama_menu ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>

@@ -9,4 +9,14 @@ class User_model extends CI_Model
 
         return $this->db->get_where('user', ['username' => $username])->row_array();
     }
+
+    function getUser()
+    {
+        $username = $this->session->userdata('username');
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('username !=', $username);
+        $this->db->where('role !=', 'GOD');
+        return $this->db->get()->result();
+    }
 }

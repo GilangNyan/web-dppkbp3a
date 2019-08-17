@@ -215,16 +215,62 @@
                 <li><a href="#" target="blank"><i class="fab fa-twitter"></i></a></li>
                 <li><a href="#" target="blank"><i class="fab fa-google-plus"></i></a></li>
                 <li><a href="#" target="blank"><i class="fab fa-youtube"></i></a></li>
-
             </ul>
         </div>
         <div class="copyright">
             <p><i class="far fa-copyright"></i> Dinas PPKBP3A 2019</i></p>
-
-
         </div>
-
     </div>
+<!-- <div class="footer-mid-part">
+    <div class="footer-social-icon">
+        <ul>
+            <li><a href="#" target="blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#" target="blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#" target="blank"><i class="fab fa-google-plus"></i></a></li>
+            <li><a href="#" target="blank"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="footer-section-one">
+                <div class="footer-heading">
+                    <h2>Contact Us</h2>
+                </div>
+                <div class="footer-contact-box">
+                    <div class="footer-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="footer-contact-text">
+                        <p>Address: Jl. Yudanagara No 75A Kota Tasikmalaya</p>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+                <div class="footer-contact-box">
+                    <div class="footer-contact-icon"><i class="fas fa-phone"></i></div>
+                    <div class="footer-contact-text">
+                        <p> <a href="#">(0232) 698587879</a></p>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+                <div class="footer-contact-box">
+                    <div class="footer-contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="footer-contact-text">
+                        <p> <a href="#">dppkbp3a@gmail.com</a></p>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+                <div class="footer-contact-box">
+                    <div class="footer-contact-icon"><i class="fas fa-globe"></i></div>
+                    <div class="footer-contact-text">
+                        <p> <a href="#">http://www.dppkbp3atasik.com</a></p>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p><i class="far fa-copyright"></i> Dinas PPKBP3A 2019</i></p>
+    </div>
+</div> -->
     <!-- FOOTER END -->
 
     <!-- jQuery -->

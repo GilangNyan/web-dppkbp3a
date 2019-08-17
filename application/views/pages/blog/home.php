@@ -71,157 +71,165 @@
             <?php
             $i = 0;
             foreach ($carousel as $row) : ?>
-                <?php $i++ ?>
-                <div class="carousel-item <?php if ($i == 1) {
-                                                echo 'active';
-                                            } ?>">
-                    <img src="<?= base_url('assets/img/') . $row->image ?>" alt="<?= $row->judul ?>">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3><?= $row->judul ?></h3>
-                        <div class="container">
-                            <p class="crop-text"><?= strip_tags($row->isi) ?></p>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-        <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-
-    <div class="container pt-3">
-        <div class="row justify-content-center">
-            <!-- LEFT CONTENT START -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="<?= base_url('assets/img/1.jpg') ?>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card Title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                            content.</p>
-                    </div>
+            <?php $i++ ?>
+            <div class="carousel-item <?php if ($i == 1) {
+                echo 'active';
+            } ?>">
+            <img src="<?= base_url('assets/img/') . $row->image ?>" alt="<?= $row->judul ?>">
+            <div class="carousel-caption d-none d-md-block">
+                <h3><?= $row->judul ?></h3>
+                <div class="container">
+                    <p class="crop-text"><?= strip_tags($row->isi) ?></p>
                 </div>
             </div>
-            <!-- LEFT CONTENT END -->
+        </div>
+    <?php endforeach; ?>
+</div>
+<a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+</a>
+</div>
 
-            <!-- CONTENT CENTER START -->
-            <div class="col-md-4 justify-content-center">
-                <div class="row mb-1">
-                    <div class="card mb-2">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="<?= base_url('assets/img/1.jpg') ?>" class="card-img" alt="..." style="size: auto">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="ml-2 mt-2">
-                                    <h5>Juduulll</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<section class="content">
+    <div class="container mt-3">
+        <div class="row">
+            <!-- CONTENT -->
+            <div class="col-lg-8 col-sm-12">
+                <!-- TULISAN POPULER -->
+                <h5 class="page-title mb-3">
+                    Tulisan Terbaru
+                </h5>
+                <div class="card rounded-0 border border-secondary mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-5">
+                            <img src=" <?= base_url('assets/dist/img/post_image.png') ?> " class="card-img rounded-0" alt="Sample Post 1">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body p-3">
+                                <h5 class="card-title">
+                                    <a href="#">Sample Post 1</a>
+                                </h5>
+                                <p class="card-text mb-0">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mt-1">
+                                    <small class="text-muted">Administrator</small>
+                                    <a href="#" class="btn btn-sm action-button rounded-0"><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mb-1">
-                    <div class="card mb-2">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="<?= base_url('assets/img/2.jpg') ?>" class="card-img" alt="...">
+                <div class="card rounded-0 border border-secondary mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-5">
+                            <img src="" class="card-img rounded-0" alt="Sample Post 1">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body p-3">
+                                <h5 class="card-title">
+                                    <a href="#">Sample Post 2</a>
+                                </h5>
+                                <p class="card-text mb-0">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mt-1">
+                                    <small class="text-muted">Administrator</small>
+                                    <a href="#" class="btn btn-sm action-button rounded-0"><i class="fa fa-search"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mb-1">
-                    <div class="card mb-2">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="<?= base_url('assets/img/3.jpg') ?>" class="card-img" alt="...">
+                <div class="card rounded-0 border border-secondary mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-5">
+                            <img src="" class="card-img rounded-0" alt="Sample Post 1">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body p-3">
+                                <h5 class="card-title">
+                                    <a href="#">Sample Post 3</a>
+                                </h5>
+                                <p class="card-text mb-0">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mt-1">
+                                    <small class="text-muted">Administrator</small>
+                                    <a href="#" class="btn btn-sm action-button rounded-0"><i class="fa fa-search"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mb-1">
-                    <div class="card mb-2">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="<?= base_url('assets/img/4.jpg') ?>" class="card-img" alt="...">
+                <div class="card rounded-0 border border-secondary mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-5">
+                            <img src="" class="card-img rounded-0" alt="Sample Post 1">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body p-3">
+                                <h5 class="card-title">
+                                    <a href="#">Sample Post 4</a>
+                                </h5>
+                                <p class="card-text mb-0">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mt-1">
+                                    <small class="text-muted">Administrator</small>
+                                    <a href="#" class="btn btn-sm action-button rounded-0"><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card rounded-0 border border-secondary mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-5">
+                            <img src="" class="card-img rounded-0" alt="Sample Post 1">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body p-3">
+                                <h5 class="card-title">
+                                    <a href="#">Sample Post 5</a>
+                                </h5>
+                                <p class="card-text mb-0">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mt-1">
+                                    <small class="text-muted">Administrator</small>
+                                    <a href="#" class="btn btn-sm action-button rounded-0"><i class="fa fa-search"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- CONTENT CENTER END -->
-
-            <!-- SIDEBAR START -->
-            <div class="col-4 justify-content-center" style="width: 100%">
-                <div class="card">
-                    <?php foreach ($kepala as $head) : ?>
-                        <img class="card-img-top" src="<?= base_url('assets/dist/img/') . $head->foto ?>" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $head->nama ?></h5>
-                            <p class="card-text"><?= $head->jabatan ?></p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    <?php endforeach; ?>
+            <div class="col-lg-4 col-md-4 col-sm-12 sidebar">
+                <!-- Sambutan Kepala Dinas PPKBP3A -->
+                <div class="card-img-top">
+                    <img class="card-img-top" src=" <?= base_url('assets/dist/img/headmaster_photo.png') ?> " alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-center">Lusy Robiatul Fadilah., S.Kom.</h5>
+                    <p class="card-text text-center mt-0 text-muted">- Kepala Dinas -</p>
+                    <p class="card-text text-justify">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
                 </div>
             </div>
-            <!-- SIDEBAR END -->
-        </div>
-    </div>
 
-    <div class="card mb-3">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
     </div>
-    <div class="card mb-3">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-    </div>
-    <div class="card mb-3">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-    </div>
-    <div class="card mb-3">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-    </div>
+</section>
 
-    <!-- FOOTER START -->
-    <div class="footer">
-        <div class="footer-social-icon">
-            <ul>
-                <li><a href="#" target="blank"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#" target="blank"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#" target="blank"><i class="fab fa-google-plus"></i></a></li>
-                <li><a href="#" target="blank"><i class="fab fa-youtube"></i></a></li>
-            </ul>
-        </div>
-        <div class="copyright">
-            <p><i class="far fa-copyright"></i> Dinas PPKBP3A 2019</i></p>
-        </div>
-    </div>
-<!-- <div class="footer-mid-part">
+<!-- FOOTER START -->
+<div class="footer">
     <div class="footer-social-icon">
         <ul>
             <li><a href="#" target="blank"><i class="fab fa-facebook"></i></a></li>
@@ -230,61 +238,24 @@
             <li><a href="#" target="blank"><i class="fab fa-youtube"></i></a></li>
         </ul>
     </div>
-    <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="footer-section-one">
-                <div class="footer-heading">
-                    <h2>Contact Us</h2>
-                </div>
-                <div class="footer-contact-box">
-                    <div class="footer-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div class="footer-contact-text">
-                        <p>Address: Jl. Yudanagara No 75A Kota Tasikmalaya</p>
-                    </div>
-                    <div class="clr"></div>
-                </div>
-                <div class="footer-contact-box">
-                    <div class="footer-contact-icon"><i class="fas fa-phone"></i></div>
-                    <div class="footer-contact-text">
-                        <p> <a href="#">(0232) 698587879</a></p>
-                    </div>
-                    <div class="clr"></div>
-                </div>
-                <div class="footer-contact-box">
-                    <div class="footer-contact-icon"><i class="fas fa-envelope"></i></div>
-                    <div class="footer-contact-text">
-                        <p> <a href="#">dppkbp3a@gmail.com</a></p>
-                    </div>
-                    <div class="clr"></div>
-                </div>
-                <div class="footer-contact-box">
-                    <div class="footer-contact-icon"><i class="fas fa-globe"></i></div>
-                    <div class="footer-contact-text">
-                        <p> <a href="#">http://www.dppkbp3atasik.com</a></p>
-                    </div>
-                    <div class="clr"></div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="copyright">
         <p><i class="far fa-copyright"></i> Dinas PPKBP3A 2019</i></p>
     </div>
-</div> -->
-    <!-- FOOTER END -->
+</div>
+<!-- FOOTER END -->
 
-    <!-- jQuery -->
-    <script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="<?= base_url('assets/plugins/jquery-ui/jquery-ui.min.js') ?>"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-        $.widget.bridge('uibutton', $.ui.button)
-    </script>
-    <!-- Bootstrap 4 -->
-    <script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-    <!-- Nav Shrink -->
-    <script src="<?= base_url('assets/dist/js/navshrink.js') ?>"></script>
+<!-- jQuery -->
+<script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="<?= base_url('assets/plugins/jquery-ui/jquery-ui.min.js') ?>"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+$.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+<!-- Nav Shrink -->
+<script src="<?= base_url('assets/dist/js/navshrink.js') ?>"></script>
 </body>
 
 </html>

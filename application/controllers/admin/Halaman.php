@@ -84,6 +84,22 @@ class Halaman extends CI_Controller
         redirect('admin/halaman');
     }
 
+    public function editPage()
+    {
+        $id = $this->input->post('idhal');
+        $judul = $this->input->post('titleedit');
+        $isi = $this->input->post('kontenedit');
+        $parent = $this->input->post('parentedit');
+        //Membuat slug
+        $string = preg_replace('/[^a-zA-Z0-9 \&%|{.}=,?!*()"-_+$@;<>\']/', '', $judul);
+        $trim = trim($string);
+        $pre_slug = strtolower(str_replace(" ", "-", $trim));
+        $slug = $pre_slug . '.html';
+        $this->halaman_model->editPages($id, $judul, $isi, $slug, $parent);
+        $this->session->set_flashdata('message', 'Halaman berhasil diedit!');
+        redirect('admin/halaman');
+    }
+
     public function deletePage($id)
     {
         if (!isset($id)) show_404();

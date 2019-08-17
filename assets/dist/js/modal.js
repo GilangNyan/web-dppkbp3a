@@ -60,5 +60,18 @@ $(document).ready(function () {
 
 		$(".modal-body #idmenu").val(id);
 		$(".modal-body #namaedit").val(nama);
-	})
+	});
+	$('.btn-edithal').click(function (e) {
+		e.preventDefault();
+		var id = $(this).data('postid');
+		var judul = $(this).data('judulhal');
+		var isi = $(this).data('isihal');
+		var parent = $(this).data('parent');
+
+		$(".modal-body #idhal").val(id);
+		$(".modal-body #titleedit").val(judul);
+		// $(".modal-body #kontenedit").val(isi);
+		CKEDITOR.instances.kontenedit.setData(isi);
+		$(".modal-body #parentedit").val(parent);
+	});
 });

@@ -18,4 +18,27 @@ class User extends CI_Controller
         $this->load->view('pages/user', $data);
         $this->load->view('templates/footer');
     }
+
+    public function add()
+    {
+        $this->form_validation->set_rules($this->user_model->addUserRules());
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('admin/user');
+        } else {
+            $this->user_model->addUser();
+            $this->session->set_flashdata('message', 'User berhasil dibuat!');
+            redirect('admin/user');
+        }
+    }
+
+    public function delete($id)
+    {
+        if (!isset($id)) show_404();
+
+        if ($this->user_model->deleteUser($id)) {
+            $this->session->set_flashdata('message', 'User berhasil dihapus!');
+            redirect('admin/user');
+        }
+    }
 }

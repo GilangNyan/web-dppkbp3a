@@ -52,7 +52,19 @@ class Halaman_model extends CI_Model
             'slug' => $slug,
             'parent' => $menu
         );
-        $this->db->insert('halaman', $data);
+        return $this->db->insert('halaman', $data);
+    }
+
+    public function editPages($id, $judul, $isi, $slug, $parent)
+    {
+        $data = array(
+            'judul' => $judul,
+            'isi' => $isi,
+            'slug' => $slug,
+            'parent' => $parent
+        );
+
+        return $this->db->update('halaman', $data, ['id_halaman' => $id]);
     }
 
     public function deletePage($postId)

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 31 Jul 2019 pada 10.48
+-- Waktu pembuatan: 14 Agu 2019 pada 15.03
 -- Versi server: 10.3.15-MariaDB
 -- Versi PHP: 7.3.6
 
@@ -37,6 +37,34 @@ CREATE TABLE `halaman` (
   `parent` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `halaman`
+--
+
+INSERT INTO `halaman` (`id_halaman`, `judul`, `isi`, `tanggal`, `slug`, `parent`) VALUES
+('page-5d4194a2cf70d', 'Test Halaman', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae neque repellat, non cumque numquam vel nostrum voluptates sint dolore laudantium eos eius est in exercitationem, optio fugit voluptate autem accusamus.</p>\r\n', '2019-07-31 13:16:18', 'test-halaman.html', 'menu-5d3b216f86435'),
+('page-5d4194af6ba69', 'Test', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae neque repellat, non cumque numquam vel nostrum voluptates sint dolore laudantium eos eius est in exercitationem, optio fugit voluptate autem accusamus.</p>\r\n', '2019-07-31 13:16:31', 'test.html', 'menu-5d3b2190a3542');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kepala_dinas`
+--
+
+CREATE TABLE `kepala_dinas` (
+  `id` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `jabatan` varchar(255) NOT NULL,
+  `foto` varchar(255) NOT NULL DEFAULT 'default.jpg'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `kepala_dinas`
+--
+
+INSERT INTO `kepala_dinas` (`id`, `nama`, `jabatan`, `foto`) VALUES
+('123456', 'Dra. Hj. Nunung Kartini, M.Pd', 'Kepala Dinas Pengendalian Penduduk, Keluarga Berencana, Pemberdayaan Perempuan dan Perlindungan Anak Kota Tasikmalaya', 'default.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -56,7 +84,7 @@ CREATE TABLE `menu` (
 INSERT INTO `menu` (`id_menu`, `nama_menu`, `posisi`) VALUES
 ('menu-5d3b216f86435', 'Profil', 1),
 ('menu-5d3b2190a3542', 'Kepegawaian', 2),
-('menu-5d3b21a8368db', 'Bidang', 3);
+('menu-5d5405c191cdf', 'Bidang', 3);
 
 -- --------------------------------------------------------
 
@@ -112,8 +140,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `username`, `email`, `password`, `image`, `role`, `dibuat_pada`) VALUES
-('user-5d220f1860ad4', 'Gilang Saeful Anwar', 'gilang', 'sagilang@gmail.com', '$2y$10$pzV7SdwtLT5RN3ne165epeOSKF7a8bpcO/yX.TxQXZUvIWCAZhMga', 'default.jpg', 'USER', '2019-07-07 15:26:16'),
-('user-5d3929514e2fe', 'Stella Annisa', 'stella', 'stellaannisa4869@gmail.com', '$2y$10$v74opP0ZnJzamnF/ygOyCeXM2W4t3dPX1psMi2l9507trhXkXzTi.', 'default.jpg', 'USER', '2019-07-25 04:00:17');
+('user-5d220f1860ad4', 'Gilang Saeful Anwar', 'gilang', 'sagilang@gmail.com', '$2y$10$pzV7SdwtLT5RN3ne165epeOSKF7a8bpcO/yX.TxQXZUvIWCAZhMga', 'default.jpg', 'ADMIN', '2019-07-07 15:26:16'),
+('user-5d3929514e2fe', 'Stella Annisa', 'stella', 'stellaannisa4869@gmail.com', '$2y$10$v74opP0ZnJzamnF/ygOyCeXM2W4t3dPX1psMi2l9507trhXkXzTi.', 'default.jpg', 'USER', '2019-07-25 04:00:17'),
+('user-5d53f50b16515', 'God', 'god', '', '$2y$10$EPY4.2szVWR4tSATq5HkHOZfKQNyKXtern/Cysq8HEuEet8myePqC', 'default.jpg', 'GOD', '2019-08-14 11:48:27');
 
 -- --------------------------------------------------------
 
@@ -145,7 +174,10 @@ INSERT INTO `visitor` (`ip`, `tanggal`, `hits`, `online`, `browser`, `platform`)
 ('::1', '2019-07-23', 2, '1563853250', 'Chrome', 'Windows 10'),
 ('::1', '2019-07-25', 3, '1564032689', 'Chrome', 'Windows 10'),
 ('::1', '2019-07-27', 2, '1564243297', 'Chrome', 'Windows 10'),
-('::1', '2019-07-30', 1, '1564490089', 'Chrome', 'Windows 10');
+('::1', '2019-07-30', 1, '1564490089', 'Chrome', 'Windows 10'),
+('::1', '2019-07-31', 37, '1564581018', 'Chrome', 'Windows 10'),
+('::1', '2019-08-01', 46, '1564636343', 'Chrome', 'Windows 10'),
+('::1', '2019-08-14', 8, '1565783250', 'Chrome', 'Windows 10');
 
 --
 -- Indexes for dumped tables

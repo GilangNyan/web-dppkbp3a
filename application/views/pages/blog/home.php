@@ -69,18 +69,18 @@
                     <div class="card rounded-0 border border-secondary mb-3">
                         <div class="row no-gutters">
                             <div class="col-md-5">
-                                <img src="<?= base_url('assets/img/') . $row->image ?>" class="card-img rounded-0" alt="Sample Post 1">
+                                <img src="<?= base_url('assets/img/') . $row->image ?>" class="card-img rounded-0 img-posting" alt="<?= $row->judul ?>">
                             </div>
                             <div class="col-md-7">
                                 <div class="card-body p-3">
                                     <h5 class="card-title">
                                         <a href="<?= base_url() . $tahun . '/' . $bulan . '/' . $row->slug ?>"><?= $row->judul ?></a>
                                     </h5>
-                                    <p class="card-text mb-0 crop-content">
+                                    <p class="card-text mb-0 text-justify crop-content">
                                         <?= strip_tags($row->isi) ?>
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center mt-1">
-                                        <small class="text-muted"><?= "Dipublikasikan pada $tanggal $nbulan $tahun oleh " . $row->nama ?></small>
+                                        <small class="text-muted"><i class="fas fa-user mr-1"></i><?= "$row->nama" ?><i class="far fa-clock ml-2 mr-1"></i><?= $tanggal . ' ' . $nbulan . ' ' . $tahun ?></small>
                                         <a href="#" class="btn btn-sm action-button rounded-0"><i class="fa fa-search"></i></a>
                                     </div>
                                 </div>

@@ -68,6 +68,17 @@
 	-webkit-box-orient: vertical;
 }
 
+.img-posting {
+	height: 201px !important;
+	object-fit: cover;
+}
+
+/* @media only screen and(max-width: 750px) {
+	.img-posting {
+		height: auto !important;
+	}
+} */
+
 .footer {
 	width: 100%;
 	height: auto;

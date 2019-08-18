@@ -60,6 +60,14 @@
 	-webkit-box-orient: vertical;
 }
 
+.crop-content {
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
 .footer {
 	width: 100%;
 	height: auto;
@@ -68,20 +76,20 @@
 	padding: 20px 0px;
 }
 
-.footer-social-icon{
+.footer-social-icon {
 	width: 100%;
 	height: auto;
 	margin: auto;
 	padding-top: 5px;
 }
 
-.footer-social-icon ul{
+.footer-social-icon ul {
 	margin: 0px;
 	padding: 0px;
 	text-align: center;
 }
 
-.footer-social-icon ul li{
+.footer-social-icon ul li {
 	display: inline-block;
 	width: 50px;
 	height: 50px;
@@ -90,16 +98,16 @@
 	background: #2e68d9;
 }
 
-.footer-social-icon ul li a{
+.footer-social-icon ul li a {
 	color: #272727;
 	font-size: 25px;
 }
 
-.footer-social-icon ul li a i{
+.footer-social-icon ul li a i {
 	line-height: 50px;
 }
 
-.copyright p{
+.copyright p {
 	text-align: center;
 	color: #ffffff;
 	padding-top: 8px;

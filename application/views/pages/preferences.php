@@ -13,6 +13,9 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
+                            <div class="col-12 alert alert-primary" role="alert">
+                                Data Kepala Dinas akan otomatis diperbaharui ketika selesai mengetik dan fokus sudah berpindah dari form.
+                            </div>
                             <div class="col-sm-12 col-md-2 text-center">
                                 <?php foreach ($fotokepala as $foto) : ?>
                                 <img class="img-fluid mb-2" src="<?= base_url('assets/dist/img/') . $foto->foto ?>" alt="Foto Kepala Dinas">

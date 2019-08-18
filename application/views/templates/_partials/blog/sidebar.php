@@ -1,8 +1,8 @@
 <div class="col-lg-4 col-md-4 col-sm-12 sidebar">
     <!-- Sambutan Kepala Dinas PPKBP3A -->
-    <div class="card rounded-0 border border-secondary mb-3">
+    <div class="card mb-3">
         <?php foreach ($kepala as $head) : ?>
-        <img class="card-img-top rounded-0" src=" <?= base_url('assets/dist/img/') . $head->foto ?> " alt="Potret Kepala Dinas">
+        <img class="card-img-top" src=" <?= base_url('assets/dist/img/') . $head->foto ?> " alt="Potret Kepala Dinas">
         <div class="card-body">
 
             <h5 class="card-title text-center"><?= $head->nama ?></h5>

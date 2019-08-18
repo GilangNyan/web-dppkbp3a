@@ -8,5 +8,3 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-<!-- Nav Shrink -->
-<script src="<?= base_url('assets/dist/js/navshrink.js') ?>"></script>

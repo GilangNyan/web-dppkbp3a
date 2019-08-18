@@ -16,6 +16,14 @@ sambutan.on('blur', function (evt) {
 		},
 		success: function (response) {
 			console.log('Sambutan berubah ' + data.length);
+			Swal.fire({
+				position: 'top-end',
+				type: 'success',
+				title: 'Sambutan Kepala Dinas berhasil diubah',
+				toast: true,
+				showConfirmButton: false,
+				timer: 3000
+			});
 		}
 	});
 });

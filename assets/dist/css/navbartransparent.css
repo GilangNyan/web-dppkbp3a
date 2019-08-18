@@ -1,0 +1,35 @@
+.navbar {
+	height: 70px;
+	background-color: transparent !important;
+	transition: all ease .5s;
+}
+
+.shrink {
+	height: 55px;
+	background-color: rgba(52, 58, 64) !important;
+	transition: all ease .5s;
+}
+
+.navbar .nav-item a {
+	color: #666 !important;
+}
+
+.navbar .nav-item>a {
+	color: #FFF !important;
+}
+
+/* .navbar .dropdown-menu {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-item:hover {
+	background-color: rgba(0, 0, 0, 0.5);
+} */
+
+.navbar .collapsing {
+	background-color: rgba(52, 58, 64);
+}
+
+.navbar>.collapse.show {
+	background-color: rgba(52, 58, 64);
+}

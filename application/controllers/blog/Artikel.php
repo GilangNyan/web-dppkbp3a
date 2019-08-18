@@ -7,6 +7,7 @@ class Artikel extends CI_Controller
     {
         parent::__construct();
         $this->load->model('artikel_model');
+        $this->load->model('landing_model');
     }
 
     public function index()
@@ -55,6 +56,11 @@ class Artikel extends CI_Controller
 
     public function getArtikel($tahun, $bulan, $slug)
     {
-        //
+        $data['menu'] = $this->landing_model->getMenu();
+        $data['submenu'] = $this->landing_model->getSubMenu();
+        $data['kepala'] = $this->landing_model->getKepala();
+        $data['artikel'] = $this->artikel_model->getPostDetail($tahun, $bulan, $slug);
+
+        $this->load->view('pages/blog/posting', $data);
     }
 }

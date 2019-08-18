@@ -21,4 +21,16 @@ class Artikel_model extends CI_Model
         $this->db->where('post.status', 1);
         return $this->db->count_all_results();
     }
+
+    function getPostDetail($tahun, $bulan, $slug)
+    {
+        $this->db->select('*');
+        $this->db->from('post');
+        $where = "YEAR(tanggal) = $tahun AND MONTH(tanggal) = $bulan AND slug = '$slug'";
+        $this->db->where($where);
+        // $this->db->where('YEAR(tanggal)', $tahun);
+        // $this->db->where('MONTH(tanggal)', $bulan);
+        // $this->db->where('slug', $slug);
+        return $this->db->get()->result();
+    }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Agu 2019 pada 15.03
+-- Waktu pembuatan: 18 Agu 2019 pada 11.08
 -- Versi server: 10.3.15-MariaDB
 -- Versi PHP: 7.3.6
 
@@ -42,8 +42,7 @@ CREATE TABLE `halaman` (
 --
 
 INSERT INTO `halaman` (`id_halaman`, `judul`, `isi`, `tanggal`, `slug`, `parent`) VALUES
-('page-5d4194a2cf70d', 'Test Halaman', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae neque repellat, non cumque numquam vel nostrum voluptates sint dolore laudantium eos eius est in exercitationem, optio fugit voluptate autem accusamus.</p>\r\n', '2019-07-31 13:16:18', 'test-halaman.html', 'menu-5d3b216f86435'),
-('page-5d4194af6ba69', 'Test', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae neque repellat, non cumque numquam vel nostrum voluptates sint dolore laudantium eos eius est in exercitationem, optio fugit voluptate autem accusamus.</p>\r\n', '2019-07-31 13:16:31', 'test.html', 'menu-5d3b2190a3542');
+('page-5d57fc3782bfd', 'Sub Menu Bidang Edit', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '2019-08-17 13:56:48', 'sub-menu-bidang-edit.html', 'menu-5d57fc15c55a7');
 
 -- --------------------------------------------------------
 
@@ -55,15 +54,16 @@ CREATE TABLE `kepala_dinas` (
   `id` varchar(255) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `jabatan` varchar(255) NOT NULL,
-  `foto` varchar(255) NOT NULL DEFAULT 'default.jpg'
+  `foto` varchar(255) NOT NULL DEFAULT 'default.jpg',
+  `sambutan` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `kepala_dinas`
 --
 
-INSERT INTO `kepala_dinas` (`id`, `nama`, `jabatan`, `foto`) VALUES
-('123456', 'Dra. Hj. Nunung Kartini, M.Pd', 'Kepala Dinas Pengendalian Penduduk, Keluarga Berencana, Pemberdayaan Perempuan dan Perlindungan Anak Kota Tasikmalaya', 'default.jpg');
+INSERT INTO `kepala_dinas` (`id`, `nama`, `jabatan`, `foto`, `sambutan`) VALUES
+('123456', 'Dra. Hj. Nunung Kartini, M.Pd', 'Kepala Dinas PPKBP3A', 'default.jpg', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin nibh sit amet commodo nulla. Pellentesque adipiscing commodo elit at. Diam sit amet nisl suscipit adipiscing bibendum est ultricies integer. Aliquet enim tortor at auctor urna nunc id cursus metus. Ultrices neque ornare aenean euismod elementum nisi. Scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam. Nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices. Nulla aliquet porttitor lacus luctus accumsan tortor. Mattis molestie a iaculis at erat pellentesque adipiscing. Nam aliquam sem et tortor consequat. Consectetur adipiscing elit pellentesque habitant morbi. Etiam tempor orci eu lobortis elementum.</p>\n\n<p>Eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam. Sit amet nulla facilisi morbi tempus iaculis urna. Sagittis id consectetur purus ut. Arcu non odio euismod lacinia at. Fames ac turpis egestas maecenas pharetra. A diam sollicitudin tempor id eu nisl nunc mi. Adipiscing tristique risus nec feugiat in fermentum posuere. Scelerisque varius morbi enim nunc faucibus. Tempor commodo ullamcorper a lacus vestibulum sed arcu. Sapien nec sagittis aliquam malesuada. Et odio pellentesque diam volutpat. In egestas erat imperdiet sed euismod nisi porta. Cursus mattis molestie a iaculis. Consequat nisl vel pretium lectus quam id leo in vitae. Tempor id eu nisl nunc. Cras fermentum odio eu feugiat pretium.</p>\n\n<p>Sit amet nulla facilisi morbi. Pulvinar sapien et ligula ullamcorper malesuada. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Ornare suspendisse sed nisi lacus sed viverra. Turpis cursus in hac habitasse. Nibh cras pulvinar mattis nunc. Eget nullam non nisi est sit amet. Ut venenatis tellus in metus vulputate eu. Egestas maecenas pharetra convallis posuere. A diam sollicitudin tempor id eu. Aliquet lectus proin nibh nisl condimentum id venenatis. Lectus quam id leo in vitae turpis massa sed elementum. Nunc consequat interdum varius sit amet mattis vulputate enim nulla. Amet venenatis urna cursus eget nunc scelerisque viverra. Sed elementum tempus egestas sed sed risus pretium quam. Enim diam vulputate ut pharetra sit amet. Purus faucibus ornare suspendisse sed nisi lacus. Mattis aliquam faucibus purus in massa tempor nec. Amet dictum sit amet justo donec enim diam vulputate. Amet purus gravida quis blandit.</p>\n');
 
 -- --------------------------------------------------------
 
@@ -84,7 +84,7 @@ CREATE TABLE `menu` (
 INSERT INTO `menu` (`id_menu`, `nama_menu`, `posisi`) VALUES
 ('menu-5d3b216f86435', 'Profil', 1),
 ('menu-5d3b2190a3542', 'Kepegawaian', 2),
-('menu-5d5405c191cdf', 'Bidang', 3);
+('menu-5d57fc15c55a7', 'Bidang', 3);
 
 -- --------------------------------------------------------
 
@@ -141,8 +141,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `nama`, `username`, `email`, `password`, `image`, `role`, `dibuat_pada`) VALUES
 ('user-5d220f1860ad4', 'Gilang Saeful Anwar', 'gilang', 'sagilang@gmail.com', '$2y$10$pzV7SdwtLT5RN3ne165epeOSKF7a8bpcO/yX.TxQXZUvIWCAZhMga', 'default.jpg', 'ADMIN', '2019-07-07 15:26:16'),
-('user-5d3929514e2fe', 'Stella Annisa', 'stella', 'stellaannisa4869@gmail.com', '$2y$10$v74opP0ZnJzamnF/ygOyCeXM2W4t3dPX1psMi2l9507trhXkXzTi.', 'default.jpg', 'USER', '2019-07-25 04:00:17'),
-('user-5d53f50b16515', 'God', 'god', '', '$2y$10$EPY4.2szVWR4tSATq5HkHOZfKQNyKXtern/Cysq8HEuEet8myePqC', 'default.jpg', 'GOD', '2019-08-14 11:48:27');
+('user-5d53f50b16515', 'God', 'god', '', '$2y$10$EPY4.2szVWR4tSATq5HkHOZfKQNyKXtern/Cysq8HEuEet8myePqC', 'default.jpg', 'GOD', '2019-08-14 11:48:27'),
+('user-5d581af3bb085', 'Stella Annisa', 'stella', 'stellaannisa4869@gmail.com', '$2y$10$6hYwlgL/JL7zMcL/UHyp..62WknMFLI83alcbqhLfik11Y6/seMny', 'default.jpg', 'USER', '2019-08-17 15:19:15');
 
 -- --------------------------------------------------------
 
@@ -177,7 +177,9 @@ INSERT INTO `visitor` (`ip`, `tanggal`, `hits`, `online`, `browser`, `platform`)
 ('::1', '2019-07-30', 1, '1564490089', 'Chrome', 'Windows 10'),
 ('::1', '2019-07-31', 37, '1564581018', 'Chrome', 'Windows 10'),
 ('::1', '2019-08-01', 46, '1564636343', 'Chrome', 'Windows 10'),
-('::1', '2019-08-14', 8, '1565783250', 'Chrome', 'Windows 10');
+('::1', '2019-08-14', 8, '1565783250', 'Chrome', 'Windows 10'),
+('::1', '2019-08-17', 5, '1566055214', 'Chrome', 'Windows 10'),
+('::1', '2019-08-18', 83, '1566117111', 'Chrome', 'Windows 10');
 
 --
 -- Indexes for dumped tables
@@ -189,6 +191,12 @@ INSERT INTO `visitor` (`ip`, `tanggal`, `hits`, `online`, `browser`, `platform`)
 ALTER TABLE `halaman`
   ADD PRIMARY KEY (`id_halaman`),
   ADD KEY `menuparent` (`parent`);
+
+--
+-- Indeks untuk tabel `kepala_dinas`
+--
+ALTER TABLE `kepala_dinas`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `menu`

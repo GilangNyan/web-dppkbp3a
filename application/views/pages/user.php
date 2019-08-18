@@ -39,7 +39,7 @@
                                     <td>
                                         <a href="<?= base_url() ?>" class="btn btn-sm text-success" data-username="<?= $row->username ?>" data-email="<?= $row->email ?>" data-nama="<?= $row->nama ?>" data-role="<?= $row->role ?>" data-created="<?= $row->dibuat_pada ?>"><i class="fas fa-eye"></i> Lihat</a>
                                         <a href="<?= base_url() ?>" class="btn btn-sm text-primary" data-id="<?= $row->id ?>" data-username="<?= $row->username ?>" data-email="<?= $row->email ?>" data-nama="<?= $row->nama ?>" data-role="<?= $row->role ?>" data-created="<?= $row->dibuat_pada ?>"><i class="fas fa-edit"></i> Edit</a>
-                                        <a href="<?= base_url('user/delete/') . $row->id ?>" class="btn btn-sm text-danger"><i class="fas fa-trash-alt"></i> Hapus</a>
+                                        <a href="<?= base_url('admin/user/delete/') . $row->id ?>" class="btn-hapususer btn btn-sm text-danger"><i class="fas fa-trash-alt"></i> Hapus</a>
                                     </td>
                                 </tr>
                                 <?php endforeach; ?>

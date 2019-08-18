@@ -103,11 +103,12 @@
                 <!-- TULISAN POPULER -->
                 <h5 class="page-title mb-3">
                     Tulisan Terbaru
+                    <hr>
                 </h5>
                 <div class="card rounded-0 border border-secondary mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-5">
-                            <img src=" <?= base_url('assets/dist/img/post_image.png') ?> " class="card-img rounded-0" alt="Sample Post 1">
+                            <img src=" <?= base_url('assets/img/1.jpg') ?> " class="card-img rounded-0" alt="Sample Post 1">
                         </div>
                         <div class="col-md-7">
                             <div class="card-body p-3">
@@ -115,7 +116,7 @@
                                     <a href="#">Sample Post 1</a>
                                 </h5>
                                 <p class="card-text mb-0">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center mt-1">
                                     <small class="text-muted">Administrator</small>
@@ -128,7 +129,7 @@
                 <div class="card rounded-0 border border-secondary mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-5">
-                            <img src="" class="card-img rounded-0" alt="Sample Post 1">
+                            <img src="<?= base_url('assets/img/2.jpg') ?>" class="card-img rounded-0" alt="Sample Post 2">
                         </div>
                         <div class="col-md-7">
                             <div class="card-body p-3">
@@ -136,7 +137,7 @@
                                     <a href="#">Sample Post 2</a>
                                 </h5>
                                 <p class="card-text mb-0">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center mt-1">
                                     <small class="text-muted">Administrator</small>
@@ -149,7 +150,7 @@
                 <div class="card rounded-0 border border-secondary mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-5">
-                            <img src="" class="card-img rounded-0" alt="Sample Post 1">
+                            <img src="<?= base_url('assets/img/3.jpg') ?>" class="card-img rounded-0" alt="Sample Post 3">
                         </div>
                         <div class="col-md-7">
                             <div class="card-body p-3">
@@ -157,7 +158,7 @@
                                     <a href="#">Sample Post 3</a>
                                 </h5>
                                 <p class="card-text mb-0">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center mt-1">
                                     <small class="text-muted">Administrator</small>
@@ -170,7 +171,7 @@
                 <div class="card rounded-0 border border-secondary mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-5">
-                            <img src="" class="card-img rounded-0" alt="Sample Post 1">
+                            <img src="<?= base_url('assets/img/3.jpg') ?>" class="card-img rounded-0" alt="Sample Post 4">
                         </div>
                         <div class="col-md-7">
                             <div class="card-body p-3">
@@ -178,7 +179,7 @@
                                     <a href="#">Sample Post 4</a>
                                 </h5>
                                 <p class="card-text mb-0">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center mt-1">
                                     <small class="text-muted">Administrator</small>
@@ -191,7 +192,7 @@
                 <div class="card rounded-0 border border-secondary mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-5">
-                            <img src="" class="card-img rounded-0" alt="Sample Post 1">
+                            <img src="<?= base_url('assets/img/1.jpg') ?>" class="card-img rounded-0" alt="Sample Post 5">
                         </div>
                         <div class="col-md-7">
                             <div class="card-body p-3">
@@ -199,7 +200,7 @@
                                     <a href="#">Sample Post 5</a>
                                 </h5>
                                 <p class="card-text mb-0">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center mt-1">
                                     <small class="text-muted">Administrator</small>
@@ -212,18 +213,22 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 sidebar">
                 <!-- Sambutan Kepala Dinas PPKBP3A -->
-                <div class="card-img-top">
-                    <img class="card-img-top" src=" <?= base_url('assets/dist/img/headmaster_photo.png') ?> " alt="Card image cap">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title text-center">Lusy Robiatul Fadilah., S.Kom.</h5>
-                    <p class="card-text text-center mt-0 text-muted">- Kepala Dinas -</p>
-                    <p class="card-text text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
+                <div class="card rounded-0 border border-secondary mb-3">
+                    <img class="card-img-top rounded-0" src=" <?= base_url('assets/img/kepala-dinas.jpg') ?> " alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Lusy Robiatul Fadilah., S.Kom.</h5>
+                        <p class="card-text text-center mt-0 text-muted">- Kepala Dinas -</p>
+                        <p class="card-text text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                    <div class="footer text-center">
+                        <small class="text-muted text-uppercase">
+                            <a href="#">Selengkapnya</a>
+                        </small>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>

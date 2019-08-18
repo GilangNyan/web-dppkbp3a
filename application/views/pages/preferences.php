@@ -16,11 +16,14 @@
                             <div class="col-12 alert alert-primary" role="alert">
                                 Data Kepala Dinas akan otomatis diperbaharui ketika selesai mengetik dan fokus sudah berpindah dari form.
                             </div>
-                            <div class="col-sm-12 col-md-2 text-center">
+                            <div class="col-sm-12 col-md-2 text-center" id="divfoto">
                                 <?php foreach ($fotokepala as $foto) : ?>
                                 <img class="img-fluid mb-2" src="<?= base_url('assets/dist/img/') . $foto->foto ?>" alt="Foto Kepala Dinas">
                                 <?php endforeach; ?>
-                                <button class="btn btn-primary">Ganti Foto</button>
+                                <form method="post" action="" enctype="multipart/form-data" id="formfoto">
+                                    <input type="file" name="foto" id="foto" hidden>
+                                    <button type="button" id="btnfoto" class="btn btn-primary">Ganti Foto</button>
+                                </form>
                             </div>
                             <div class="col-sm-12 col-md-10">
                                 <form action="<?= base_url('admin/preferences/editKepala') ?>" method="post">

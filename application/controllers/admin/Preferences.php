@@ -45,4 +45,12 @@ class Preferences extends CI_Controller
         $this->preferences_model->editSambutan($sambutan);
         redirect('admin/preferences');
     }
+
+    public function updateFoto()
+    {
+        $id = '123456';
+        $foto = $this->input->post('foto');
+        $this->preferences_model->updateFoto($id);
+        redirect('admin/preferences');
+    }
 }

@@ -18,4 +18,14 @@
             </small>
         </div>
     </div>
+    <div class="card">
+        <div class="card-header bg-primary text-light">
+            <h5 class="card-title mb-0">
+                Arsip
+            </h5>
+        </div>
+        <div class="card-body">
+            Nanti deh
+        </div>
+    </div>
 </div>

@@ -44,4 +44,44 @@ $(document).ready(function () {
 			}
 		});
 	});
+
+	$('#btnfoto').click(function () {
+		$('#foto').click();
+	});
+
+	$('#foto').change(function () {
+		var files = $('#foto').prop('files')[0];
+		var formdata = new FormData();
+		formdata.append('foto', files);
+		$.ajax({
+			url: 'preferences/updateFoto',
+			method: 'POST',
+			dataType: 'text',
+			cache: false,
+			contentType: false,
+			processData: false,
+			data: formdata,
+			success: function (response) {
+				Swal.fire({
+					position: 'top-end',
+					type: 'success',
+					title: 'Foto Kepala Dinas berhasil diubah',
+					toast: true,
+					showConfirmButton: false,
+					timer: 3000
+				});
+				$("#divfoto").load(" #divfoto > *");
+			},
+			error: function (response) {
+				Swal.fire({
+					position: 'top-end',
+					type: 'error',
+					title: 'Foto Kepala Dinas gagal diubah',
+					toast: true,
+					showConfirmButton: false,
+					timer: 3000
+				});
+			}
+		});
+	});
 });

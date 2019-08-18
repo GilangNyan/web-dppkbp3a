@@ -50,6 +50,7 @@
 <script src="<?= base_url('assets/dist/js/modal.js') ?>"></script>
 <script src="<?= base_url('assets/dist/js/tanggal.js') ?>"></script>
 <script src="<?= base_url('assets/dist/js/chart.js') ?>"></script>
+<script src="<?= base_url('assets/dist/js/admin.js') ?>"></script>
 <script>
     $(document).ready(function() {
         $('.menu tbody').sortable({

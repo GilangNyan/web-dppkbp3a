@@ -60,6 +60,7 @@ class Artikel extends CI_Controller
         $data['submenu'] = $this->landing_model->getSubMenu();
         $data['kepala'] = $this->landing_model->getKepala();
         $data['artikel'] = $this->artikel_model->getPostDetail($tahun, $bulan, $slug);
+        $this->artikel_model->countPostViews($tahun, $bulan, $slug);
 
         $this->load->view('pages/blog/posting', $data);
     }

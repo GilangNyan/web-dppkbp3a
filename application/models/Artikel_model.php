@@ -33,4 +33,13 @@ class Artikel_model extends CI_Model
         // $this->db->where('slug', $slug);
         return $this->db->get()->result();
     }
+
+    function countPostViews($tahun, $bulan, $slug)
+    {
+        $this->db->set('views', 'views+1', false);
+        $this->db->where('YEAR(tanggal)', $tahun);
+        $this->db->where('MONTH(tanggal)', $bulan);
+        $this->db->where('slug', $slug);
+        return $this->db->update('post');
+    }
 }

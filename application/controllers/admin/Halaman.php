@@ -26,12 +26,13 @@ class Halaman extends CI_Controller
 
     public function menu()
     {
-        $data['user'] = $this->user_model->get_current_user();
-        $data['menu'] = $this->halaman_model->getMenu();
-        $data['pagename'] = 'Menu';
-        $this->load->view('templates/header', $data);
-        $this->load->view('pages/menu', $data);
-        $this->load->view('templates/footer');
+      $data['parent_pages'] = $this->halaman_model->get_parent_pages();
+      $data['user'] = $this->user_model->get_current_user();
+      $data['menu'] = $this->halaman_model->getMenu();
+      $data['pagename'] = 'Menu';
+      $this->load->view('templates/header', $data);
+      $this->load->view('pages/menu', $data);
+      $this->load->view('templates/footer');
     }
 
     public function simpanMenu()

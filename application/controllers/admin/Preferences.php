@@ -7,6 +7,7 @@ class Preferences extends CI_Controller
     {
         parent::__construct();
         $this->load->model('preferences_model');
+        $this->load->model('halaman_model');
 
         if ($this->session->userdata('username') == null) {
             redirect('login');
@@ -15,6 +16,7 @@ class Preferences extends CI_Controller
 
     public function index()
     {
+      $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['user'] = $this->user_model->get_current_user();
         $data['fotokepala'] = $this->preferences_model->getFotoKepala();
         $data['kepala'] = $this->preferences_model->getKepala();

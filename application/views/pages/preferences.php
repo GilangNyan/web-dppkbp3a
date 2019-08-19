@@ -29,8 +29,8 @@
                                 <form action="<?= base_url('admin/preferences/editKepala') ?>" method="post">
                                     <?php foreach ($kepala as $row) : ?>
                                     <div class="form-group">
-                                        <label for="nama">Nama Kepala Dinas</label>
-                                        <input type="text" class="form-control" name="nama" id="nama" aria-describedby="nama" value="<?= $row->nama ?>" placeholder="Masukkan Nama Kepala Dinas">
+                                        <label for="namakadis">Nama Kepala Dinas</label>
+                                        <input type="text" class="form-control" name="namakadis" id="namakadis" aria-describedby="namakadis" value="<?= $row->nama ?>" placeholder="Masukkan Nama Kepala Dinas">
                                     </div>
                                     <div class="form-group">
                                         <label for="jabatan">Nama Kepala Dinas</label>

@@ -1,7 +1,7 @@
 // Atur Kepala Dinas
 $(document).ready(function () {
-	$('#nama').blur(function () {
-		var nama = $('#nama').val();
+	$('#namakadis').blur(function () {
+		var nama = $('#namakadis').val();
 		$.ajax({
 			url: 'preferences/editNama',
 			method: 'POST',

@@ -16,7 +16,7 @@ class Preferences extends CI_Controller
 
     public function index()
     {
-      $data['parent_pages'] = $this->halaman_model->get_parent_pages();
+        $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['user'] = $this->user_model->get_current_user();
         $data['fotokepala'] = $this->preferences_model->getFotoKepala();
         $data['kepala'] = $this->preferences_model->getKepala();

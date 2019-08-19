@@ -20,17 +20,38 @@ class User_model extends CI_Model
         return $this->db->get()->result();
     }
 
+    function getUserById($id)
+    {
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('id', $id);
+        return $this->db->get()->row();
+    }
+
     function addUser()
     {
         $data = array(
             'id' => htmlspecialchars(uniqid('user-')),
-            'nama' => htmlspecialchars($this->input->post('nama', true)),
+            'nama' => htmlspecialchars($this->input->post('namalengkap', true)),
             'username' => htmlspecialchars($this->input->post('username', true)),
             'email' => htmlspecialchars($this->input->post('email', true)),
-            'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT)
+            'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+            'role' => htmlspecialchars($this->input->post('role'))
         );
 
-        $this->db->insert('user', $data);
+        return $this->db->insert('user', $data);
+    }
+
+    function editUser($id)
+    {
+        $data = array(
+            'nama' => htmlspecialchars($this->input->post('namalengkap', true)),
+            'username' => htmlspecialchars($this->input->post('username', true)),
+            'email' => htmlspecialchars($this->input->post('email', true)),
+            'role' => htmlspecialchars($this->input->post('role'))
+        );
+
+        return $this->db->update('user', $data, ['id' => $id]);
     }
 
     function deleteUser($id)
@@ -42,14 +63,14 @@ class User_model extends CI_Model
     {
         $rules = [
             [
-                'field' => 'nama',
+                'field' => 'namalengkap',
                 'label' => 'Nama',
                 'rules' => 'trim|required'
             ],
             [
                 'field' => 'username',
                 'label' => 'Username',
-                'rules' => 'trim|required|min_length[3]|max_length[12]|is_unique[user.username]'
+                'rules' => 'trim|required|min_length[3]|max_length[18]|is_unique[user.username]'
             ],
             [
                 'field' => 'email',
@@ -65,6 +86,28 @@ class User_model extends CI_Model
                 'field' => 'passconf',
                 'label' => 'Konfirmasi Password',
                 'rules' => 'trim|required|matches[password]'
+            ],
+        ];
+        return $rules;
+    }
+
+    function editUserRules()
+    {
+        $rules = [
+            [
+                'field' => 'namalengkap',
+                'label' => 'Nama',
+                'rules' => 'trim|required'
+            ],
+            [
+                'field' => 'username',
+                'label' => 'Username',
+                'rules' => 'trim|required|min_length[3]|max_length[18]'
+            ],
+            [
+                'field' => 'email',
+                'label' => 'Email',
+                'rules' => 'trim|valid_email|is_unique[user.email]'
             ],
         ];
         return $rules;

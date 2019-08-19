@@ -19,7 +19,7 @@ class Post extends CI_Controller
 
     public function index()
     {
-      $data['parent_pages'] = $this->halaman_model->get_parent_pages();
+        $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['user'] = $this->user_model->get_current_user();
         $data['pagename'] = 'Semua Post';
         $data['posting'] = $this->post_model->getAllPost();
@@ -30,7 +30,7 @@ class Post extends CI_Controller
 
     public function published()
     {
-      $data['parent_pages'] = $this->halaman_model->get_parent_pages();
+        $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['user'] = $this->user_model->get_current_user();
         $data['pagename'] = 'Post Diterbitkan';
         $data['posting'] = $this->post_model->getPublishedPost();

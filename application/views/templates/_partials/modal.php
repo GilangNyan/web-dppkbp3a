@@ -157,7 +157,7 @@
                     <div class="form-group">
                         <label for="parent">Sub Halaman dari</label>
                         <select class="form-control" name="parent" id="parent">
-                           <option value="">Pilih :</option>
+                            <option value="">Pilih :</option>
                             <?php foreach ($parent_pages->result() as $row) : ?>
                             <option value="<?= $row->id_halaman ?>"><?= $row->judul ?></option>
                             <?php endforeach; ?>

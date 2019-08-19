@@ -24,19 +24,21 @@ class Artikel_model extends CI_Model
 
     function getPostDetail($tahun, $bulan, $slug)
     {
-        $this->db->select('*');
+        $this->db->select('post.*, user.username, user.nama, user.role');
         $this->db->from('post');
+        $this->db->join('user', 'post.author = user.id', 'inner');
         $where = "YEAR(tanggal) = $tahun AND MONTH(tanggal) = $bulan AND slug = '$slug'";
         $this->db->where($where);
         // $this->db->where('YEAR(tanggal)', $tahun);
         // $this->db->where('MONTH(tanggal)', $bulan);
         // $this->db->where('slug', $slug);
-        return $this->db->get()->result();
+        return $this->db->get()->row();
     }
 
-    public function readmore( $slug = NULL ) {
-      return $this->db->get_where('halaman', ['slug' => $slug])->row();
-   }
+    public function readmore($slug = NULL)
+    {
+        return $this->db->get_where('halaman', ['slug' => $slug])->row();
+    }
 
     function countPostViews($tahun, $bulan, $slug)
     {

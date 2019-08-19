@@ -74,6 +74,44 @@
                             <p class="card-text"><?= preg_replace($pattern, $replace, $artikel->isi) ?></p>
                         </div>
                     </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h4 class="card-title">Komentar</h4>
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <a class="nav-item nav-link active text-muted" id="nav-site-tab" data-toggle="tab" href="#nav-site" role="tab" aria-controls="nav-site" aria-selected="true">Komentar</a>
+                                    <a class="nav-item nav-link text-muted" id="nav-disqus-tab" data-toggle="tab" href="#nav-disqus" role="tab" aria-controls="nav-disqus" aria-selected="false">Disqus</a>
+                                </div>
+                            </nav>
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-site" role="tabpanel" aria-labelledby="nav-site-tab">
+                                    <form action="#" method="post" class="mt-3">
+                                        <div class="form-group">
+                                            <label for="displayname" class="font-weight-bold">Nama Tampilan</label>
+                                            <input type="text" name="displayname" id="displayname" class="form-control" placeholder="Masukkan nama anda" aria-describedby="displayname">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email" class="font-weight-bold">Email</label>
+                                            <input type="email" name="email" id="email" class="form-control" placeholder="Masukkan email anda" aria-describedby="email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="komentar" class="font-weight-bold">Komentar</label>
+                                            <textarea class="form-control" name="komentar" id="komentar" rows="3"></textarea>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <button class="btn btn-primary px-3" type="submit">Kirim</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="nav-disqus" role="tabpanel" aria-labelledby="nav-disqus-tab">
+                                    <div class="mt-3">
+                                        <?= $disqus ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
                 <?php $this->load->view('templates/_partials/blog/sidebar') ?>
             </div>

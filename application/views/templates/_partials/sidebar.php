@@ -108,14 +108,14 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="<?= base_url('admin/menu') ?>" class="nav-link <?php if ($pagename == 'Menu') {
                                                                                         echo 'active';
                                                                                     } ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Menu</p>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a href="<?= base_url('admin/halaman') ?>" class="nav-link <?php if ($pagename == 'Halaman') {
                                                                                             echo 'active';

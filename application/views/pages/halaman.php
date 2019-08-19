@@ -24,8 +24,8 @@
                             <thead>
                                 <tr>
                                     <th>Judul Halaman</th>
+                                    <th>Sub Halaman Dari</th>
                                     <th style="width: 20%">Dibuat Pada</th>
-                                    <th>Menu</th>
                                     <th style="width: 25%">Opsi</th>
                                 </tr>
                             </thead>
@@ -33,8 +33,8 @@
                                 <?php foreach ($halaman as $page) : ?>
                                 <tr>
                                     <td><?= $page->judul ?></td>
+                                    <td><?= $page->sub_page ?></td>
                                     <td><?= $page->tanggal ?></td>
-                                    <td><?= $page->nama_menu ?></td>
                                     <td>
                                         <a href="<?= base_url('pages/') . $page->slug ?>" class="btn btn-sm text-success" target="_blank"><i class="fas fa-eye"></i> Lihat</a>
                                         <a href="<?= base_url('admin/halaman/getPage/') . $page->id_halaman ?>" class="btn-edithal btn btn-sm text-primary" data-toggle="modal" data-target="#modalPageUpdate" data-postid="<?= $page->id_halaman ?>" data-judulhal="<?= $page->judul ?>" data-isihal="<?= htmlspecialchars($page->isi) ?>" data-parent="<?= $page->parent ?>"><i class="fas fa-edit"></i> Edit</a>
@@ -43,12 +43,6 @@
                                 </tr>
                                 <?php endforeach; ?>
                             </tbody>
-                            <tfoot>
-                                <th>Judul Halaman</th>
-                                <th>Dibuat Pada</th>
-                                <th>Menu</th>
-                                <th>Opsi</th>
-                            </tfoot>
                         </table>
                     </div>
                 </div>

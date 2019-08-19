@@ -155,10 +155,11 @@
             <div class="modal-body">
                 <form action="<?= base_url('admin/halaman/addPages') ?>" method="post" name="formpages" id="formpages" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="parent">Pilih Menu</label>
+                        <label for="parent">Sub Halaman dari</label>
                         <select class="form-control" name="parent" id="parent">
-                            <?php foreach ($menu as $menus) : ?>
-                            <option value="<?= $menus->id_menu ?>"><?= $menus->nama_menu ?></option>
+                           <option value="">Pilih :</option>
+                            <?php foreach ($parent_pages->result() as $row) : ?>
+                            <option value="<?= $row->id_halaman ?>"><?= $row->judul ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>

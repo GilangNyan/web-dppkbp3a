@@ -6,7 +6,7 @@ class Landing extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('landing_model');
+        $this->load->model(['landing_model', 'halaman_model']);
     }
 
     public function index()
@@ -15,6 +15,8 @@ class Landing extends CI_Controller
         $data['menu'] = $this->landing_model->getMenu();
         $data['submenu'] = $this->landing_model->getSubMenu();
         $data['kepala'] = $this->landing_model->getKepala();
+        $data['parent_pages'] = $this->halaman_model->get_parent_pages();
+        $data['sub_pages'] = $this->halaman_model->get_sub_pages();
 
         // Pagination Start
         // Pagination

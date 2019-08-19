@@ -8,7 +8,7 @@ $(document).ready(function () {
 			[2, "desc"]
 		]
 	});
-	var groupColumn = 2;
+	var groupColumn = 4;
 	var table = $('#allPages').DataTable({
 		"language": {
 			"url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json",

@@ -18,7 +18,7 @@ class Halaman extends CI_Controller
         $data['user'] = $this->user_model->get_current_user();
         $data['halaman'] = $this->halaman_model->getHalaman();
         $data['pagename'] = 'Halaman';
-        $data['menu'] = $this->halaman_model->getMenu();
+        $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $this->load->view('templates/header', $data);
         $this->load->view('pages/halaman', $data);
         $this->load->view('templates/footer');
@@ -82,8 +82,8 @@ class Halaman extends CI_Controller
         $trim = trim($string);
         $pre_slug = strtolower(str_replace(" ", "-", $trim));
         $slug = $pre_slug . '.html';
-        $menu = $this->input->post('parent');
-        $this->halaman_model->addPages($judul, $isi, $slug, $menu);
+        $parent = $this->input->post('parent') ? $this->input->post('parent') : NULL;
+        $this->halaman_model->addPages($judul, $isi, $slug, $parent);
         $this->session->set_flashdata('message', 'Halaman berhasil ditambahkan!');
         redirect('admin/halaman');
     }

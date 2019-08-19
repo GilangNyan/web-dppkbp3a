@@ -8,6 +8,7 @@ class Artikel extends CI_Controller
         parent::__construct();
         $this->load->model('artikel_model');
         $this->load->model('landing_model');
+        $this->load->model('halaman_model');
     }
 
     public function index()
@@ -56,8 +57,8 @@ class Artikel extends CI_Controller
 
     public function getArtikel($tahun, $bulan, $slug)
     {
-        $data['menu'] = $this->landing_model->getMenu();
-        $data['submenu'] = $this->landing_model->getSubMenu();
+         $data['parent_pages'] = $this->halaman_model->get_parent_pages();
+         $data['sub_pages'] = $this->halaman_model->get_sub_pages();
         $data['kepala'] = $this->landing_model->getKepala();
         $data['artikel'] = $this->artikel_model->getPostDetail($tahun, $bulan, $slug);
         $this->artikel_model->countPostViews($tahun, $bulan, $slug);
@@ -67,8 +68,8 @@ class Artikel extends CI_Controller
 
     public function readmore($slug)
     {
-        $data['menu'] = $this->landing_model->getMenu();
-        $data['submenu'] = $this->landing_model->getSubMenu();
+         $data['parent_pages'] = $this->halaman_model->get_parent_pages();
+         $data['sub_pages'] = $this->halaman_model->get_sub_pages();
         $data['kepala'] = $this->landing_model->getKepala();
         $data['query'] = $this->artikel_model->readmore($slug);
         // print_r($data['query']);

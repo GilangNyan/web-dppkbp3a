@@ -27,14 +27,14 @@ SET time_zone = "+00:00";
 --
 -- Struktur dari tabel `halaman`
 --
-
+DROP TABLE `halaman`;
 CREATE TABLE `halaman` (
   `id_halaman` varchar(255) NOT NULL,
   `judul` varchar(150) NOT NULL,
   `isi` text NOT NULL,
   `tanggal` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `slug` varchar(150) NOT NULL,
-  `parent` varchar(255) NOT NULL
+  `parent` varchar(255) NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

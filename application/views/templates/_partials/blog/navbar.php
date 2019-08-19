@@ -12,13 +12,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url() ?>"><i class="fas fa-home"></i> <span class="sr-only">(current)</span></a>
             </li>
-            <?php foreach ($menu as $menus) : ?>
+            <?php foreach ($parent_pages->result() as $parent_page) : ?>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" id="<?= $menus->id_menu ?>" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= strtoupper($menus->nama_menu) ?></a>
-                <div class="dropdown-menu" aria-labelledby="<?= $menus->id_menu ?>">
-                    <?php foreach ($submenu as $submenus) : ?>
-                    <?php if ($menus->id_menu == $submenus->parent) : ?>
-                    <a class="dropdown-item" href="<?= base_url('pages/') . $submenus->slug ?>"><?= $submenus->judul ?></a>
+                <a href="#" class="nav-link dropdown-toggle" id="<?= $parent_page->id_halaman ?>" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= strtoupper($parent_page->judul) ?></a>
+                <div class="dropdown-menu" aria-labelledby="<?= $parent_page->id_halaman ?>">
+                    <?php foreach ($sub_pages->result() as $sub_page) : ?>
+                    <?php if ($parent_page->id_halaman == $sub_page->parent) : ?>
+                    <a class="dropdown-item" href="<?= base_url('pages/') . $sub_page->slug ?>"><?= $sub_page->judul ?></a>
                     <?php endif; ?>
                     <?php endforeach; ?>
                 </div>

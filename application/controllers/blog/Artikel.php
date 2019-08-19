@@ -64,4 +64,15 @@ class Artikel extends CI_Controller
 
         $this->load->view('pages/blog/posting', $data);
     }
+
+    public function readmore($slug)
+    {
+        $data['menu'] = $this->landing_model->getMenu();
+        $data['submenu'] = $this->landing_model->getSubMenu();
+        $data['kepala'] = $this->landing_model->getKepala();
+        $data['query'] = $this->artikel_model->readmore($slug);
+        // print_r($data['query']);
+        // exit;
+        $this->load->view('pages/blog/artikel', $data);
+    }
 }

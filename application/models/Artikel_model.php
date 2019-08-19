@@ -34,6 +34,10 @@ class Artikel_model extends CI_Model
         return $this->db->get()->result();
     }
 
+    public function readmore( $slug = NULL ) {
+      return $this->db->get_where('halaman', ['slug' => $slug])->row();
+   }
+
     function countPostViews($tahun, $bulan, $slug)
     {
         $this->db->set('views', 'views+1', false);

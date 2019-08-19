@@ -67,3 +67,4 @@ $route['artikel'] = 'blog/artikel/index';
 $route['artikel/:num'] = 'blog/artikel/index/:num';
 $route[':num'] = 'blog/landing/index/:num';
 $route['(:num)/(:num)/(:any)'] = "blog/artikel/getartikel/$1/$2/$3";
+$route['pages/(:any)'] = "blog/artikel/readmore/$1/$2";

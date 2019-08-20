@@ -48,4 +48,28 @@ class Artikel_model extends CI_Model
         $this->db->where('slug', $slug);
         return $this->db->update('post');
     }
+
+    function getKomentar($slug)
+    {
+        $this->db->select('komentar.*, post.judul, post.slug');
+        $this->db->from('komentar');
+        $this->db->join('post', 'komentar.id_post = post.id', 'inner');
+        $this->db->where('slug', $slug);
+        return $this->db->get()->result();
+    }
+
+    function addKomentar($nama, $email, $komentar, $postid)
+    {
+        $data = array(
+            'id' => uniqid('comment-'),
+            'display_name' => $nama,
+            'email' => $email,
+            'id_post' => $postid,
+            'id_parent' => 0,
+            'komentar' => $komentar,
+            'is_mod' => 0
+        );
+
+        return $this->db->insert('komentar', $data);
+    }
 }

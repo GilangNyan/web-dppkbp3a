@@ -58,14 +58,29 @@ class Artikel extends CI_Controller
     public function getArtikel($tahun, $bulan, $slug)
     {
         $this->load->library('disqus');
+        $postid = $this->session->userdata('post_id');
         $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['sub_pages'] = $this->halaman_model->get_sub_pages();
         $data['kepala'] = $this->landing_model->getKepala();
         $data['artikel'] = $this->artikel_model->getPostDetail($tahun, $bulan, $slug);
         $data['disqus'] = $this->disqus->get_html();
         $this->artikel_model->countPostViews($tahun, $bulan, $slug);
+        $data['komentar'] = $this->artikel_model->getKomentar($slug);
 
         $this->load->view('pages/blog/posting', $data);
+    }
+
+    public function addKomentar()
+    {
+        $urlpost = $this->session->userdata('referred_from');
+        $nama = $this->input->post('displayname');
+        $email = $this->input->post('email');
+        $komentar = $this->input->post('komentar');
+        $postid = $this->input->post('postid');
+
+        $this->artikel_model->addKomentar($nama, $email, $komentar, $postid);
+        $this->session->set_flashdata('message', 'Komentar telah ditambahkan');
+        redirect($urlpost, 'refresh');
     }
 
     public function readmore($slug)

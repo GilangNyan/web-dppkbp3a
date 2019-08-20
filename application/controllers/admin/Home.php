@@ -16,7 +16,7 @@ class Home extends CI_Controller
 
     public function index()
     {
-      $data['parent_pages'] = $this->halaman_model->get_parent_pages();
+        $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['user'] = $this->home_model->get_current_user();
         $data['pagename'] = 'Dashboard';
         $data['todayvisitor'] = $this->home_model->getTodayVisitor();

@@ -14,7 +14,14 @@
                                         } ?>">
             <img src="<?= base_url('assets/img/') . $row->image ?>" alt="<?= $row->judul ?>">
             <div class="carousel-caption d-none d-md-block">
-                <h3><?= $row->judul ?></h3>
+                <?php
+                    $time = strtotime($row->tanggal);
+                    $year = date('Y', $time);
+                    $month = date('m', $time);
+                    ?>
+                <a class="text-light" href="<?= base_url() . $year . '/' . $month . '/' . $row->slug ?>">
+                    <h3 class="text-reset"><?= $row->judul ?></h3>
+                </a>
                 <div class="container">
                     <p class="crop-text"><?= strip_tags($row->isi) ?></p>
                 </div>

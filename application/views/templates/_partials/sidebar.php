@@ -63,36 +63,17 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item has-treeview <?php if ($pagename == 'Komentar' || $pagename == 'Spam') {
+            <li class="nav-item <?php if ($pagename == 'Komentar' || $pagename == 'Spam') {
                                                     echo 'menu-open';
                                                 } ?>">
-                <a href="#" class="nav-link <?php if ($pagename == 'Komentar' || $pagename == 'Spam') {
+                <a href="<?= base_url('admin/komentar') ?>" class="nav-link <?php if ($pagename == 'Komentar') {
                                                 echo 'active';
                                             } ?>">
                     <i class="nav-icon fas fa-comment"></i>
                     <p>
                         Komentar
-                        <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link <?php if ($pagename == 'Komentar') {
-                                                        echo 'active';
-                                                    } ?>">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Diterbitkan</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link <?php if ($pagename == 'Spam') {
-                                                        echo 'active';
-                                                    } ?>">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Spam</p>
-                        </a>
-                    </li>
-                </ul>
             </li>
             <?php if ($this->session->userdata('role') == 'ADMIN' || $this->session->userdata('role') == 'GOD') : ?>
             <li class="nav-item has-treeview <?php if ($pagename == 'Halaman' || $pagename == 'Menu') {

@@ -87,9 +87,9 @@
                             <div class="tab-content" id="nav-tabContent">
                                 <div class="tab-pane fade show active" id="nav-site" role="tabpanel" aria-labelledby="nav-site-tab">
                                     <div class="row">
-                                        <?php if ($this->session->userdata('username') == null) : ?>
                                         <div class="col-12">
                                             <form action="<?= base_url('blog/artikel/addKomentar') ?>" method="post" class="my-3">
+                                                <?php if ($this->session->userdata('username') == null) : ?>
                                                 <div class="row mb-3">
                                                     <div class="col">
                                                         <input type="text" name="displayname" id="displayname" class="form-control" placeholder="Nama Tampilan" required>
@@ -98,6 +98,7 @@
                                                         <input type="email" name="email" id="email" class="form-control" placeholder="Email">
                                                     </div>
                                                 </div>
+                                                <?php endif; ?>
                                                 <div class="form-group">
                                                     <textarea class="form-control" name="komentar" id="komentar" rows="3" placeholder="Komentar anda..." required></textarea>
                                                 </div>
@@ -107,7 +108,6 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        <?php endif; ?>
                                         <div class="col-12 my-3">
                                             <div class="row">
                                                 <?php foreach ($komentar as $comment) : ?>

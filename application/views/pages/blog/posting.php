@@ -87,14 +87,15 @@
                             <div class="tab-content" id="nav-tabContent">
                                 <div class="tab-pane fade show active" id="nav-site" role="tabpanel" aria-labelledby="nav-site-tab">
                                     <div class="row">
-                                        <div class="col-12 mb-3">
+                                        <?php if ($this->session->userdata('username') == null) : ?>
+                                        <div class="col-12">
                                             <form action="<?= base_url('blog/artikel/addKomentar') ?>" method="post" class="my-3">
                                                 <div class="row mb-3">
                                                     <div class="col">
                                                         <input type="text" name="displayname" id="displayname" class="form-control" placeholder="Nama Tampilan" required>
                                                     </div>
                                                     <div class="col">
-                                                        <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
+                                                        <input type="email" name="email" id="email" class="form-control" placeholder="Email">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -106,21 +107,67 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        <div class="col-12">
+                                        <?php endif; ?>
+                                        <div class="col-12 my-3">
                                             <div class="row">
                                                 <?php foreach ($komentar as $comment) : ?>
-                                                <div class="col-2 p-1 d-flex flex-row-reverse">
-                                                    <img class="rounded-circle img-fluid" src="<?= base_url('assets/dist/img/default.jpg') ?>" alt="Foto User">
+                                                <?php if ($comment->id_parent == null) : ?>
+                                                <div class="col-sm-2">
+                                                    <div class="img-thumbnail">
+                                                        <img src="<?= base_url('assets/dist/img/default.jpg') ?>" alt="Gambar User" class="img-fluid user-photo">
+                                                    </div>
                                                 </div>
-                                                <div class="col-10">
-                                                    <div class="row">
-                                                        <div class="col-12 d-flex justify-content-between">
-                                                            <h6 class="card-title"><?= $comment->display_name ?></h6>
-                                                            <small class="text-muted"><?= $comment->tanggal ?></small>
+                                                <div class="col-sm-10">
+                                                    <div class="card mb-3">
+                                                        <div class="card-header">
+                                                            <strong><?= $comment->display_name ?></strong><?= ($comment->is_mod == 1) ? '<span class="badge badge-pill badge-secondary">mod</span>' : ''; ?> <span class="text-muted"><?= $comment->tanggal ?></span>
+                                                            <button class="btn btn-sm btn-outline-secondary py-0 float-right" onclick="showFormBalas('<?= $comment->id ?>')">Balas</button>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <p class="card-text"><?= $comment->komentar ?></p>
                                                         </div>
                                                     </div>
-                                                    <p class="card-text"><?= $comment->komentar ?></p>
+                                                    <div id="<?= $comment->id ?>" style="display: none">
+                                                        <form action="<?= base_url('blog/artikel/addReply/') . $comment->id ?>" method="post" class="my-3">
+                                                            <div class="row mb-3">
+                                                                <div class="col">
+                                                                    <input type="text" name="displayname" id="displayname" class="form-control" placeholder="Nama Tampilan" required>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <textarea class="form-control" name="komentar" id="komentar" rows="3" placeholder="Komentar anda..." required></textarea>
+                                                            </div>
+                                                            <input type="hidden" name="postid" value="<?= $artikel->id ?>">
+                                                            <div class="d-flex justify-content-end">
+                                                                <button class="btn btn-primary px-3" type="submit">Balas</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
                                                 </div>
+                                                <?php endif; ?>
+                                                <?php foreach ($komentar as $reply) : ?>
+                                                <?php if ($reply->id_parent == $comment->id) : ?>
+                                                <div class="col-sm-2"></div>
+                                                <div class="col-sm-2">
+                                                    <div class="img-thumbnail">
+                                                        <img src="<?= base_url('assets/dist/img/default.jpg') ?>" alt="Gambar User" class="img-fluid user-photo">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <div class="card mb-3">
+                                                        <div class="card-header">
+                                                            <strong><?= $reply->display_name ?></strong><?= ($reply->is_mod == 1) ? '<span class="badge badge-pill badge-secondary">mod</span>' : ''; ?> <span class="text-muted"><?= $comment->tanggal ?></span>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <p class="card-text"><?= $reply->komentar ?></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php endif; ?>
+                                                <?php endforeach; ?>
                                                 <?php endforeach; ?>
                                             </div>
                                         </div>

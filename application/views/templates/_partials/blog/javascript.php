@@ -8,3 +8,5 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+<!-- Custom Script -->
+<script src="<?= base_url('assets/dist/js/blog.js') ?>"></script>

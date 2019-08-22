@@ -55,6 +55,7 @@ class Artikel_model extends CI_Model
         $this->db->from('komentar');
         $this->db->join('post', 'komentar.id_post = post.id', 'inner');
         $this->db->where('slug', $slug);
+        $this->db->order_by('tanggal', 'asc');
         return $this->db->get()->result();
     }
 
@@ -65,11 +66,23 @@ class Artikel_model extends CI_Model
             'display_name' => $nama,
             'email' => $email,
             'id_post' => $postid,
-            'id_parent' => 0,
             'komentar' => $komentar,
             'is_mod' => 0
         );
 
         return $this->db->insert('komentar', $data);
+    }
+
+    function addReply($nama, $email, $komentar, $postid, $parentid)
+    {
+        $data = array(
+            'id' => uniqid('comment-'),
+            'display_name' => $nama,
+            'email' => $email,
+            'id_post' => $postid,
+            'id_parent' => $parentid,
+            'komentar' => $komentar,
+            'is_mod' => 0
+        );
     }
 }

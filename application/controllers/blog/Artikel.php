@@ -66,6 +66,7 @@ class Artikel extends CI_Controller
         $data['disqus'] = $this->disqus->get_html();
         $this->artikel_model->countPostViews($tahun, $bulan, $slug);
         $data['komentar'] = $this->artikel_model->getKomentar($slug);
+        $data['user'] = $this->user_model->get_current_user();
 
         $this->load->view('pages/blog/posting', $data);
     }
@@ -78,9 +79,40 @@ class Artikel extends CI_Controller
         $komentar = $this->input->post('komentar');
         $postid = $this->input->post('postid');
 
-        $this->artikel_model->addKomentar($nama, $email, $komentar, $postid);
-        $this->session->set_flashdata('message', 'Komentar telah ditambahkan');
-        redirect($urlpost, 'refresh');
+        if ($this->session->userdata('username') != null) {
+            $ismod = 1;
+            $idmod = $this->input->post('idmod');
+            $this->artikel_model->addKomentar($nama, $email, $komentar, $postid, $ismod, $idmod);
+            $this->session->set_flashdata('message', 'Komentar telah ditambahkan');
+            redirect($urlpost, 'refresh');
+        } else {
+            $ismod = 0;
+            $this->artikel_model->addKomentar($nama, $email, $komentar, $postid, $ismod);
+            $this->session->set_flashdata('message', 'Komentar telah ditambahkan');
+            redirect($urlpost, 'refresh');
+        }
+    }
+
+    public function addReply($id)
+    {
+        $urlpost = $this->session->userdata('referred_from');
+        $nama = $this->input->post('displayname');
+        $email = $this->input->post('email');
+        $komentar = $this->input->post('komentar');
+        $postid = $this->input->post('postid');
+
+        if ($this->session->userdata('username') != null) {
+            $ismod = 1;
+            $idmod = $this->input->post('idmod');
+            $this->artikel_model->addReply($nama, $email, $komentar, $postid, $id, $ismod, $idmod);
+            $this->session->set_flashdata('message', 'Komentar telah ditambahkan');
+            redirect($urlpost, 'refresh');
+        } else {
+            $ismod = 0;
+            $this->artikel_model->addReply($nama, $email, $komentar, $postid, $id, $ismod);
+            $this->session->set_flashdata('message', 'Komentar telah ditambahkan');
+            redirect($urlpost, 'refresh');
+        }
     }
 
     public function readmore($slug)

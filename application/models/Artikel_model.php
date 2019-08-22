@@ -51,15 +51,16 @@ class Artikel_model extends CI_Model
 
     function getKomentar($slug)
     {
-        $this->db->select('komentar.*, post.judul, post.slug');
+        $this->db->select('komentar.*, post.judul, post.slug, user.image');
         $this->db->from('komentar');
-        $this->db->join('post', 'komentar.id_post = post.id', 'inner');
+        $this->db->join('post', 'komentar.id_post = post.id', 'left outer');
+        $this->db->join('user', 'komentar.id_mod = user.id', 'left outer');
         $this->db->where('slug', $slug);
         $this->db->order_by('tanggal', 'asc');
         return $this->db->get()->result();
     }
 
-    function addKomentar($nama, $email, $komentar, $postid)
+    function addKomentar($nama, $email, $komentar, $postid, $ismod, $idmod = null)
     {
         $data = array(
             'id' => uniqid('comment-'),
@@ -67,13 +68,14 @@ class Artikel_model extends CI_Model
             'email' => $email,
             'id_post' => $postid,
             'komentar' => $komentar,
-            'is_mod' => 0
+            'is_mod' => $ismod,
+            'id_mod' => $idmod
         );
 
         return $this->db->insert('komentar', $data);
     }
 
-    function addReply($nama, $email, $komentar, $postid, $parentid)
+    function addReply($nama, $email, $komentar, $postid, $parentid, $ismod, $idmod = null)
     {
         $data = array(
             'id' => uniqid('comment-'),
@@ -82,7 +84,10 @@ class Artikel_model extends CI_Model
             'id_post' => $postid,
             'id_parent' => $parentid,
             'komentar' => $komentar,
-            'is_mod' => 0
+            'is_mod' => $ismod,
+            'id_mod' => $idmod
         );
+
+        return $this->db->insert('komentar', $data);
     }
 }

@@ -98,6 +98,16 @@
                                                         <input type="email" name="email" id="email" class="form-control" placeholder="Email">
                                                     </div>
                                                 </div>
+                                                <?php else : ?>
+                                                <div class="row mb-3">
+                                                    <div class="col">
+                                                        <input type="text" name="displayname" id="displayname" class="form-control" placeholder="Nama Tampilan" value="<?= $user->nama ?>" readonly>
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="email" name="email" id="email" class="form-control" placeholder="Email" value="<?= $user->email ?>" readonly>
+                                                    </div>
+                                                    <input type="hidden" name="idmod" id="idmod" value="<?= $user->id ?>">
+                                                </div>
                                                 <?php endif; ?>
                                                 <div class="form-group">
                                                     <textarea class="form-control" name="komentar" id="komentar" rows="3" placeholder="Komentar anda..." required></textarea>
@@ -114,13 +124,17 @@
                                                 <?php if ($comment->id_parent == null) : ?>
                                                 <div class="col-sm-2">
                                                     <div class="img-thumbnail">
+                                                        <?php if ($comment->image != null) : ?>
+                                                        <img src="<?= base_url('assets/dist/img/') . $comment->image ?>" alt="Gambar User" class="img-fluid user-photo">
+                                                        <?php else : ?>
                                                         <img src="<?= base_url('assets/dist/img/default.jpg') ?>" alt="Gambar User" class="img-fluid user-photo">
+                                                        <?php endif; ?>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-10">
                                                     <div class="card mb-3">
                                                         <div class="card-header">
-                                                            <strong><?= $comment->display_name ?></strong><?= ($comment->is_mod == 1) ? '<span class="badge badge-pill badge-secondary">mod</span>' : ''; ?> <span class="text-muted"><?= $comment->tanggal ?></span>
+                                                            <strong><?= $comment->display_name ?></strong> <?= ($comment->is_mod == 1) ? '<span class="badge badge-pill badge-secondary">mod</span>' : ''; ?> <span class="text-muted"><?= $comment->tanggal ?></span>
                                                             <button class="btn btn-sm btn-outline-secondary py-0 float-right" onclick="showFormBalas('<?= $comment->id ?>')">Balas</button>
                                                         </div>
                                                         <div class="card-body">
@@ -129,6 +143,7 @@
                                                     </div>
                                                     <div id="<?= $comment->id ?>" style="display: none">
                                                         <form action="<?= base_url('blog/artikel/addReply/') . $comment->id ?>" method="post" class="my-3">
+                                                            <?php if ($this->session->userdata('username') == null) : ?>
                                                             <div class="row mb-3">
                                                                 <div class="col">
                                                                     <input type="text" name="displayname" id="displayname" class="form-control" placeholder="Nama Tampilan" required>
@@ -137,6 +152,17 @@
                                                                     <input type="email" name="email" id="email" class="form-control" placeholder="Email">
                                                                 </div>
                                                             </div>
+                                                            <?php else : ?>
+                                                            <div class="row mb-3">
+                                                                <div class="col">
+                                                                    <input type="text" name="displayname" id="displayname" class="form-control" placeholder="Nama Tampilan" value="<?= $user->nama ?>" readonly>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email" value="<?= $user->email ?>" readonly>
+                                                                </div>
+                                                                <input type="hidden" name="idmod" id="idmod" value="<?= $user->id ?>">
+                                                            </div>
+                                                            <?php endif; ?>
                                                             <div class="form-group">
                                                                 <textarea class="form-control" name="komentar" id="komentar" rows="3" placeholder="Komentar anda..." required></textarea>
                                                             </div>
@@ -153,13 +179,17 @@
                                                 <div class="col-sm-2"></div>
                                                 <div class="col-sm-2">
                                                     <div class="img-thumbnail">
+                                                        <?php if ($reply->image != null) : ?>
+                                                        <img src="<?= base_url('assets/dist/img/') . $reply->image ?>" alt="Gambar User" class="img-fluid user-photo">
+                                                        <?php else : ?>
                                                         <img src="<?= base_url('assets/dist/img/default.jpg') ?>" alt="Gambar User" class="img-fluid user-photo">
+                                                        <?php endif; ?>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-8">
                                                     <div class="card mb-3">
                                                         <div class="card-header">
-                                                            <strong><?= $reply->display_name ?></strong><?= ($reply->is_mod == 1) ? '<span class="badge badge-pill badge-secondary">mod</span>' : ''; ?> <span class="text-muted"><?= $comment->tanggal ?></span>
+                                                            <strong><?= $reply->display_name ?></strong> <?= ($reply->is_mod == 1) ? '<span class="badge badge-pill badge-secondary">mod</span>' : ''; ?> <span class="text-muted"><?= $comment->tanggal ?></span>
                                                         </div>
                                                         <div class="card-body">
                                                             <p class="card-text"><?= $reply->komentar ?></p>

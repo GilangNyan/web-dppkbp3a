@@ -40,7 +40,7 @@ class Pemeliharaan extends CI_Controller
 
     public function restoreDB()
     {
-        $isifile = file_get_contents('./backup/database/db_webdppkbp3a.txt');
+        $isifile = file_get_contents('./backup/database/db_webdppkbp3a.zip');
         $stringquery = rtrim($isifile, "\n;");
         $arrayquery = explode(";", $stringquery);
         foreach ($arrayquery as $query) {

@@ -25,7 +25,7 @@ class Pemeliharaan extends CI_Controller
         $prefs = array(
             'tables'        => array(),                     // Array of tables to backup.
             'ignore'        => array(),                     // List of tables to omit from the backup
-            'format'        => 'txt',                       // gzip, zip, txt
+            'format'        => 'zip',                       // gzip, zip, txt
             'filename'      => 'db_dppkbp3a.sql',           // File name - NEEDED ONLY WITH ZIP FILES
             'add_drop'      => TRUE,                        // Whether to add DROP TABLE statements to backup file
             'add_insert'    => TRUE,                        // Whether to add INSERT data to backup file
@@ -34,7 +34,7 @@ class Pemeliharaan extends CI_Controller
 
         $backup = $this->dbutil->backup($prefs); // Backup
 
-        write_file('backup/database/db_webdppkbp3a.txt', $backup); // Untuk keperluan restore
+        write_file('backup/database/db_webdppkbp3a.zip', $backup); // Untuk keperluan restore
         force_download('db_webdppkbp3a.zip', $backup);
     }
 

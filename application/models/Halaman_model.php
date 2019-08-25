@@ -37,7 +37,7 @@ class Halaman_model extends CI_Model
 
     public function getHalaman()
     {
-      $this->db->select('
+        $this->db->select('
          x1.id_halaman
          , x1.judul
          , x1.isi
@@ -46,8 +46,8 @@ class Halaman_model extends CI_Model
          , x1.parent
          , x2.judul AS sub_page
       ');
-      $this->db->join('halaman x2', 'x1.parent = x2.id_halaman', 'LEFT');
-      return $this->db->get('halaman x1')->result();
+        $this->db->join('halaman x2', 'x1.parent = x2.id_halaman', 'LEFT');
+        return $this->db->get('halaman x1')->result();
     }
 
     public function addPages($judul, $isi, $slug, $parent)
@@ -79,17 +79,19 @@ class Halaman_model extends CI_Model
         return $this->db->delete('halaman', ['id_halaman' => $postId]);
     }
 
-    public function get_parent_pages() {
-      return $this->db
-         ->where('parent', '')
-         ->or_where('parent IS NULL')
-         ->get('halaman');
-   }
+    public function get_parent_pages()
+    {
+        return $this->db
+            ->where('parent', '')
+            ->or_where('parent IS NULL')
+            ->get('halaman');
+    }
 
-   public function get_sub_pages() {
-     return $this->db
-        ->where('parent <>', '')
-        ->or_where('parent IS NOT NULL')
-        ->get('halaman');
-  }
+    public function get_sub_pages()
+    {
+        return $this->db
+            ->where('parent <>', '')
+            ->or_where('parent IS NOT NULL')
+            ->get('halaman');
+    }
 }

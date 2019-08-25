@@ -120,6 +120,24 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-medkit"></i>
+                    <p>Pemeliharaan<i class="fas fa-angle-left right"></i></p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="<?= base_url('admin/pemeliharaan/backupDB') ?>" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Backup Database</p>
+                        </a>
+                        <a href="<?= base_url('admin/pemeliharaan/restoreDB') ?>" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Restore Database</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <?php endif; ?>
         </ul>
     </nav>

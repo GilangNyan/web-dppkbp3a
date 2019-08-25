@@ -3,10 +3,10 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-            <img src="<?= base_url('assets/dist/img/' . $user['image']) ?>" class="img-circle elevation-2" alt="User Image">
+            <img src="<?= base_url('assets/dist/img/' . $user->image) ?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a href="#" class="d-block"><?= $user['nama'] ?></a>
+            <a href="#" class="d-block"><?= $user->nama ?></a>
         </div>
     </div>
 
@@ -64,11 +64,11 @@
                 </ul>
             </li>
             <li class="nav-item <?php if ($pagename == 'Komentar' || $pagename == 'Spam') {
-                                                    echo 'menu-open';
-                                                } ?>">
+                                    echo 'menu-open';
+                                } ?>">
                 <a href="<?= base_url('admin/komentar') ?>" class="nav-link <?php if ($pagename == 'Komentar') {
-                                                echo 'active';
-                                            } ?>">
+                                                                                echo 'active';
+                                                                            } ?>">
                     <i class="nav-icon fas fa-comment"></i>
                     <p>
                         Komentar

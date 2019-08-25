@@ -75,4 +75,14 @@ class User extends CI_Controller
             redirect('admin/user');
         }
     }
+
+    public function setelan($username)
+    {
+        $data['parent_pages'] = $this->halaman_model->get_parent_pages();
+        $data['user'] = $this->user_model->get_current_user();
+        $data['pagename'] = 'Setelan Akun';
+        $this->load->view('templates/header', $data);
+        $this->load->view('pages/setelan', $data);
+        $this->load->view('templates/footer');
+    }
 }

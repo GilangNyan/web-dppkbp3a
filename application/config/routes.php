@@ -65,6 +65,7 @@ $route['logout'] = 'admin/logout';
 $route['admin/menu'] = 'admin/halaman/menu';
 $route['admin/kepala'] = 'admin/preferences';
 $route['admin/profil'] = 'admin/preferences/profil';
+$route['admin/setelan/(:any)'] = 'admin/user/setelan/(:any)';
 $route['artikel'] = 'blog/artikel/index';
 $route['artikel/:num'] = 'blog/artikel/index/:num';
 $route[':num'] = 'blog/landing/index/:num';

@@ -12,52 +12,7 @@
     <?php
     $this->session->set_userdata('referred_from', current_url());
     $pattern = "/(<p)/";
-    $replace = '<p class="text-justify"';
-    $pisah1 = explode("-", $artikel->tanggal);
-    $tahun = $pisah1[0];
-    $bulan = $pisah1[1];
-    $sisa1 = $pisah1[2];
-    $pisah2 = explode(" ", $sisa1);
-    $tanggal = $pisah2[0];
-    switch ($bulan) {
-        case "01":
-            $nbulan = "Januari";
-            break;
-        case "02":
-            $nbulan = "Februari";
-            break;
-        case "03":
-            $nbulan = "Maret";
-            break;
-        case "04":
-            $nbulan = "April";
-            break;
-        case "05":
-            $nbulan = "Mei";
-            break;
-        case "06":
-            $nbulan = "Juni";
-            break;
-        case "07":
-            $nbulan = "Juli";
-            break;
-        case "08":
-            $nbulan = "Agustus";
-            break;
-        case "09":
-            $nbulan = "September";
-            break;
-        case "10":
-            $nbulan = "Oktober";
-            break;
-        case "11":
-            $nbulan = "November";
-            break;
-        case "12":
-            $nbulan = "Desember";
-            break;
-    }
-    ?>
+    $replace = '<p class="text-justify"'; ?>
     <section class="content">
         <div class="container mt-3">
             <div class="row">
@@ -71,7 +26,8 @@
                         <img src="<?= base_url('assets/img/') . $artikel->image ?>" class="card-img-top" alt="<?= $artikel->judul ?>">
                         <div class="card-body">
                             <h3 class="card-title font-weight-bolder"><?= $artikel->judul ?></h3>
-                            <p class="card-text"><small class="text-muted"><i class="fas fa-user mr-1"></i><?= "$artikel->nama" ?><i class="far fa-clock ml-2 mr-1"></i><?= $tanggal . ' ' . $nbulan . ' ' . $tahun ?></small></p>
+                            <div id="tanggaldatabase" style="display: none;"><?= $artikel->tanggal ?></div>
+                            <p class="card-text"><small class="text-muted"><i class="fas fa-user mr-1"></i><?= "$artikel->nama" ?><i class="far fa-clock ml-2 mr-1"></small></i><small class="text-muted" id="tanggalpost"><?= $artikel->tanggal ?></small></p>
                             <p class="card-text"><?= preg_replace($pattern, $replace, $artikel->isi) ?></p>
                         </div>
                     </div>

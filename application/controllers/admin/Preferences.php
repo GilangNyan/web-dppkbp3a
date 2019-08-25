@@ -21,9 +21,22 @@ class Preferences extends CI_Controller
         $data['fotokepala'] = $this->preferences_model->getFotoKepala();
         $data['kepala'] = $this->preferences_model->getKepala();
         $data['sambutan'] = $this->preferences_model->getSambutan();
-        $data['pagename'] = 'Preferensi';
+        $data['pagename'] = 'Kepala Dinas';
         $this->load->view('templates/header', $data);
-        $this->load->view('pages/preferences', $data);
+        $this->load->view('pages/kepaladinas', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function profil()
+    {
+        $data['parent_pages'] = $this->halaman_model->get_parent_pages();
+        $data['user'] = $this->user_model->get_current_user();
+        $data['fotokepala'] = $this->preferences_model->getFotoKepala();
+        $data['kepala'] = $this->preferences_model->getKepala();
+        $data['sambutan'] = $this->preferences_model->getSambutan();
+        $data['pagename'] = 'Profil Dinas';
+        $this->load->view('templates/header', $data);
+        $this->load->view('pages/profil', $data);
         $this->load->view('templates/footer');
     }
 

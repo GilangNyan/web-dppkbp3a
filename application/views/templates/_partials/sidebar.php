@@ -15,117 +15,110 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
             <li class="nav-item">
-                <a href="<?= base_url('admin') ?>" class="nav-link <?php if ($pagename == 'Dashboard') {
-                                                                        echo 'active';
-                                                                    } ?>">
+                <a href="<?= base_url('admin') ?>" class="nav-link <?= $pagename == 'Dashboard' ? 'active' : ''; ?>">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
-                    <p>
-                        Dashboard
-                    </p>
+                    <p>Dashboard</p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="<?= base_url() ?>" class="nav-link" target="_blank">
                     <i class="nav-icon fas fa-eye"></i>
-                    <p>
-                        Lihat Blog
-                    </p>
+                    <p>Lihat Blog</p>
                 </a>
             </li>
-            <li class="nav-item has-treeview <?php if ($pagename == 'Semua Post' || $pagename == 'Post Diterbitkan') {
-                                                    echo 'menu-open';
-                                                } ?>">
-                <a href="#" class="nav-link <?php if ($pagename == 'Semua Post' || $pagename == 'Post Diterbitkan') {
-                                                echo 'active';
-                                            } ?>">
+            <li class="nav-header">BLOG</li>
+            <li class="nav-item has-treeview <?= $pagename == 'Semua Artikel' || $pagename == 'Artikel Diterbitkan' ? 'menu-open' : ''; ?>">
+                <a href="#" class="nav-link <?= $pagename == 'Semua Artikel' || $pagename == 'Artikel Diterbitkan' ? 'active' : ''; ?>">
                     <i class="nav-icon fas fa-file-alt"></i>
-                    <p>
-                        Postingan
-                        <i class="fas fa-angle-left right"></i>
-                    </p>
+                    <p>Artikel Blog<i class="fas fa-angle-left right"></i></p>
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?= base_url('admin/post') ?>" class="nav-link <?php if ($pagename == 'Semua Post') {
-                                                                                    echo 'active';
-                                                                                } ?>">
+                        <a href="<?= base_url('admin/post') ?>" class="nav-link <?= $pagename == 'Semua Artikel' ? 'active' : ''; ?>">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Semua</p>
+                            <p>Semua Artikel</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('admin/post/published') ?>" class="nav-link <?php if ($pagename == 'Post Diterbitkan') {
-                                                                                                echo 'active';
-                                                                                            } ?>">
+                        <a href="<?= base_url('admin/post/published') ?>" class="nav-link <?= $pagename == 'Artikel Diterbitkan' ? 'active' : ''; ?>">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Diterbitkan</p>
+                            <p>Artikel Diterbitkan</p>
                         </a>
                     </li>
                 </ul>
             </li>
-            <li class="nav-item <?php if ($pagename == 'Komentar' || $pagename == 'Spam') {
-                                    echo 'menu-open';
-                                } ?>">
-                <a href="<?= base_url('admin/komentar') ?>" class="nav-link <?php if ($pagename == 'Komentar') {
-                                                                                echo 'active';
-                                                                            } ?>">
+            <li class="nav-item">
+                <a href="<?= base_url('admin/komentar') ?>" class="nav-link <?= $pagename == 'Komentar' ? 'active' : ''; ?>">
                     <i class="nav-icon fas fa-comment"></i>
-                    <p>
-                        Komentar
-                    </p>
+                    <p>Komentar</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link <?= $pagename == 'Pesan Masuk' ? 'active' : ''; ?>">
+                    <i class="nav-icon fas fa-envelope"></i>
+                    <p>Pesan Masuk</p>
                 </a>
             </li>
             <?php if ($this->session->userdata('role') == 'ADMIN' || $this->session->userdata('role') == 'GOD') : ?>
-            <li class="nav-item has-treeview <?php if ($pagename == 'Halaman' || $pagename == 'Menu') {
-                                                        echo 'menu-open';
-                                                    } ?>">
-                <a href="#" class="nav-link <?php if ($pagename == 'Halaman' || $pagename == 'Menu') {
-                                                    echo 'active';
-                                                } ?>">
-                    <i class="nav-icon fas fa-file"></i>
-                    <p>
-                        Halaman
-                        <i class="fas fa-angle-left right"></i>
-                    </p>
+            <li class="nav-header">TAMPILAN</li>
+            <li class="nav-item has-treeview <?= $pagename == 'Album Foto' || $pagename == 'Video' ? 'menu-open' : ''; ?>">
+                <a href="#" class="nav-link <?= $pagename == 'Album Foto' || $pagename == 'Video' ? 'active' : ''; ?>">
+                    <i class="nav-icon fas fa-photo-video"></i>
+                    <p>Media<i class="fas fa-angle-left right"></i></p>
                 </a>
                 <ul class="nav nav-treeview">
-                    <!-- <li class="nav-item">
-                        <a href="<?= base_url('admin/menu') ?>" class="nav-link <?php if ($pagename == 'Menu') {
-                                                                                        echo 'active';
-                                                                                    } ?>">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Menu</p>
-                        </a>
-                    </li> -->
                     <li class="nav-item">
-                        <a href="<?= base_url('admin/halaman') ?>" class="nav-link <?php if ($pagename == 'Halaman') {
-                                                                                            echo 'active';
-                                                                                        } ?>">
+                        <a href="#" class="nav-link <?= $pagename == 'Album Foto' ? 'active' : ''; ?>">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Album Foto</p>
+                        </a>
+                        <a href="#" class="nav-link <?= $pagename == 'Video' ? 'active' : ''; ?>">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Video</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item has-treeview <?= $pagename == 'Halaman' || $pagename == 'Menu' ? 'active' : ''; ?>">
+                <a href="#" class="nav-link <?= $pagename == 'Halaman' || $pagename == 'Menu' ? 'active' : ''; ?>">
+                    <i class="nav-icon fas fa-file"></i>
+                    <p>Menu<i class="fas fa-angle-left right"></i></p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="<?= base_url('admin/halaman') ?>" class="nav-link <?= $pagename == 'Halaman' ? 'active' : '' ?>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Halaman</p>
                         </a>
                     </li>
                 </ul>
             </li>
+            <li class="nav-header">ADMINISTRATOR</li>
             <li class="nav-item">
-                <a href="<?= base_url('admin/user') ?>" class="nav-link <?php if ($pagename == 'Kelola Pengguna') {
-                                                                                echo 'active';
-                                                                            } ?>">
+                <a href="<?= base_url('admin/user') ?>" class="nav-link <?= $pagename == 'Kelola Pengguna' ? 'active' : ''; ?>">
                     <i class="nav-icon fas fa-user"></i>
-                    <p>
-                        Kelola Pengguna
-                    </p>
+                    <p>Kelola Pengguna</p>
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="<?= base_url('admin/preferences') ?>" class="nav-link <?php if ($pagename == 'Preferensi') {
-                                                                                        echo 'active';
-                                                                                    } ?>">
+            <li class="nav-item has-treeview <?= $pagename == 'Kepala Dinas' || $pagename == 'Profil Dinas' ? 'menu-open' : ''; ?>">
+                <a href="#" class="nav-link <?= $pagename == 'Kepala Dinas' || $pagename == 'Profil Dinas' ? 'active' : ''; ?>">
                     <i class="nav-icon fas fa-cog"></i>
-                    <p>
-                        Preferensi
-                    </p>
+                    <p>Pengaturan<i class="fas fa-angle-left right"></i></p>
                 </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="<?= base_url('admin/profil') ?>" class="nav-link <?= $pagename == 'Profil Dinas' ? 'active' : ''; ?>">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Profil Dinas</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('admin/kepala') ?>" class="nav-link <?= $pagename == 'Kepala Dinas' ? 'active' : '' ?>">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Kepala Dinas</p>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <?php endif; ?>
         </ul>

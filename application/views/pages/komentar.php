@@ -12,7 +12,7 @@
                         </h3>
                     </div>
                     <div class="card-body">
-                        <table class="table table-bordered table-hover">
+                        <table class="table table-bordered table-hover" id="tblkomentar">
                             <thead>
                                 <tr>
                                     <th>Nama</th>

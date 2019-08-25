@@ -8,5 +8,10 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+<!-- SweetAlert2 -->
+<script src="<?= base_url('assets/plugins/sweetalert2/sweetalert2.all.min.js') ?>"></script>
+<!-- daterangepicker -->
+<script src="<?= base_url('assets/plugins/moment/moment-with-locales.min.js') ?>"></script>
+<script src="<?= base_url('assets/plugins/daterangepicker/daterangepicker.js') ?>"></script>
 <!-- Custom Script -->
 <script src="<?= base_url('assets/dist/js/blog.js') ?>"></script>

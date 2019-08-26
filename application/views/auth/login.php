@@ -45,10 +45,10 @@
                </div>
                <div class="col-12">
                   <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-               </div>T
+               </div>
             </form>
 
-            <p class="mb-1">
+            <p class="mb-1 mt-1">
                <a href="#">I forgot my password</a>
             </p>
          </div>

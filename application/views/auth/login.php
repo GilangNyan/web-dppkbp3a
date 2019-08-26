@@ -10,7 +10,8 @@
    <div class="login-box">
       <div class="login-logo">
          <img width="100px" class="image mb-4" src="<?= base_url('assets/img/kotatasikmalaya.png') ?>" alt="">
-         <h2>DPPKBP3A KOTA TASIKMALAYA</h2>
+         <h2>DINAS PPKBP3A</h2>
+         <h3>KOTA TASIKMALAYA</h3>
       </div>
       <!-- /.login-logo -->
       <div class="card">
@@ -47,8 +48,7 @@
                   <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
                </div>
             </form>
-
-            <p class="mb-1 mt-1">
+            <p class="mb-1 mt-1 text-center">
                <a href="#">I forgot my password</a>
             </p>
          </div>

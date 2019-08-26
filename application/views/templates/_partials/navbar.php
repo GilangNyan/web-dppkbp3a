@@ -60,7 +60,7 @@
                 <i class="far fa-user"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
-                <a href="<?= base_url('admin/setelan/') . $user->username ?>" class="dropdown-item">
+                <a href="<?= base_url('admin/setelan/') . $user->id ?>" class="dropdown-item">
                     <i class="fas fa-cog mr-2"></i> Setelan
                 </a>
                 <div class="dropdown-divider"></div>

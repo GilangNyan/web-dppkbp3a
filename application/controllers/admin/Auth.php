@@ -34,7 +34,6 @@ class Auth extends CI_Controller
             $username = $this->input->post('username');
             $password = $this->input->post('password');
             $user = $this->auth_model->get_user($username);
-            var_dump('user');
             if ($user) {
                 if (password_verify($password, $user['password'])) {
                     $this->auth_model->login($user);

@@ -1,9 +1,4 @@
 <div id="carouselId" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselId" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselId" data-slide-to="1"></li>
-        <li data-target="#carouselId" data-slide-to="2"></li>
-    </ol>
     <div class="carousel-inner" role="listbox">
         <?php
         $i = 0;

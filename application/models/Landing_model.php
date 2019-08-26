@@ -54,10 +54,10 @@ class Landing_model extends CI_Model
     {
         $this->db->select('post.*, user.username, user.nama, user.role');
         $this->db->from('post');
-        $this->db->join('user', 'post.author = user.id', 'inner');
+        $this->db->join('user', 'post.author = user.id', 'LEFT');
         $this->db->where('post.status', 1);
         $this->db->order_by('tanggal', 'DESC');
-        $this->db->limit($limit, $start);
+        $this->db->limit($limit, $start + 5  );
         return $this->db->get()->result();
     }
 
@@ -76,7 +76,7 @@ class Landing_model extends CI_Model
         $this->db->from('post');
         $this->db->where('status', 1);
         $this->db->order_by('tanggal', 'DESC');
-        $this->db->limit(3, 0);
+        $this->db->limit(5, 0);
         return $this->db->get()->result();
     }
 

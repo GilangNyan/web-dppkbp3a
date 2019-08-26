@@ -9,6 +9,7 @@ class Artikel extends CI_Controller
         $this->load->model('artikel_model');
         $this->load->model('landing_model');
         $this->load->model('halaman_model');
+        $this->load->model('preferences_model');
     }
 
     public function index()
@@ -124,5 +125,15 @@ class Artikel extends CI_Controller
         // print_r($data['query']);
         // exit;
         $this->load->view('pages/blog/artikel', $data);
+    }
+
+    public function sambutan()
+    {
+        $data['parent_pages'] = $this->halaman_model->get_parent_pages();
+        $data['sub_pages'] = $this->halaman_model->get_sub_pages();
+        $data['kepala'] = $this->preferences_model->getKepala();
+        $data['photo_kepala'] = $this->preferences_model->getFotoKepala();
+        $data['sambutan'] = $this->preferences_model->getSambutan();
+        $this->load->view('pages/blog/sambutan', $data);
     }
 }

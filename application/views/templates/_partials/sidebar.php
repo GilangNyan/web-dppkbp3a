@@ -6,7 +6,7 @@
             <img src="<?= base_url('assets/dist/img/' . $user->image) ?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a href="<?= base_url('admin/setelan/') . $user->username ?>" class="d-block"><?= $user->nama ?></a>
+            <a href="<?= base_url('admin/setelan/') . $user->id ?>" class="d-block"><?= $user->nama ?></a>
         </div>
     </div>
 

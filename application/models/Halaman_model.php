@@ -81,17 +81,13 @@ class Halaman_model extends CI_Model
 
     public function get_parent_pages()
     {
-        return $this->db
-            ->where('parent', '')
-            ->or_where('parent IS NULL')
-            ->get('halaman');
+        return $this->db->query("SELECT * FROM halaman WHERE parent = '' OR parent IS NULL");
     }
 
-    public function get_sub_pages()
+    public function get_sub_pages($id_halaman = NULL)
     {
         return $this->db
-            ->where('parent <>', '')
-            ->or_where('parent IS NOT NULL')
+            ->where('parent', $id_halaman)
             ->get('halaman');
     }
 }

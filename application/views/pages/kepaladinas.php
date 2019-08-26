@@ -21,7 +21,7 @@
                                 <img class="img-fluid mb-2" src="<?= base_url('assets/dist/img/') . $foto->foto ?>" alt="Foto Kepala Dinas">
                                 <?php endforeach; ?>
                                 <form method="post" action="" enctype="multipart/form-data" id="formfoto">
-                                    <input type="file" name="foto" id="foto" hidden>
+                                    <input type="file" name="foto" id="foto" accept="image/*" hidden>
                                     <button type="button" id="btnfoto" class="btn btn-primary">Ganti Foto</button>
                                 </form>
                             </div>

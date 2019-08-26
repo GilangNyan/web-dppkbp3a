@@ -13,8 +13,9 @@
                 <a class="nav-link" href="<?= base_url() ?>"><i class="fas fa-home"></i> <span class="sr-only">(current)</span></a>
             </li>
             <?php foreach ($parent_pages->result() as $parent_page) : ?>
-            <div class="nav-item dropdown">
+            <div class="nav-item">
                 <a href="#" class="nav-link dropdown-toggle" id="<?= $parent_page->id_halaman ?>" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= strtoupper($parent_page->judul) ?></a>
+                <?php if ($sub_pages->num_rows() > 0) { ?>
                 <div class="dropdown-menu" aria-labelledby="<?= $parent_page->id_halaman ?>">
                     <?php foreach ($sub_pages->result() as $sub_page) : ?>
                     <?php if ($parent_page->id_halaman == $sub_page->parent) : ?>
@@ -22,6 +23,7 @@
                     <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
+             <?php } ?>
             </div>
             <?php endforeach; ?>
         </ul>

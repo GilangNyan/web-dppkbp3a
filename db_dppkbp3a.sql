@@ -34,7 +34,7 @@ CREATE TABLE `halaman` (
   `isi` text NOT NULL,
   `tanggal` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `slug` varchar(150) NOT NULL,
-  `parent` varchar(255) NOT NULL
+  `parent` varchar(255) NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

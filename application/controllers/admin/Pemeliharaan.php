@@ -29,18 +29,27 @@ class Pemeliharaan extends CI_Controller
             'filename'      => 'db_dppkbp3a.sql',           // File name - NEEDED ONLY WITH ZIP FILES
             'add_drop'      => TRUE,                        // Whether to add DROP TABLE statements to backup file
             'add_insert'    => TRUE,                        // Whether to add INSERT data to backup file
-            'newline'       => "\n"                         // Newline character used in backup file
+            'newline'       => "\n",                        // Newline character used in backup file
+            'foreign_key_checks' => FALSE
         );
 
         $backup = $this->dbutil->backup($prefs); // Backup
 
-        write_file('backup/database/db_webdppkbp3a.zip', $backup); // Untuk keperluan restore
-        force_download('db_webdppkbp3a.zip', $backup);
+        write_file('backup/database/db_dppkbp3a.zip', $backup); // Untuk keperluan restore
+        force_download('db_dppkbp3a.zip', $backup);
     }
 
     public function restoreDB()
     {
-        $isifile = file_get_contents('./backup/database/db_webdppkbp3a.zip');
+        $zip = new ZipArchive;
+        if ($zip->open('backup/database/db_dppkbp3a.zip') === true) {
+            $zip->extractTo('backup/database/');
+            $zip->close();
+            echo 'Berhasil diekstrak.';
+        } else {
+            echo 'Gagal diekstrak';
+        }
+        $isifile = file_get_contents('./backup/database/db_dppkbp3a.sql');
         $stringquery = rtrim($isifile, "\n;");
         $arrayquery = explode(";", $stringquery);
         foreach ($arrayquery as $query) {

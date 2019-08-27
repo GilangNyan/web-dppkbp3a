@@ -55,5 +55,7 @@ class Pemeliharaan extends CI_Controller
         foreach ($arrayquery as $query) {
             $this->db->query($query);
         }
+        unlink('./backup/database/db_dppkbp3a.sql');
+        $this->session->set_flashdata('message', 'Proses restore database berhasil!');
     }
 }

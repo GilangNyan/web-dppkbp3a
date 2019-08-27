@@ -210,8 +210,15 @@ class User_model extends CI_Model
             $config['image_library'] = 'gd2';
             $config['source_image'] = './assets/dist/img/' . $data['file_name'];
             // $config['create_thumb'] = true;
-            // $config['width'] = 300;
-            $config['height'] = 300;
+            $imageSize = $this->image_lib->get_image_properties($config['source_image'], TRUE);
+            if ($imageSize['width'] > $imageSize['height']) {
+                $config['height'] = 300;
+            } else if ($imageSize['width'] < $imageSize['height']) {
+                $config['width'] = 300;
+            } else {
+                $config['height'] = 300;
+                $config['width'] = 300;
+            }
             $config['maintain_ratio'] = true;
 
             // Lakukan Resize Gambar
@@ -227,8 +234,14 @@ class User_model extends CI_Model
             // $config['create_thumb'] = true;
             $config['width'] = 300;
             $config['height'] = 300;
-            // $config['y_axis'] = round($imageSize['height'] / 4);
-            $config['x_axis'] = round($imageSize['width'] / 4);
+            if ($imageSize['width'] > $imageSize['height']) {
+                $config['x_axis'] = round($imageSize['width'] / 4);
+            } else if ($imageSize['width'] < $imageSize['height']) {
+                $config['y_axis'] = round($imageSize['height'] / 4);
+            } else {
+                $config['y_axis'] = round($imageSize['height'] / 4);
+                $config['x_axis'] = round($imageSize['width'] / 4);
+            }
             $config['maintain_ratio'] = false;
 
             // Lakukan Crop Gambar

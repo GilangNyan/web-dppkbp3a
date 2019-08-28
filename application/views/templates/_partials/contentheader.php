@@ -9,14 +9,6 @@
                 <span class="text-muted float-sm-right" id="jam"></span>
             </div><!-- /.col -->
         </div><!-- /.row -->
-        <div class="row mb-2">
-            <div class="col-sm-12">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>">Home</a></li>
-                    <li class="breadcrumb-item active"><?= $pagename ?></li>
-                </ol>
-            </div>
-        </div>
     </div><!-- /.container-fluid -->
 </div>
 <!-- /.content-header -->

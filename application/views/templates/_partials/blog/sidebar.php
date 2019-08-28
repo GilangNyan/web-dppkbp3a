@@ -28,20 +28,62 @@
         </div>
         <div class="card-body">
             <div class="accordion" id="accordionExample">
+                <?php foreach ($archiveyear as $year) : ?>
                 <div class="card">
-                    <div class="card-header" id="headingOne">
+                    <div class="card-header p-0" id="headingOne">
                         <h2 class="mb-0">
                             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                Collapsible Group Item #1
+                                <?= $year->tahun ?>
                             </button>
                         </h2>
                     </div>
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            <?php foreach ($archivemonth as $month) :
+                                    switch ($month->bulan) {
+                                        case "01":
+                                            $nbulan = "Januari";
+                                            break;
+                                        case "02":
+                                            $nbulan = "Februari";
+                                            break;
+                                        case "03":
+                                            $nbulan = "Maret";
+                                            break;
+                                        case "04":
+                                            $nbulan = "April";
+                                            break;
+                                        case "05":
+                                            $nbulan = "Mei";
+                                            break;
+                                        case "06":
+                                            $nbulan = "Juni";
+                                            break;
+                                        case "07":
+                                            $nbulan = "Juli";
+                                            break;
+                                        case "08":
+                                            $nbulan = "Agustus";
+                                            break;
+                                        case "09":
+                                            $nbulan = "September";
+                                            break;
+                                        case "10":
+                                            $nbulan = "Oktober";
+                                            break;
+                                        case "11":
+                                            $nbulan = "November";
+                                            break;
+                                        case "12":
+                                            $nbulan = "Desember";
+                                            break;
+                                    } ?>
+                            <a name="bulan" id="bulan" class="btn btn-block btn-outline-secondary" href="<?= base_url('arsip/') . $year->tahun . '/' . $month->bulan ?>" role="button"><?= $nbulan ?></a>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

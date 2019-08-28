@@ -14,6 +14,9 @@ class Artikel extends CI_Controller
 
     public function index()
     {
+        $data['archiveyear'] = $this->sidebar_model->archiveYear();
+        $data['archivemonth'] = $this->sidebar_model->archiveMonth();
+
         // Pagination
         $config['base_url'] = base_url('artikel');
         $config['total_rows'] = $this->artikel_model->published();
@@ -59,7 +62,8 @@ class Artikel extends CI_Controller
     public function getArtikel($tahun, $bulan, $slug)
     {
         $this->load->library('disqus');
-        $postid = $this->session->userdata('post_id');
+        $data['archiveyear'] = $this->sidebar_model->archiveYear();
+        $data['archivemonth'] = $this->sidebar_model->archiveMonth();
         $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['sub_pages'] = $this->halaman_model->get_sub_pages();
         $data['kepala'] = $this->landing_model->getKepala();
@@ -70,6 +74,58 @@ class Artikel extends CI_Controller
         $data['user'] = $this->user_model->get_current_user();
 
         $this->load->view('pages/blog/posting', $data);
+    }
+
+    public function getArchive($tahun, $bulan)
+    {
+        switch ($bulan) {
+            case "01":
+                $nbulan = "Januari";
+                break;
+            case "02":
+                $nbulan = "Februari";
+                break;
+            case "03":
+                $nbulan = "Maret";
+                break;
+            case "04":
+                $nbulan = "April";
+                break;
+            case "05":
+                $nbulan = "Mei";
+                break;
+            case "06":
+                $nbulan = "Juni";
+                break;
+            case "07":
+                $nbulan = "Juli";
+                break;
+            case "08":
+                $nbulan = "Agustus";
+                break;
+            case "09":
+                $nbulan = "September";
+                break;
+            case "10":
+                $nbulan = "Oktober";
+                break;
+            case "11":
+                $nbulan = "November";
+                break;
+            case "12":
+                $nbulan = "Desember";
+                break;
+        }
+        $data['judulcard'] = 'Arsip bulan ' . $nbulan . ' ' . $tahun;
+        $data['archiveyear'] = $this->sidebar_model->archiveYear();
+        $data['archivemonth'] = $this->sidebar_model->archiveMonth();
+        $data['parent_pages'] = $this->halaman_model->get_parent_pages();
+        $data['sub_pages'] = $this->halaman_model->get_sub_pages();
+        $data['kepala'] = $this->landing_model->getKepala();
+        $data['user'] = $this->user_model->get_current_user();
+        $data['archive'] = $this->artikel_model->getArchive($tahun, $bulan);
+
+        $this->load->view('pages/blog/arsip', $data);
     }
 
     public function addKomentar()
@@ -129,6 +185,7 @@ class Artikel extends CI_Controller
 
     public function sambutan()
     {
+        $data['archivemonth'] = $this->sidebar_model->archiveMonth();
         $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['sub_pages'] = $this->halaman_model->get_sub_pages();
         $data['kepala'] = $this->preferences_model->getKepala();

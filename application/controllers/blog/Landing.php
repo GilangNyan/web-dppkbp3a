@@ -17,6 +17,8 @@ class Landing extends CI_Controller
         $data['kepala'] = $this->landing_model->getKepala();
         $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['sub_pages'] = $this->halaman_model->get_sub_pages();
+        $data['archiveyear'] = $this->sidebar_model->archiveYear();
+        $data['archivemonth'] = $this->sidebar_model->archiveMonth();
 
         // Pagination Start
         // Pagination

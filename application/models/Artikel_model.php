@@ -90,4 +90,16 @@ class Artikel_model extends CI_Model
 
         return $this->db->insert('komentar', $data);
     }
+
+    function getArchive($tahun, $bulan)
+    {
+        $this->db->select('post.*, user.username, user.nama, user.role');
+        $this->db->from('post');
+        $this->db->join('user', 'post.author = user.id', 'inner');
+        $this->db->where('post.status', 1);
+        $this->db->where('year(tanggal)', $tahun);
+        $this->db->where('month(tanggal)', $bulan);
+        $this->db->order_by('tanggal', 'DESC');
+        return $this->db->get()->result();
+    }
 }

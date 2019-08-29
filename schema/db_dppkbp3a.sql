@@ -146,7 +146,7 @@ INSERT INTO `post` (`id`, `judul`, `isi`, `tanggal`, `slug`, `image`, `author`, 
 CREATE TABLE `user` (
   `id` varchar(255) NOT NULL,
   `nama` varchar(255) NOT NULL,
-  `username` varchar(12) NOT NULL,
+  `username` varchar(15) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL DEFAULT 'default.jpg',

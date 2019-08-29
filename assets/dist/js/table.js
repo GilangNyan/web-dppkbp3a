@@ -20,6 +20,12 @@ $(document).ready(function () {
 			"sEmptyTable": "Tidads"
 		},
 	});
+	$('#allAlbums').DataTable({
+		"language": {
+			"url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json",
+			"sEmptyTable": "Tidads"
+		},
+	});
 	$('#tblkomentar').DataTable({
 		"language": {
 			"url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json",

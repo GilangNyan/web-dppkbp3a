@@ -55,5 +55,25 @@ $(document).ready(function () {
 				document.location.href = href;
 			}
 		});
-	})
+	});
+
+	$('.btn-hapusalbum').click(function (e) {
+		e.preventDefault();
+		const href = $(this).attr('href');
+		Swal.fire({
+			type: 'warning',
+			title: 'Apakah anda yakin album akan dihapus ?',
+			text: 'album yang dihapus tidak bisa dikembalikan!',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Ya, hapus',
+			cancelButtonText: "Batal"
+		}).then((result) => {
+			if (result.value) {
+				document.location.href = href;
+			}
+		});
+	});
+
 });

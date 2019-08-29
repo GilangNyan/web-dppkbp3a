@@ -77,7 +77,7 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => 'root',
+	'password' => '',
 	'database' => 'db_dppkbp3a',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
@@ -94,3 +94,23 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+$mysqldumplocation = "./backup/dumpquery.sql";
+
+// Cek Database
+mysqli_connect(
+	$db['default']['hostname'],
+	$db['default']['username'],
+	$db['default']['password']
+);
+$mysqli = new mysqli(
+	$db['default']['hostname'],
+	$db['default']['username'],
+	$db['default']['password']
+);
+
+if (!$mysqli->select_db($db['default']['database'])) {
+	$mysqli->query("CREATE DATABASE " . $db['default']['database']);
+	$mysqli->select_db($db['default']['database']);
+	$mysqli->multi_query(file_get_contents($mysqldumplocation));
+}

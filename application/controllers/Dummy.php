@@ -1,14 +1,17 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dummy extends CI_Controller {
+class Dummy extends CI_Controller
+{
 
-   public function index() {
+   public function index()
+   {
       $this->set_users();
       // $this->set_tulisan();
       // $this->set_halaman();
    }
 
-   public function set_users() {
+   public function set_users()
+   {
       $this->db->empty_table('komentar');
       $this->db->empty_table('user');
       $this->db->set('id', 1);
@@ -18,15 +21,16 @@ class Dummy extends CI_Controller {
       $this->db->set('password', password_hash('123456', PASSWORD_BCRYPT));
       $this->db->set('image', 'default.jpg');
       $this->db->set('role', 'ADMIN');
-      $this->db->set('dibuat_pada', date('Y-m-d H:i:s'));
+      // $this->db->set('dibuat_pada', date('Y-m-d H:i:s'));
       $this->db->insert('user');
    }
 
-   public function set_halaman() {
+   public function set_halaman()
+   {
       $this->db->truncate('halaman');
       $faker = Faker\Factory::create();
       $data  = [];
-      for($i = 1; $i <= 5; $i++) {
+      for ($i = 1; $i <= 5; $i++) {
          $title = $faker->sentence($nbWords = 1, $variableNbWords = true);
          $date = $faker->dateTimeBetween($startDate = '-4 months', $endDate = 'now', $timezone = 'Asia/Jakarta');
          $data[] = [
@@ -41,12 +45,13 @@ class Dummy extends CI_Controller {
       $this->db->insert_batch('halaman', $data);
    }
 
-   public function set_tulisan() {
+   public function set_tulisan()
+   {
       // $this->db->delete('post');
       // $this->db->delete('komentar');
       $faker = Faker\Factory::create();
       $data  = [];
-      for($i = 1; $i <= 35; $i++) {
+      for ($i = 1; $i <= 35; $i++) {
          $title = $faker->sentence($nbWords = 1, $variableNbWords = true);
          $date = $faker->dateTimeBetween($startDate = '-4 months', $endDate = 'now', $timezone = 'Asia/Jakarta');
          $data[] = [

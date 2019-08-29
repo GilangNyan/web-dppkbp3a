@@ -46,40 +46,66 @@ class Post extends CI_Controller
         json_encode($query);
     }
 
-    public function savePost()
+    public function addPost()
     {
-        $judul = $this->input->post('judul');
-        $isi = $this->input->post('isi');
-        //Membuat slug
-        $string = preg_replace('/[^a-zA-Z0-9 \&%|{.}=,?!*()"-_+$@;<>\']/', '', $judul);
-        $trim = trim($string);
-        $pre_slug = strtolower(str_replace(" ", "-", $trim));
-        $slug = $pre_slug . '.html';
-        $status = $this->input->post('status');
+        $this->form_validation->set_rules($this->post_model->addUserRules());
 
-        $this->post_model->simpanPost($judul, $isi, $slug, $status);
-        if ($status == 0) {
-            $this->session->set_flashdata('message', 'Artikel berhasil disimpan!');
-            redirect('admin/post');
-        } else if ($status == 1) {
-            $this->session->set_flashdata('message', 'Artikel berhasil diterbitkan!');
-            redirect('admin/post');
+        if ($this->form_validation->run() == false) {
+            $data['parent_pages'] = $this->halaman_model->get_parent_pages();
+            $data['user'] = $this->user_model->get_current_user();
+            $data['pagename'] = 'Tambah Artikel';
+            $this->load->view('templates/header', $data);
+            $this->load->view('pages/tambahPost', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $judul = $this->input->post('judul');
+            $isi = $this->input->post('isi');
+            //Membuat slug
+            $string = preg_replace('/[^a-zA-Z0-9 \&%|{.}=,?!*()"-_+$@;<>\']/', '', $judul);
+            $trim = trim($string);
+            $pre_slug = strtolower(str_replace(" ", "-", $trim));
+            $slug = $pre_slug . '.html';
+            $status = $this->input->post('status');
+
+            $this->post_model->simpanPost($judul, $isi, $slug, $status);
+            if ($status == 0) {
+                $this->session->set_flashdata('message', 'Artikel berhasil disimpan!');
+                redirect('admin/post');
+            } else if ($status == 1) {
+                $this->session->set_flashdata('message', 'Artikel berhasil diterbitkan!');
+                redirect('admin/post');
+            }
         }
     }
 
-    public function updatePost()
+    public function updatePost($postId = null)
     {
-        $postId = $this->input->post('id');
-        $judul = $this->input->post('judul');
-        //Membuat slug
-        $string = preg_replace('/[^a-zA-Z0-9 \&%|{.}=,?!*()"-_+$@;<>\']/', '', $judul);
-        $trim = trim($string);
-        $pre_slug = strtolower(str_replace(" ", "-", $trim));
-        $slug = $pre_slug . '.html';
+        if (!isset($postId)) {
+            redirect('admin/post');
+        }
 
-        $this->post_model->updatePost($postId, $slug);
-        $this->session->set_flashdata('message', 'Artikel berhasil diedit!');
-        redirect('admin/post');
+        $this->form_validation->set_rules($this->post_model->editUserRules());
+
+        if ($this->form_validation->run() == false) {
+            $data['parent_pages'] = $this->halaman_model->get_parent_pages();
+            $data['user'] = $this->user_model->get_current_user();
+            $data['pagename'] = 'Edit Artikel';
+            $data['posting'] = $this->post_model->getSpecificPost($postId);
+            $this->load->view('templates/header', $data);
+            $this->load->view('pages/editPost', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $judul = $this->input->post('judul');
+            //Membuat slug
+            $string = preg_replace('/[^a-zA-Z0-9 \&%|{.}=,?!*()"-_+$@;<>\']/', '', $judul);
+            $trim = trim($string);
+            $pre_slug = strtolower(str_replace(" ", "-", $trim));
+            $slug = $pre_slug . '.html';
+
+            $this->post_model->updatePost($postId, $slug);
+            $this->session->set_flashdata('message', 'Artikel berhasil diedit!');
+            redirect('admin/post');
+        }
     }
 
     public function deletePost($id)

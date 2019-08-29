@@ -11,9 +11,9 @@
                             Post
                         </h3>
                         <div class="sisi ml-auto p-2">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPost">
+                            <a href="<?= base_url('admin/post/addpost') ?>" class="btn btn-primary">
                                 Tambah Post
-                            </button>
+                            </a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -28,22 +28,23 @@
                             </thead>
                             <tbody>
                                 <?php foreach ($posting as $post) : ?>
-                                <tr>
-                                    <td><?= $post->judul ?></td>
-                                    <td><?= $post->nama ?></td>
-                                    <td><?= $post->tanggal ?></td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm text-success" data-postid="<?= $post->id ?>"><i class="fas fa-eye"></i> Lihat</button>
-                                        <?php if ($this->session->userdata('role') == 'GOD' || $this->session->userdata('role') == 'ADMIN' || $post->username == $this->session->userdata('username')) : ?>
-                                        <a href="<?= base_url('admin/post/getSpecificPost/') . $post->id ?>" class="btn-edit btn btn-sm text-primary" data-toggle="modal" data-target="#modalEditPost" data-postid="<?= $post->id ?>"><i class="fas fa-edit"></i> Edit</a>
-                                        <a href="<?= base_url('admin/post/deletePost/') . $post->id ?>" class="btn-hapus btn btn-sm text-danger"><i class="fas fa-trash-alt"></i> Hapus</a>
-                                        <?php endif; ?>
-                                    </td>
-                                    <input type="hidden" name="val-judul" class="val-judul" value="<?= $post->judul ?>">
-                                    <input type="hidden" name="val-isi" class="val-isi" value="<?= htmlspecialchars($post->isi) ?>">
-                                    <input type="hidden" name="val-gambar" class="val-gambar" value="<?= $post->image ?>">
-                                    <input type="hidden" name="val-status" class="val-status" value="<?= $post->status ?>">
-                                </tr>
+                                    <tr>
+                                        <td><?= $post->judul ?></td>
+                                        <td><?= $post->nama ?></td>
+                                        <td><?= $post->tanggal ?></td>
+                                        <td>
+                                            <?php
+                                                $time = strtotime($post->tanggal);
+                                                $year = date('Y', $time);
+                                                $month = date('m', $time);
+                                                ?>
+                                            <a href="<?= base_url() . $year . '/' . $month . '/' . $post->slug ?>" class="btn btn-sm text-success" target="_blank"><i class="fas fa-eye"></i> Lihat</a>
+                                            <?php if ($this->session->userdata('role') == 'GOD' || $this->session->userdata('role') == 'ADMIN' || $post->username == $this->session->userdata('username')) : ?>
+                                                <a href="<?= base_url('admin/post/editPost/') . $post->id ?>" class="btn-edit btn btn-sm text-primary"><i class="fas fa-edit"></i> Edit</a>
+                                                <a href="<?= base_url('admin/post/deletePost/') . $post->id ?>" class="btn-hapus btn btn-sm text-danger"><i class="fas fa-trash-alt"></i> Hapus</a>
+                                            <?php endif; ?>
+                                        </td>
+                                    </tr>
                                 <?php endforeach; ?>
                             </tbody>
                             <tfoot>

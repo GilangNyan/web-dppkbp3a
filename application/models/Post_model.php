@@ -31,7 +31,7 @@ class Post_model extends CI_Model
 
     function getSpecificPost($postId)
     {
-        return $this->db->get_where('post', ['id' => $postId])->row_array();
+        return $this->db->get_where('post', ['id' => $postId])->row();
     }
 
     function getPublishedPost()
@@ -102,5 +102,41 @@ class Post_model extends CI_Model
             $filename = explode(".", $post->image)[0];
             return array_map('unlink', glob(FCPATH . "assets/img/$filename.*"));
         }
+    }
+
+    function addUserRules()
+    {
+        $rules = [
+            [
+                'field' => 'judul',
+                'label' => 'Judul Artikel',
+                'rules' => 'trim|required|max_length[150]'
+            ],
+            [
+                'field' => 'isi',
+                'label' => 'Isi Artikel',
+                'rules' => 'trim|required'
+            ]
+        ];
+
+        return $rules;
+    }
+
+    function editUserRules()
+    {
+        $rules = [
+            [
+                'field' => 'judul',
+                'label' => 'Judul Artikel',
+                'rules' => 'trim|required|max_length[150]'
+            ],
+            [
+                'field' => 'isi2',
+                'label' => 'Isi Artikel',
+                'rules' => 'trim|required'
+            ]
+        ];
+
+        return $rules;
     }
 }

@@ -3,8 +3,23 @@
 class Dummy extends CI_Controller {
 
    public function index() {
-      $this->set_tulisan();
-      $this->set_halaman();
+      $this->set_users();
+      // $this->set_tulisan();
+      // $this->set_halaman();
+   }
+
+   public function set_users() {
+      $this->db->empty_table('komentar');
+      $this->db->empty_table('user');
+      $this->db->set('id', 1);
+      $this->db->set('nama', 'Administrator');
+      $this->db->set('username', 'admin');
+      $this->db->set('email', 'admin@gmail.com');
+      $this->db->set('password', password_hash('123456', PASSWORD_BCRYPT));
+      $this->db->set('image', 'default.jpg');
+      $this->db->set('role', 'ADMIN');
+      $this->db->set('dibuat_pada', date('Y-m-d H:i:s'));
+      $this->db->insert('user');
    }
 
    public function set_halaman() {

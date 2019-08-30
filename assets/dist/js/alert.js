@@ -8,10 +8,19 @@ if (flashData.includes('berhasil') || flashData.includes('Berhasil')) {
 		showConfirmButton: false,
 		timer: 3000
 	});
-} else if (flashData.includes('tidak')) {
+} else if (flashData.includes('tidak') || flashData.includes('gagal')) {
 	Swal.fire({
 		position: 'top-end',
 		type: 'error',
+		title: flashData,
+		toast: true,
+		showConfirmButton: false,
+		timer: 3000
+	});
+} else if (flashData.includes('pemulihan')) {
+	Swal.fire({
+		position: 'top-end',
+		type: 'info',
 		title: flashData,
 		toast: true,
 		showConfirmButton: false,

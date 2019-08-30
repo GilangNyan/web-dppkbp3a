@@ -102,4 +102,12 @@ class Artikel_model extends CI_Model
         $this->db->order_by('tanggal', 'DESC');
         return $this->db->get()->result();
     }
+
+    function searchPost($title)
+    {
+        $this->db->like('judul', $title, 'both');
+        $this->db->order_by('judul', 'ASC');
+        $this->db->limit(10);
+        return $this->db->get('post')->result();
+    }
 }

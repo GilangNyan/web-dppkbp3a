@@ -74,37 +74,38 @@
                                         break;
                                 }
                                 ?>
-                            <div class="card mb-3">
-                                <div class="row no-gutters">
-                                    <div class="col-md-5">
-                                        <a href="<?= base_url() . $tahun . '/' . $bulan . '/' . $row->slug ?>">
-                                            <img src="<?= base_url('assets/img/') . $row->image ?>" class="card-img rounded-0 img-posting" alt="<?= $row->judul ?>">
-                                        </a>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <div class="card-body p-3">
-                                            <h5 class="card-title">
-                                                <a href="<?= base_url() . $tahun . '/' . $bulan . '/' . $row->slug ?>"><?= $row->judul ?></a>
-                                            </h5>
-                                            <p class="card-text mb-0 text-justify crop-content">
-                                                <?= strip_tags($row->isi) ?>
-                                            </p>
-                                            <div class="d-flex justify-content-between align-items-center mt-1">
-                                                <small class="text-muted"><i class="fas fa-user mr-1"></i><?= "$row->nama" ?><i class="far fa-clock ml-2 mr-1"></i><?= $tanggal . ' ' . $nbulan . ' ' . $tahun ?></small>
-                                                <a href="<?= base_url() . $tahun . '/' . $bulan . '/' . $row->slug ?>" class="btn btn-sm btn-light rounded-0">Selengkapnya &raquo;</a>
+                                    <div class="card mb-3">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-5">
+                                                <a href="<?= base_url() . $tahun . '/' . $bulan . '/' . $row->slug ?>">
+                                                    <img src="<?= base_url('assets/img/') . $row->image ?>" class="card-img rounded-0 img-posting" alt="<?= $row->judul ?>">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="card-body p-3">
+                                                    <h5 class="card-title">
+                                                        <a href="<?= base_url() . $tahun . '/' . $bulan . '/' . $row->slug ?>"><?= $row->judul ?></a>
+                                                    </h5>
+                                                    <p class="card-text mb-0 text-justify crop-content">
+                                                        <?= strip_tags($row->isi) ?>
+                                                    </p>
+                                                    <div class="d-flex justify-content-between align-items-center mt-1">
+                                                        <small class="text-muted"><i class="fas fa-user mr-1"></i><?= "$row->nama" ?><i class="far fa-clock ml-2 mr-1"></i><?= $tanggal . ' ' . $nbulan . ' ' . $tahun ?></small>
+                                                        <a href="<?= base_url() . $tahun . '/' . $bulan . '/' . $row->slug ?>" class="btn btn-sm btn-light rounded-0">Selengkapnya &raquo;</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <?php endforeach;
-                            echo $this->pagination->create_links(); ?>
+                                <?php endforeach;
+                                echo $this->pagination->create_links(); ?>
                         </div>
                     </div>
                 </div>
                 <?php $this->load->view('templates/_partials/blog/sidebar') ?>
             </div>
         </div>
+        <?php $this->load->view('templates/_partials/blog/backtotop') ?>
     </section>
 
     <?php $this->load->view('templates/_partials/blog/footer') ?>

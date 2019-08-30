@@ -13,15 +13,15 @@
                <a class="nav-link" href="<?= base_url() ?>"><i class="fas fa-home"></i> <span class="sr-only">(current)</span></a>
             </li>
             <?php foreach ($parent_pages->result() as $parent_page) {
-               $sub_pages = $this->halaman_model->get_sub_pages($parent_page->id_halaman);
-               if ($sub_pages->num_rows() > 0) { ?>
+                  $sub_pages = $this->halaman_model->get_sub_pages($parent_page->id_halaman);
+                  if ($sub_pages->num_rows() > 0) { ?>
                   <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="<?= base_url('pages/') . $parent_page->slug ?>" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <?= strtoupper($parent_page->judul) ?>
                      </a>
                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <?php foreach($sub_pages->result() as $sub_page) { ?>
-                        <a class="dropdown-item" href="<?= base_url('pages/') . $sub_page->slug ?>"><?= strtoupper($sub_page->judul) ?></a>
+                        <?php foreach ($sub_pages->result() as $sub_page) { ?>
+                           <a class="dropdown-item" href="<?= base_url('pages/') . $sub_page->slug ?>"><?= strtoupper($sub_page->judul) ?></a>
                         <?php } ?>
                      </div>
                   </li>
@@ -35,11 +35,11 @@
          <?php } ?>
          <form class="form-inline my-2 my-lg-0 mr-lg-3">
             <div class="input-group">
-               <input type="text" class="form-control" placeholder="Cari..." aria-label="Cari..." aria-describedby="basic-addon">
+               <input type="text" class="form-control" name="cari" id="cari" placeholder="Cari..." aria-label="Cari..." aria-describedby="basic-addon">
                <div class="input-group-append">
                   <span class="input-group-text" id="basic-addon"><i class="fas fa-search"></i></span>
                </div>
             </div>
          </form>
-      </div>
-   </nav>
+   </div>
+</nav>

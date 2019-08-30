@@ -89,4 +89,98 @@ class Auth extends CI_Controller
             redirect('login');
         }
     }
+
+    public function forget()
+    {
+        $rules = [
+            [
+                'field' => 'email',
+                'label' => 'email',
+                'rules' => 'trim|required|valid_email'
+            ]
+        ];
+        $this->form_validation->set_rules($rules);
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('auth/forgotpassword');
+        } else {
+            $email = $this->input->post('email');
+            $clean = $this->security->xss_clean($email);
+            $userinfo = $this->auth_model->getUserInfoByEmail($clean);
+
+            if (!$userinfo) {
+                $this->session->set_flashdata('message', 'Email tidak ditemukan!');
+                redirect('forget', 'refresh');
+            }
+
+            $token = $this->auth_model->insertToken($userinfo->id);
+            $qstring = $this->base64url_encode($token);
+            $url = base_url('admin/auth/reset/') . $qstring;
+            $link = '<a href="' . $url . '">' . $url . '</a>';
+
+            $message = '';
+            $message .= '<strong>Hai, anda menerima email ini karena ada permintaan untuk memperbaharui password anda.</strong><br>';
+            $message .= '<strong>Silahkan klik link ini: </strong>' . $link;
+
+            echo $message;
+            exit;
+        }
+    }
+
+    public function reset()
+    {
+        $token = $this->base64url_decode($this->uri->segment(4));
+        $cleanToken = $this->security->xss_clean($token);
+
+        $userinfo = $this->auth_model->isTokenValid($cleanToken);
+
+        if (!$userinfo) {
+            $this->session->set_flashdata('message', 'Token tidak valid atau kadaluarsa!');
+            redirect('login', 'refresh');
+        }
+
+        $rules = [
+            [
+                'field' => 'password',
+                'label' => 'Password',
+                'rules' => 'trim|required|min_length[6]'
+            ],
+            [
+                'field' => 'passconf',
+                'label' => 'Konfirmasi Password',
+                'rules' => 'trim|required|matches[password]'
+            ],
+        ];
+        $this->form_validation->set_rules($rules);
+
+        if ($this->form_validation->run() == false) {
+            $data['nama'] = $userinfo->nama;
+            $data['email'] = $userinfo->email;
+            $data['token'] = $this->base64url_encode($token);
+            $this->load->view('auth/resetpassword', $data);
+        } else {
+            $post = $this->input->post(null, true);
+            $cleanPost = $this->security->xss_clean($post);
+            $hashed = password_hash($cleanPost['password'], PASSWORD_DEFAULT);
+            $cleanPost['password'] = $hashed;
+            $cleanPost['id'] = $userinfo->id;
+            unset($cleanPost['passconf']);
+            if (!$this->auth_model->updatePassword($cleanPost)) {
+                $this->session->set_flashdata('message', 'Update password gagal.');
+            } else {
+                $this->session->set_flashdata('message', 'Password diperbarui.');
+            }
+            redirect('login');
+        }
+    }
+
+    private function base64url_encode($data)
+    {
+        return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
+    }
+
+    private function base64url_decode($data)
+    {
+        return base64_decode(str_pad(strtr($data, '-_', '+/'), strlen($data) % 4, '=', STR_PAD_RIGHT));
+    }
 }

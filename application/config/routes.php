@@ -62,6 +62,7 @@ $route['admin'] = 'admin/home';
 $route['login'] = 'admin/auth';
 $route['register'] = 'admin/auth/register';
 $route['logout'] = 'admin/logout';
+$route['forget'] = 'admin/auth/forget';
 $route['admin/menu'] = 'admin/halaman/menu';
 $route['admin/kepala'] = 'admin/preferences';
 $route['admin/profil'] = 'admin/preferences/profil';

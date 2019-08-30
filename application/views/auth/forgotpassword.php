@@ -16,28 +16,21 @@
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Masuk untuk melanjutkan</p>
-                <form action="<?= base_url('admin/auth') ?>" method="post">
+                <p class="login-box-msg">Masukkan email akun anda</p>
+                <form action="<?= base_url('admin/auth/forget') ?>" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Username" name="username" value="<?= set_value('username') ?>" required minlength="3" maxlength="12">
+                        <input type="text" class="form-control" placeholder="Email" name="email" value="<?= set_value('email') ?>" required>
                         <div class="input-group-append input-group-text">
-                            <span class="fas fa-user"></span>
+                            <span class="fas fa-envelope"></span>
                         </div>
                     </div>
-                    <?= form_error('username', '<small class="text-danger">', '</small>') ?>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password" name="password" required minlength="6">
-                        <div class="input-group-append input-group-text">
-                            <span class="fas fa-lock"></span>
-                        </div>
-                    </div>
-                    <?= form_error('password', '<small class="text-danger">', '</small>') ?>
+                    <?= form_error('email', '<small class="text-danger">', '</small>') ?>
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Masuk</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Kirim</button>
                     </div>
                 </form>
                 <p class="mb-1 mt-1 text-center">
-                    <a href="<?= base_url('forget') ?>">Lupa password?</a>
+                    <a href="<?= base_url('login') ?>">Kembali ke halaman login</a>
                 </p>
             </div>
             <!-- /.login-card-body -->

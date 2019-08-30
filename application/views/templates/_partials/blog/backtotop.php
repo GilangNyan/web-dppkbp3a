@@ -1,0 +1,1 @@
+<a href="#" id="back-to-top" class="btn btn-primary btn-lg back-to-top" role="button" title="Klik untuk kembali ke atas" data-toggle="tooltip" data-placement="left"><i class="fas fa-chevron-up"></i></a>

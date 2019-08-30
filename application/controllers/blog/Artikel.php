@@ -1,4 +1,7 @@
 <?php
+
+use function GuzzleHttp\json_encode;
+
 defined('BASEPATH') or exit('No direct script access allowed.');
 
 class Artikel extends CI_Controller
@@ -192,5 +195,18 @@ class Artikel extends CI_Controller
         $data['photo_kepala'] = $this->preferences_model->getFotoKepala();
         $data['sambutan'] = $this->preferences_model->getSambutan();
         $this->load->view('pages/blog/sambutan', $data);
+    }
+
+    public function autoSearch()
+    {
+        if ($this->input->get('term', true) != null) {
+            $result = $this->artikel_model->searchPost($this->input->get('cari'));
+            if (count($result) > 0) {
+                foreach ($result as $row) {
+                    $arr_result[] = $row->judul;
+                    echo json_encode($arr_result);
+                }
+            }
+        }
     }
 }

@@ -117,13 +117,39 @@ class Auth extends CI_Controller
             $qstring = $this->base64url_encode($token);
             $url = base_url('admin/auth/reset/') . $qstring;
             $link = '<a href="' . $url . '">' . $url . '</a>';
+            $data['link'] = $link;
 
             $message = '';
             $message .= '<strong>Hai, anda menerima email ini karena ada permintaan untuk memperbaharui password anda.</strong><br>';
             $message .= '<strong>Silahkan klik link ini: </strong>' . $link;
+            $messagehtml = $this->load->view('emailpemulihan', $data, TRUE);
 
-            echo $message;
-            exit;
+            $config['mailtype'] = 'html';
+            $config['protocol'] = 'smtp';
+            $config['smtp_host'] = 'smtp.mailtrap.io';
+            $config['smtp_user'] = '8866148ddd2a30';
+            $config['smtp_pass'] = 'f07ae3f322554d';
+            $config['smtp_port'] = 2525;
+            $config['newline'] = "\r\n";
+
+            $this->email->initialize($config);
+            $this->email->from('noreply@dppkbp3a.com', 'Admin DPPKBP3A');
+            $this->email->to($clean);
+            $this->email->subject('Reset password akun DPPKBP3A untuk akun ' . $userinfo->nama);
+            $this->email->message($messagehtml);
+            $this->email->set_alt_message($message);
+
+            // echo $message;
+            // exit;
+
+            if (!$this->email->send()) {
+                $this->session->set_flashdata('message', 'Email pemulihan gagal dikirim.');
+                redirect('login');
+                echo $this->email->print_debugger();
+            } else {
+                $this->session->set_flashdata('message', 'Email pemulihan berhasil dikirim.');
+                redirect('login');
+            }
         }
     }
 

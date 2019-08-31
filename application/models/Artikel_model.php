@@ -105,9 +105,11 @@ class Artikel_model extends CI_Model
 
     function searchPost($title)
     {
+        $this->db->select('*');
+        $this->db->from('post');
         $this->db->like('judul', $title, 'both');
         $this->db->order_by('judul', 'ASC');
         $this->db->limit(10);
-        return $this->db->get('post')->result();
+        return $this->db->get()->result();
     }
 }

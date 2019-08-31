@@ -197,16 +197,16 @@ class Artikel extends CI_Controller
         $this->load->view('pages/blog/sambutan', $data);
     }
 
-    public function autoSearch()
+    public function liveSearch()
     {
-        if ($this->input->get('term', true) != null) {
-            $result = $this->artikel_model->searchPost($this->input->get('cari'));
-            if (count($result) > 0) {
-                foreach ($result as $row) {
-                    $arr_result[] = $row->judul;
-                    echo json_encode($arr_result);
-                }
-            }
+        $searchquery = $this->artikel_model->searchPost($this->input->post('searchval'));
+        $result = "";
+        foreach ($searchquery as $res) {
+            $time = strtotime($res->tanggal);
+            $year = date('Y', $time);
+            $month = date('m', $time);
+            $result .= '<a href="' . base_url() . $year . '/' . $month . '/' . $res->slug . '" class="list-group-item list-group-item-action">' . $res->judul . '</a>';
         }
+        echo $result;
     }
 }

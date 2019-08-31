@@ -117,7 +117,9 @@ class Auth extends CI_Controller
             $qstring = $this->base64url_encode($token);
             $url = base_url('admin/auth/reset/') . $qstring;
             $link = '<a href="' . $url . '">' . $url . '</a>';
-            $data['link'] = $link;
+            $data['link'] = $url;
+            $data['nama'] = $userinfo->nama;
+            $data['tanggal'] = date('d/m/Y');
 
             $message = '';
             $message .= '<strong>Hai, anda menerima email ini karena ada permintaan untuk memperbaharui password anda.</strong><br>';

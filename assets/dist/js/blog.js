@@ -31,9 +31,21 @@ $(document).ready(function () {
 	$('#back-to-top').tooltip('show');
 });
 
-// Search Suggestions
-$(document).ready(function () {
-	$('#cari').autocomplete({
-		source: "artikel/autoSearch/?"
-	});
+// Live Search
+$('#cari').on('keyup', function () {
+	var cari = $('#cari').val();
+	if (cari == '') {
+		$('#searchData').empty();
+	} else {
+		$.ajax({
+			url: 'blog/artikel/liveSearch',
+			type: 'POST',
+			data: {
+				searchval: cari
+			},
+			success: function (res) {
+				$('#searchData').html(res);
+			}
+		})
+	}
 });

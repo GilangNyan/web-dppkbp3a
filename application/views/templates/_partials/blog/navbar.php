@@ -31,15 +31,14 @@
                   </li>
                <?php } ?>
             <?php } ?>
-
-         <?php } ?>
-         <form class="form-inline my-2 my-lg-0 mr-lg-3">
-            <div class="input-group">
-               <input type="text" class="form-control" name="cari" id="cari" placeholder="Cari..." aria-label="Cari..." aria-describedby="basic-addon">
-               <div class="input-group-append">
-                  <span class="input-group-text" id="basic-addon"><i class="fas fa-search"></i></span>
-               </div>
-            </div>
-         </form>
+         </ul>
+      <?php } ?>
+      <form class="form-inline my-2 my-lg-0 ml-auto">
+         <div class="form-group has-search">
+            <i class="fas fa-search form-control-feedback"></i>
+            <input type="text" class="form-control" name="cari" id="cari" placeholder="Cari..." aria-label="Cari..." aria-describedby="basic-addon">
+            <div class="list-group mt-5" id="searchData" style="position: absolute; z-index-100; width: 226px;"></div>
+         </div>
+      </form>
    </div>
 </nav>

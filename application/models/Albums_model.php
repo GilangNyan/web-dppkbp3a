@@ -54,7 +54,7 @@ class Albums_model extends CI_Model
         $config['upload_path'] = './assets/img/album/'; //'./assets/img/';
         $config['allowed_types'] = 'gif|jpg|png|bmp';
         $config['file_name'] = $idalbum . '_' . $nama;
-        $config['overwrite'] = true;
+        $config['overwrite'] = false;
         $config['max_size']  = '2048000';
 
         $this->upload->initialize($config);
@@ -77,7 +77,7 @@ class Albums_model extends CI_Model
             [
                 'field' => 'judul',
                 'label' => 'Judul Foto',
-                'rules' => 'trim|required|max_length[150]|is_unique[photos.photo_name]'
+                'rules' => 'trim|required|max_length[150]'
             ]
         ];
 

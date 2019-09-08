@@ -1,0 +1,1 @@
+INSERT INTO db_dppkbp3a.albums (id, album_title, album_description, created_at, updated_at) VALUES (1, 'Test Album', 'Ini nyobain ngetes album ya bos', '2019-09-07 15:07:51', '2019-09-07 20:07:51');

@@ -28,15 +28,16 @@
                             </thead>
                             <tbody>
                                 <?php foreach ($query as $row) : ?>
-                                <tr>
-                                    <td><?= $row->album_title ?></td>
-                                    <td><?= $row->album_description ?></td>
-                                    <td><?= $row->created_at ?></td>
-                                    <td>
-                                        <a href="<?= site_url('admin/albums/edit/') . $row->id ?>" class="btn btn-sm text-primary"><i class="fas fa-edit"></i> Edit</a>
-                                        <a href="<?= site_url('admin/albums/delete/') . $row->id ?>" class="btn-hapusalbum btn btn-sm text-danger"><i class="fas fa-trash-alt"></i> Hapus</a>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td><?= $row->album_title ?></td>
+                                        <td><?= $row->album_description ?></td>
+                                        <td><?= $row->created_at ?></td>
+                                        <td>
+                                            <a href="<?= base_url('admin/albums/view/') . $row->id ?>" class="btn btn-sm text-success"><i class="fas fa-eye"></i> Lihat</a>
+                                            <a href="<?= site_url('admin/albums/edit/') . $row->id ?>" class="btn btn-sm text-primary"><i class="fas fa-edit"></i> Edit</a>
+                                            <a href="<?= site_url('admin/albums/delete/') . $row->id ?>" class="btn-hapusalbum btn btn-sm text-danger"><i class="fas fa-trash-alt"></i> Hapus</a>
+                                        </td>
+                                    </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>

@@ -68,11 +68,11 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= site_url('admin/albums') ?>" class="nav-link <?= $pagename == 'Album Foto' ? 'active' : ''; ?>">
+                            <a href="<?= base_url('admin/albums') ?>" class="nav-link <?= $pagename == 'Album Foto' ? 'active' : ''; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Album Foto</p>
                             </a>
-                            <a href="<?= base_url('') ?>" class="nav-link <?= $pagename == 'Video' ? 'active' : ''; ?>">
+                            <a href="<?= base_url('admin/videos') ?>" class="nav-link <?= $pagename == 'Video' ? 'active' : ''; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Video</p>
                             </a>

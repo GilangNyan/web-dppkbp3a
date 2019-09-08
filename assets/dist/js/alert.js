@@ -8,7 +8,7 @@ if (flashData.includes('berhasil') || flashData.includes('Berhasil')) {
 		showConfirmButton: false,
 		timer: 3000
 	});
-} else if (flashData.includes('tidak') || flashData.includes('gagal')) {
+} else if (flashData.includes('tidak') || flashData.includes('gagal') || flashData.includes('Kesalahan')) {
 	Swal.fire({
 		position: 'top-end',
 		type: 'error',

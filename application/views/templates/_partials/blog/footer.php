@@ -1,5 +1,5 @@
 <!-- FOOTER START -->
-<footer class="footer">
+<!-- <footer class="footer">
     <div class="footer-social-icon">
         <ul>
             <li><a href="#" target="blank" class="facebook"><i class="fab fa-facebook"></i></a></li>
@@ -11,5 +11,5 @@
     <div class="copyright">
         <p><i class="far fa-copyright"></i> Dinas PPKBP3A 2019</i></p>
     </div>
-</footer>
+</footer> -->
 <!-- FOOTER END -->

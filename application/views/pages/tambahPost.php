@@ -8,13 +8,13 @@
                     <div class="card-header d-flex p-0">
                         <h3 class="card-title p-3">
                             <i class="fas fa-user-plus mr-1"></i>
-                            Tambahkan Detail Post
+                            Tambahkan Tulisan
                         </h3>
                     </div>
                     <div class="card-body">
                         <form action="<?= base_url('admin/post/addPost') ?>" method="post" name="formtambah" id="formtambah" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label for="judul">Judul Post</label>
+                                <label for="judul">Judul</label>
                                 <input type="text" class="form-control" name="judul" id="judul" aria-describedby="judul" placeholder="" value="<?= set_value('judul') ?>">
                                 <?= form_error('judul', '<small id="judul" class="text-danger">', '</small>') ?>
                             </div>
@@ -29,10 +29,10 @@
                                 <small id="image" class="form-text text-muted">Tambahkan gambar untuk tampilan cover artikel. Ukuran file maksimal 4mb.</small>
                             </div>
                             <div class="form-group">
-                                <label for="status">Terbitkan atau Simpan</label>
+                                <label for="status">Status</label>
                                 <select class="form-control" name="status" id="status">
-                                    <option value="0">Simpan Saja</option>
-                                    <option value="1">Langsung Terbitkan</option>
+                                    <option value="0">Konsep</option>
+                                    <option value="1">Diterbitkan</option>
                                 </select>
                             </div>
                         </form>

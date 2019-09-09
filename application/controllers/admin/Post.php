@@ -21,7 +21,7 @@ class Post extends CI_Controller
     {
         $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['user'] = $this->user_model->get_current_user();
-        $data['pagename'] = 'Semua Artikel';
+        $data['pagename'] = 'Semua Tulisan';
         $data['posting'] = $this->post_model->getAllPost();
         $this->load->view('templates/header', $data);
         $this->load->view('pages/posting', $data);
@@ -32,7 +32,7 @@ class Post extends CI_Controller
     {
         $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['user'] = $this->user_model->get_current_user();
-        $data['pagename'] = 'Artikel Diterbitkan';
+        $data['pagename'] = 'Tulisan Diterbitkan';
         $data['posting'] = $this->post_model->getPublishedPost();
         $this->load->view('templates/header', $data);
         $this->load->view('pages/posting', $data);
@@ -53,7 +53,7 @@ class Post extends CI_Controller
         if ($this->form_validation->run() == false) {
             $data['parent_pages'] = $this->halaman_model->get_parent_pages();
             $data['user'] = $this->user_model->get_current_user();
-            $data['pagename'] = 'Tambah Artikel';
+            $data['pagename'] = 'Tambah Tulisan';
             $this->load->view('templates/header', $data);
             $this->load->view('pages/tambahPost', $data);
             $this->load->view('templates/footer');

@@ -102,7 +102,7 @@ class Albums extends CI_Controller
          $this->load->view('pages/detailalbum', $data);
          $this->load->view('templates/footer');
       } else {
-         if ($this->albums_model->addPhoto($id)) {
+         if ($this->albums_model->addPhoto($id) != false) {
             $this->session->set_flashdata('message', 'Berhasil menambahkan foto');
             redirect('admin/albums/view/' . $id);
          } else {

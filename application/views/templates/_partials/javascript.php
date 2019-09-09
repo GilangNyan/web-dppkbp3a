@@ -39,6 +39,10 @@
 <script src="<?= base_url('assets/plugins/ckfinder/ckfinder.js') ?>"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url('assets/dist/js/adminlte.js') ?>"></script>
+<!-- Lity -->
+<script src="<?= base_url('assets/plugins/lity/lity.js') ?>"></script>
+<!-- Lightbox -->
+<script src="<?= base_url('assets/plugins/lightbox/lightbox.js') ?>"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?= base_url('assets/dist/js/pages/dashboard.js') ?>"></script>
 <!-- AdminLTE for demo purposes -->

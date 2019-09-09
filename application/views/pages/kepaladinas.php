@@ -18,7 +18,7 @@
                             </div>
                             <div class="col-sm-12 col-md-2 text-center" id="divfoto">
                                 <?php foreach ($fotokepala as $foto) : ?>
-                                <img class="img-fluid mb-2" src="<?= base_url('assets/dist/img/') . $foto->foto ?>" alt="Foto Kepala Dinas">
+                                    <img class="img-fluid mb-2" src="<?= base_url('assets/dist/img/') . $foto->foto ?>" alt="Foto Kepala Dinas">
                                 <?php endforeach; ?>
                                 <form method="post" action="" enctype="multipart/form-data" id="formfoto">
                                     <input type="file" name="foto" id="foto" accept="image/*" hidden>
@@ -28,14 +28,14 @@
                             <div class="col-sm-12 col-md-10">
                                 <form action="<?= base_url('admin/preferences/editKepala') ?>" method="post">
                                     <?php foreach ($kepala as $row) : ?>
-                                    <div class="form-group">
-                                        <label for="namakadis">Nama Kepala Dinas</label>
-                                        <input type="text" class="form-control" name="namakadis" id="namakadis" aria-describedby="namakadis" value="<?= $row->nama ?>" placeholder="Masukkan Nama Kepala Dinas">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="jabatan">Nama Kepala Dinas</label>
-                                        <input type="text" class="form-control" name="jabatan" id="jabatan" aria-describedby="jabatan" value="<?= $row->jabatan ?>" placeholder="Masukkan Jabatan">
-                                    </div>
+                                        <div class="form-group">
+                                            <label for="namakadis">Nama Kepala Dinas</label>
+                                            <input type="text" class="form-control" name="namakadis" id="namakadis" aria-describedby="namakadis" value="<?= $row->nama ?>" placeholder="Masukkan Nama Kepala Dinas">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="jabatan">Jabatan</label>
+                                            <input type="text" class="form-control" name="jabatan" id="jabatan" aria-describedby="jabatan" value="<?= $row->jabatan ?>" placeholder="Masukkan Jabatan">
+                                        </div>
                                     <?php endforeach; ?>
                                 </form>
                             </div>
@@ -55,10 +55,10 @@
                         </div>
                         <form action="<?= base_url('admin/preferences/editSambutan') ?>" method="post">
                             <?php foreach ($sambutan as $speech) : ?>
-                            <div class="form-group">
-                                <label for="sambutan">Isi Sambutan</label>
-                                <textarea class="form-control" name="sambutan" id="sambutan" row="10"><?= $speech->sambutan ?></textarea>
-                            </div>
+                                <div class="form-group">
+                                    <label for="sambutan">Isi Sambutan</label>
+                                    <textarea class="form-control" name="sambutan" id="sambutan" row="10"><?= $speech->sambutan ?></textarea>
+                                </div>
                             <?php endforeach; ?>
                         </form>
                     </div>

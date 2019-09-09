@@ -23,14 +23,14 @@
             <li class="nav-item">
                 <a href="<?= base_url() ?>" class="nav-link" target="_blank">
                     <i class="nav-icon fas fa-eye"></i>
-                    <p>Lihat Blog</p>
+                    <p>Lihat Situs</p>
                 </a>
             </li>
             <li class="nav-header">BLOG</li>
             <li class="nav-item has-treeview <?= $pagename == 'Semua Artikel' || $pagename == 'Artikel Diterbitkan' ? 'menu-open' : ''; ?>">
                 <a href="#" class="nav-link <?= $pagename == 'Semua Artikel' || $pagename == 'Artikel Diterbitkan' ? 'active' : ''; ?>">
                     <i class="nav-icon fas fa-file-alt"></i>
-                    <p>Artikel Blog<i class="fas fa-angle-left right"></i></p>
+                    <p>Tulisan<i class="fas fa-angle-left right"></i></p>
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">

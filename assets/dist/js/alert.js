@@ -35,7 +35,7 @@ $(document).ready(function () {
 		Swal.fire({
 			type: 'warning',
 			title: 'Apakah anda yakin?',
-			text: 'Post yang dihapus tidak bisa dikembalikan!',
+			text: 'Item yang dihapus tidak bisa dikembalikan!',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
 			cancelButtonColor: '#d33',
@@ -54,6 +54,24 @@ $(document).ready(function () {
 			type: 'warning',
 			title: 'Apakah anda yakin?',
 			text: 'User yang dihapus tidak bisa dikembalikan!',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Ya, hapus',
+			cancelButtonText: "Batal"
+		}).then((result) => {
+			if (result.value) {
+				document.location.href = href;
+			}
+		});
+	});
+	$('.btn-hapuskomentar').click(function (e) {
+		e.preventDefault();
+		const href = $(this).attr('href');
+		Swal.fire({
+			type: 'warning',
+			title: 'Apakah anda yakin?',
+			text: 'Komentar tersebut tidak bisa dikembalikan!',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
 			cancelButtonColor: '#d33',

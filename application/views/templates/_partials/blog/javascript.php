@@ -13,5 +13,9 @@
 <!-- daterangepicker -->
 <script src="<?= base_url('assets/plugins/moment/moment-with-locales.min.js') ?>"></script>
 <script src="<?= base_url('assets/plugins/daterangepicker/daterangepicker.js') ?>"></script>
+<!-- Lity -->
+<script src="<?= base_url('assets/plugins/lity/lity.js') ?>"></script>
+<!-- Lightbox -->
+<script src="<?= base_url('assets/plugins/lightbox/lightbox.js') ?>"></script>
 <!-- Custom Script -->
 <script src="<?= base_url('assets/dist/js/blog.js') ?>"></script>

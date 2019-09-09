@@ -10,4 +10,9 @@ class Komentar_model extends CI_Model
         $this->db->join('post', 'komentar.id_post = post.id', 'inner');
         return $this->db->get()->result();
     }
+
+    public function deleteKomentar($id)
+    {
+        return $this->db->delete('komentar', ['id' => $id]);
+    }
 }

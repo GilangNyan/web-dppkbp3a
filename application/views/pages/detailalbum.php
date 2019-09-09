@@ -15,8 +15,8 @@
                         <form action="<?= base_url('admin/albums/view/') . $album->id ?>" method="post" name="uploadfoto" id="uploadfoto" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="judul">Judul Foto</label>
-                                <input type="text" name="judul" id="judul" class="form-control" placeholder="Masukkan judul foto" aria-describedby="judul">
-                                <small id="judul" class="text-muted">Help text</small>
+                                <input type="text" name="judul" id="judul" class="form-control" placeholder="Masukkan judul foto" aria-describedby="judul" value="<?= set_value('judul') ?>" required>
+                                <?= form_error('judul', '<small id="judul" class="text-danger">', '</small>') ?>
                             </div>
                             <div class="custom-file">
                                 <input type="file" name="upload" id="upload" class="custom-file-input" placeholder="Tambahkan Foto maks. 2mb" accept="image/*" aria-describedby="upload">
@@ -39,7 +39,9 @@
                         <div class="card-columns">
                             <?php foreach ($foto as $row) : ?>
                                 <div class="card">
-                                    <img src="<?= base_url('assets/img/album/') . $row->photo_name ?>" class="card-img" alt="<?= $row->photo_name ?>">
+                                    <a href="<?= base_url('assets/img/album/') . $row->photo_name ?>" data-lightbox="galerifoto">
+                                        <img src="<?= base_url('assets/img/album/') . $row->photo_name ?>" class="card-img" alt="<?= $row->photo_name ?>">
+                                    </a>
                                 </div>
                             <?php endforeach; ?>
                         </div>

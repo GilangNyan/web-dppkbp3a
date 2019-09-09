@@ -19,16 +19,20 @@
                                     <th>Email</th>
                                     <th>Komentar</th>
                                     <th>Artikel</th>
+                                    <th>Opsi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach ($komentar as $comment) : ?>
-                                <tr>
-                                    <td><?= $comment->display_name ?></td>
-                                    <td><?= $comment->email ?></td>
-                                    <td><?= $comment->komentar ?></td>
-                                    <td><?= $comment->judul ?></td>
-                                </tr>
+                                    <tr>
+                                        <td><?= $comment->display_name ?></td>
+                                        <td><?= $comment->email ?></td>
+                                        <td><?= $comment->komentar ?></td>
+                                        <td><?= $comment->judul ?></td>
+                                        <td>
+                                            <a href="<?= base_url('admin/komentar/delete/') . $comment->id ?>" class="btn-hapuskomentar btn btn-sm text-danger"><i class="fas fa-trash-alt"></i> Hapus</a>
+                                        </td>
+                                    </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>

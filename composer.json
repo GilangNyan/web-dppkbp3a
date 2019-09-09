@@ -11,6 +11,7 @@
 		"source": "https://github.com/bcit-ci/CodeIgniter"
 	},
 	"require": {
-		"fzaninotto/faker": "^1.8"
+		"fzaninotto/faker": "^1.8",
+		"php-ffmpeg/php-ffmpeg": "^0.14.0"
 	}
 }

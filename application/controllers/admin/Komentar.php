@@ -25,4 +25,14 @@ class Komentar extends CI_Controller
         $this->load->view('pages/komentar', $data);
         $this->load->view('templates/footer');
     }
+
+    public function delete($id)
+    {
+        if (!isset($id)) show_404();
+
+        if ($this->komentar_model->deleteKomentar($id)) {
+            $this->session->set_flashdata('message', 'Komentar berhasil dihapus!');
+            redirect('admin/komentar');
+        }
+    }
 }

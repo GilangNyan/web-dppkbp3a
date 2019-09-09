@@ -42,7 +42,7 @@
                                                 ?>
                                             <a href="<?= base_url() . $year . '/' . $month . '/' . $post->slug ?>" class="btn btn-sm text-success" target="_blank"><i class="fas fa-eye"></i></a>
                                             <?php if ($this->session->userdata('role') == 'GOD' || $this->session->userdata('role') == 'ADMIN' || $post->username == $this->session->userdata('username')) : ?>
-                                                <a href="<?= base_url('admin/post/editPost/') . $post->id ?>" class="btn-edit btn btn-sm text-primary"><i class="fas fa-edit"></i></a>
+                                                <a href="<?= base_url('admin/post/updatePost/') . $post->id ?>" class="btn btn-sm text-primary"><i class="fas fa-edit"></i></a>
                                                 <a href="<?= base_url('admin/post/deletePost/') . $post->id ?>" class="btn-hapus btn btn-sm text-danger"><i class="fas fa-trash-alt"></i></a>
                                             <?php endif; ?>
                                         </td>

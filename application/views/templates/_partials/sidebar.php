@@ -109,7 +109,7 @@
                     <!-- DROPDOWN MENU START -->
                     <li class="nav-item has-treeview <?= $pagename == 'Halaman' || $pagename == 'Menu' ? 'active' : ''; ?>">
                         <a href="#" class="nav-link <?= $pagename == 'Halaman' || $pagename == 'Menu' ? 'active' : ''; ?>">
-                            <i class="nav-icon fas fa-file"></i>
+                            <i class="nav-icon fas fa-bars"></i>
                             <p>Menu<i class="fas fa-angle-left right"></i></p>
                         </a>
                         <ul class="nav nav-treeview">

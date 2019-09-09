@@ -66,8 +66,115 @@
 			</div>
 			<!-- /.row -->
 			<div class="row">
-				<!-- Performa Artikel -->
-				<div class="col-12 col-sm-12 col-md-8">
+				<div class="col-12 col-sm-12 col-md-6">
+					<!-- Performa Artikel -->
+					<div class="card">
+						<div class="card-header d-flex p-0">
+							<h3 class="card-title p-3">
+								<i class="fas fa-industry mr-1"></i>
+								Profil Dinas
+							</h3>
+							<div class="card-tools">
+								<button type="button" class="btn btn-tool pt-2" data-widget="collapse">
+									<i class="fas fa-minus"></i>
+								</button>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="tab-content p-0">
+								<table class="table table-borderless">
+									<tr>
+										<th class="text-right">Nama Dinas :</th>
+										<td><?= $profil['dinas'] ?></td>
+									</tr>
+									<tr>
+										<th class="text-right">Kepala Dinas :</th>
+										<td><?= $profil['kepala'] ?></td>
+									</tr>
+									<tr>
+										<th class="text-right">Alamat Dinas :</th>
+										<td><?= $profil['alamat'] ?></td>
+									</tr>
+									<tr>
+										<th class="text-right">Kelurahan/Desa :</th>
+										<td><?= $profil['desa'] ?></td>
+									</tr>
+									<tr>
+										<th class="text-right">Kecamatan :</th>
+										<td><?= $profil['kecamatan'] ?></td>
+									</tr>
+									<tr>
+										<th class="text-right">Kabupaten/Kota :</th>
+										<td><?= $profil['kabupaten'] ?></td>
+									</tr>
+									<tr>
+										<th class="text-right">Provinsi :</th>
+										<td><?= $profil['provinsi'] ?></td>
+									</tr>
+									<tr>
+										<th class="text-right">Telepon :</th>
+										<td><?= $profil['telepon'] ?></td>
+									</tr>
+									<tr>
+										<th class="text-right">Kode Pos :</th>
+										<td><?= $profil['kodepos'] ?></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- /.Performa Artikel -->
+					<!-- Informasi Situs -->
+					<div class="card">
+						<div class="card-header d-flex p-0">
+							<h3 class="card-title p-3">
+								<i class="far fa-window-restore mr-1"></i>
+								Informasi Situs
+							</h3>
+							<div class="card-tools">
+								<button type="button" class="btn btn-tool pt-2" data-widget="collapse">
+									<i class="fas fa-minus"></i>
+								</button>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="tab-content p-0">
+								<table class="table table-borderless">
+									<tr>
+										<th class="text-right">Sistem Operasi</th>
+										<td><?= $this->agent->platform(); ?></td>
+									</tr>
+									<tr>
+										<th class="text-right">Browser</th>
+										<td><?= $this->agent->browser(); ?></td>
+									</tr>
+									<tr>
+										<th class="text-right">Versi PHP</th>
+										<td><?= phpversion() ?></td>
+									</tr>
+									<tr>
+										<?php
+										$this->load->database();
+										$hostname = $this->db->hostname;
+										$username = $this->db->username;
+										$password = $this->db->password;
+										$mysqli = new mysqli($hostname, $username, $password) ?>
+										<th class="text-right">Versi Database</th>
+										<td><?= $mysqli->server_info ?></td>
+									</tr>
+									<tr>
+										<th class="text-right">Tanggal Server</th>
+										<td><?= date('l, d F Y', time()) ?></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- /.Performa Artikel -->
+				</div>
+
+				<div class="col-12 col-sm-12 col-md-6">
+					<!-- Performa Artikel -->
 					<div class="card">
 						<div class="card-header d-flex p-0">
 							<h3 class="card-title p-3">
@@ -93,10 +200,10 @@
 										<?php foreach ($postperf as $row) : ?>
 											<tr>
 												<?php
-												$pisah1 = explode("-", $row->tanggal);
-												$tahun = $pisah1[0];
-												$bulan = $pisah1[1];
-												?>
+													$pisah1 = explode("-", $row->tanggal);
+													$tahun = $pisah1[0];
+													$bulan = $pisah1[1];
+													?>
 												<td><a class="text-reset" href="<?= base_url() . $tahun . '/' . $bulan . '/' . $row->slug ?>" target="_blank"><?= $row->judul ?></a></td>
 												<td><?= $row->views ?></td>
 											</tr>
@@ -106,10 +213,8 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<!-- /.Performa Artikel -->
-				<!-- Penggunaan Browser -->
-				<div class="col-12 col-sm-12 col-md-4">
+					<!-- /.Performa Artikel -->
+					<!-- Penggunaan Browser -->
 					<div class="card">
 						<div class="card-header d-flex p-0">
 							<h3 class="card-title p-3">
@@ -128,8 +233,8 @@
 							</div>
 						</div>
 					</div>
+					<!-- /.Penggunaan Browser -->
 				</div>
-				<!-- /.Penggunaan Browser -->
 			</div>
 		</div><!-- /.container-fluid -->
 	</section>

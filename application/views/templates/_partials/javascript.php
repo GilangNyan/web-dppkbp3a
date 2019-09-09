@@ -8,6 +8,8 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+<!-- Select2 -->
+<script src="<?= base_url('assets/plugins/select2/js/select2.full.min.js') ?>"></script>
 <!-- ChartJS -->
 <script src="<?= base_url('assets/plugins/chart.js/Chart.min.js') ?>"></script>
 <!-- Sparkline -->
@@ -17,6 +19,8 @@
 <script src="<?= base_url('assets/plugins/jqvmap/maps/jquery.vmap.world.js') ?>"></script>
 <!-- jQuery Knob Chart -->
 <script src="<?= base_url('assets/plugins/jquery-knob/jquery.knob.min.js') ?>"></script>
+<!-- InputMask -->
+<script src="<?= base_url('assets/plugins/inputmask/jquery.inputmask.bundle.js') ?>"></script>
 <!-- daterangepicker -->
 <script src="<?= base_url('assets/plugins/moment/moment-with-locales.min.js') ?>"></script>
 <script src="<?= base_url('assets/plugins/daterangepicker/daterangepicker.js') ?>"></script>
@@ -56,36 +60,67 @@
 <script src="<?= base_url('assets/dist/js/chart.js') ?>"></script>
 <script src="<?= base_url('assets/dist/js/admin.js') ?>"></script>
 <script>
-    $(document).ready(function() {
-        $('.menu tbody').sortable({
-            update: function(event, ui) {
-                $(this).children().each(function(index) {
-                    if ($(this).attr('data-position') != (index + 1)) {
-                        $(this).attr('data-position', (index + 1)).addClass('updated');
-                    }
-                });
-                saveNewPositions();
+    $(function() {
+        $('.select2').select2();
+    });
+
+    $(document).on('ready', function(){
+        $('#provinsi').on('change', function() {
+        var selectedProv = $(this).find('option:selected').val();
+        $.ajax({
+            url: 'preferences/getKabupaten',
+            type: 'POST',
+            data: {
+                idprov: selectedProv
+            },
+            success: function(res) {
+                $('#kabupaten').html(res);
+            },
+            error: function(xhr, status, error) {
+                console.log(error);
             }
         });
     });
 
-    function saveNewPositions() {
-        var positions = [];
-        $('.updated').each(function() {
-            positions.push([$(this).attr('data-index'), $(this).attr('data-position')]);
-            $(this).removeClass('updated');
-        });
+    $('#kabupaten').on('change', function() {
+        var selectedKab = $(this).find('option:selected').val();
+        console.log(selectedKab);
         $.ajax({
-            url: 'halaman/updatePosisi',
-            method: 'POST',
-            dataType: 'text',
+            url: 'preferences/getKecamatan',
+            type: 'POST',
             data: {
-                update: 1,
-                posisi: positions
+                idkab: selectedKab
             },
-            success: function(response) {
-                console.log(response);
+            success: function(res) {
+                $('#kecamatan').html(res);
+            },
+            error: function(xhr, status, error) {
+                console.log(error);
             }
         });
-    }
+    });
+
+    $('#kecamatan').on('change', function() {
+        var selectedKec = $(this).find('option:selected').val();
+        console.log(selectedKec);
+        $.ajax({
+            url: 'preferences/getDesa',
+            type: 'POST',
+            data: {
+                idkec: selectedKec
+            },
+            success: function(res) {
+                $('#desa').html(res);
+            },
+            error: function(xhr, status, error) {
+                console.log(error);
+            }
+        });
+    });
+    });
+
+    $(document).ready(function() {
+        $("#telepon").inputmask("(9999) 999999", {removeMaskOnSubmit: true});
+        $("#postal").inputmask("99999");
+    });
 </script>

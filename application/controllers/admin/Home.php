@@ -24,6 +24,7 @@ class Home extends CI_Controller
         $data['totalvisitor'] = $this->home_model->getTotalVisitor();
         $data['totalpages'] = $this->home_model->getTotalPost();
         $data['postperf'] = $this->home_model->postPerformance();
+        $data['profil'] = $this->home_model->profil();
 
         $this->load->view('templates/header', $data);
         $this->load->view('pages/dashboard', $data);

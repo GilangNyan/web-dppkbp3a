@@ -3,6 +3,14 @@ defined('BASEPATH') or exit('No direct script access allowed.');
 
 class Home_model extends CI_Model
 {
+    var $API = "";
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->API = "http://dev.farizdotid.com/api/daerahindonesia/";
+    }
+
     public function get_current_user()
     {
         $username = $this->session->userdata('username');
@@ -65,5 +73,65 @@ class Home_model extends CI_Model
         $this->db->from('visitor');
         $this->db->group_by('browser');
         return $this->db->get()->result();
+    }
+
+    public function profil()
+    {
+        $kepala = $this->db->get_where('kepala_dinas', ['id' => 1])->row();
+        $profil = $this->db->get_where('profil', ['id' => 1])->row();
+        $dataprov = json_decode($this->curl->simple_get($this->API . 'provinsi'));
+        $datakab = json_decode($this->curl->simple_get($this->API . 'provinsi/' . $profil->provinsi . '/kabupaten'));
+        $datakec = json_decode($this->curl->simple_get($this->API . 'provinsi/kabupaten/' . $profil->kabupaten . '/kecamatan'));
+        $datades = json_decode($this->curl->simple_get($this->API . 'provinsi/kabupaten/kecamatan/' . $profil->kecamatan . '/desa'));
+
+        $provinsi = '';
+        $kabupaten = '';
+        $kecamatan = '';
+        $desa = '';
+        $namadinas = '';
+        $alamat = '';
+        $telepon = '';
+        $kodepos = '';
+
+        if ($profil != null) {
+            foreach ($dataprov->semuaprovinsi as $row) {
+                if ($profil->provinsi == $row->id) {
+                    $provinsi .= $row->nama;
+                }
+            }
+            foreach ($datakab->kabupatens as $row) {
+                if ($profil->kabupaten == $row->id) {
+                    $kabupaten .= $row->nama;
+                }
+            }
+            foreach ($datakec->kecamatans as $row) {
+                if ($profil->kecamatan == $row->id) {
+                    $kecamatan .= $row->nama;
+                }
+            }
+            foreach ($datades->desas as $row) {
+                if ($profil->desa == $row->id) {
+                    $desa .= $row->nama;
+                }
+            }
+            $namadinas .= $profil->namadinas;
+            $alamat .= $profil->alamat;
+            $telepon .= $profil->telepon;
+            $kodepos .= $profil->kodepos;
+        }
+
+        $data = [
+            'kepala' => $kepala->nama,
+            'dinas' => $namadinas,
+            'alamat' => $alamat,
+            'provinsi' => $provinsi,
+            'kabupaten' => $kabupaten,
+            'kecamatan' => $kecamatan,
+            'desa' => $desa,
+            'telepon' => $telepon,
+            'kodepos' => $kodepos
+        ];
+
+        return $data;
     }
 }

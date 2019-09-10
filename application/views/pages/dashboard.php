@@ -84,39 +84,48 @@
 							<div class="tab-content p-0">
 								<table class="table table-borderless">
 									<tr>
-										<th class="text-right">Nama Dinas :</th>
+										<th style="width: 20%;">Nama Dinas</th>
+										<td class="text-right" style="width: 5%;">:</td>
 										<td><?= $profil['dinas'] ?></td>
 									</tr>
 									<tr>
-										<th class="text-right">Kepala Dinas :</th>
+										<th>Kepala Dinas</th>
+										<td class="text-right">:</td>
 										<td><?= $profil['kepala'] ?></td>
 									</tr>
 									<tr>
-										<th class="text-right">Alamat Dinas :</th>
+										<th>Alamat Dinas</th>
+										<td class="text-right">:</td>
 										<td><?= $profil['alamat'] ?></td>
 									</tr>
 									<tr>
-										<th class="text-right">Kelurahan/Desa :</th>
+										<th>Kelurahan/Desa</th>
+										<td class="text-right">:</td>
 										<td><?= $profil['desa'] ?></td>
 									</tr>
 									<tr>
-										<th class="text-right">Kecamatan :</th>
+										<th>Kecamatan</th>
+										<td class="text-right">:</td>
 										<td><?= $profil['kecamatan'] ?></td>
 									</tr>
 									<tr>
-										<th class="text-right">Kabupaten/Kota :</th>
+										<th>Kabupaten/Kota</th>
+										<td class="text-right">:</td>
 										<td><?= $profil['kabupaten'] ?></td>
 									</tr>
 									<tr>
-										<th class="text-right">Provinsi :</th>
+										<th>Provinsi</th>
+										<td class="text-right">:</td>
 										<td><?= $profil['provinsi'] ?></td>
 									</tr>
 									<tr>
-										<th class="text-right">Telepon :</th>
+										<th>Telepon</th>
+										<td class="text-right">:</td>
 										<td><?= $profil['telepon'] ?></td>
 									</tr>
 									<tr>
-										<th class="text-right">Kode Pos :</th>
+										<th>Kode Pos</th>
+										<td class="text-right">:</td>
 										<td><?= $profil['kodepos'] ?></td>
 									</tr>
 								</table>
@@ -125,7 +134,7 @@
 					</div>
 					<!-- /.Performa Artikel -->
 					<!-- Informasi Situs -->
-					<div class="card">
+					<div class=" card">
 						<div class="card-header d-flex p-0">
 							<h3 class="card-title p-3">
 								<i class="far fa-window-restore mr-1"></i>

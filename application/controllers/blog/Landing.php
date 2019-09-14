@@ -19,10 +19,10 @@ class Landing extends CI_Controller
         $data['sub_pages'] = $this->halaman_model->get_sub_pages();
         $data['archiveyear'] = $this->sidebar_model->archiveYear();
         $data['archivemonth'] = $this->sidebar_model->archiveMonth();
-        $data['photosyear'] = $this->sidebar_model->archiveYear();
-        $data['photosmonth'] = $this->sidebar_model->archiveMonth();
-        $data['videosyear'] = $this->sidebar_model->videosYear();
-        $data['videosmonth'] = $this->sidebar_model->videosMonth();
+        $data['photoyear'] = $this->sidebar_model->photosYear();
+        $data['photomonth'] = $this->sidebar_model->photosMonth();
+        $data['videoyear'] = $this->sidebar_model->videosYear();
+        $data['videomonth'] = $this->sidebar_model->videosMonth();
 
         // Pagination Start
         // Pagination

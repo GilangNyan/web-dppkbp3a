@@ -13,6 +13,8 @@
 <!-- daterangepicker -->
 <script src="<?= base_url('assets/plugins/moment/moment-with-locales.min.js') ?>"></script>
 <script src="<?= base_url('assets/plugins/daterangepicker/daterangepicker.js') ?>"></script>
+<!-- Filterizr -->
+<script src="<?= base_url('assets/plugins/filterizr/jquery.filterizr.min.js') ?>"></script>
 <!-- Lity -->
 <script src="<?= base_url('assets/plugins/lity/lity.js') ?>"></script>
 <!-- Lightbox -->

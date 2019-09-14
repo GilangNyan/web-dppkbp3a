@@ -49,6 +49,12 @@ class Albums_model extends CI_Model
         }
     }
 
+    function deletePhoto($id)
+    {
+        $this->_deletePhoto($id);
+        return $this->db->delete('photos', ['id' => $id]);
+    }
+
     private function _uploadFoto($idalbum, $nama)
     {
         $config['upload_path'] = './assets/img/album/'; //'./assets/img/';
@@ -60,6 +66,54 @@ class Albums_model extends CI_Model
         $this->upload->initialize($config);
 
         if ($this->upload->do_upload('upload')) {
+            // Ambil data gambar
+            $data = $this->upload->data();
+
+            // Konfigurasi image_lib
+            $config['image_library'] = 'gd2';
+            $config['source_image'] = './assets/img/album/' . $data['file_name'];
+            // $config['create_thumb'] = true;
+            $imageSize = $this->image_lib->get_image_properties($config['source_image'], TRUE);
+            if ($imageSize['width'] > $imageSize['height']) {
+                $config['height'] = 500;
+            } else if ($imageSize['width'] < $imageSize['height']) {
+                $config['width'] = 500;
+            } else {
+                $config['height'] = 500;
+                $config['width'] = 500;
+            }
+            $config['maintain_ratio'] = true;
+            $config['new_image'] = './assets/img/album/thumbs/';
+
+            // Lakukan Resize Gambar
+            $this->image_lib->initialize($config);
+            $this->image_lib->resize();
+
+            $this->image_lib->clear();
+
+            // Konfigurasi image_lib
+            $config['image_library'] = 'gd2';
+            $config['source_image'] = './assets/img/album/thumbs/' . $data['file_name'];
+            $imageSize = $this->image_lib->get_image_properties($config['source_image'], TRUE);
+            // $config['create_thumb'] = true;
+            $config['width'] = 500;
+            $config['height'] = 500;
+            if ($imageSize['width'] > $imageSize['height']) {
+                $config['x_axis'] = round($imageSize['width'] / 4);
+            } else if ($imageSize['width'] < $imageSize['height']) {
+                $config['y_axis'] = round($imageSize['height'] / 4);
+            } else {
+                $config['y_axis'] = round($imageSize['height'] / 4);
+                $config['x_axis'] = round($imageSize['width'] / 4);
+            }
+            $config['maintain_ratio'] = false;
+
+            // Lakukan Crop Gambar
+            $this->image_lib->initialize($config);
+            $this->image_lib->crop();
+
+            $this->image_lib->clear();
+
             return $this->upload->data("file_name");
         } else {
             $error = $this->upload->display_errors();
@@ -69,6 +123,20 @@ class Albums_model extends CI_Model
             // exit();
             return null;
         }
+    }
+
+    private function _deletePhoto($id)
+    {
+        $foto = $this->_getPhoto($id);
+        $filename = explode(".", $foto->photo_name)[0];
+        array_map('unlink', glob(FCPATH . "assets/img/album/$filename.*"));
+        array_map('unlink', glob(FCPATH . "assets/img/album/thumbs/$filename.*"));
+        return true;
+    }
+
+    private function _getPhoto($id)
+    {
+        return $this->db->get_where('photos', ['id' => $id])->row();
     }
 
     function photoRules()

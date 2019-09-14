@@ -34,3 +34,4 @@
     <link rel="stylesheet" href="<?= base_url('assets/plugins/lightbox/lightbox.css') ?>">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/dist/css/dashcustom.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/dist/css/admin.css') ?>">

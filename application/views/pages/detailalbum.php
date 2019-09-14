@@ -38,10 +38,13 @@
                     <div class="card-body">
                         <div class="card-columns">
                             <?php foreach ($foto as $row) : ?>
-                                <div class="card">
+                                <div class="card" style="position: relative !important;">
                                     <a href="<?= base_url('assets/img/album/') . $row->photo_name ?>" data-lightbox="galerifoto">
-                                        <img src="<?= base_url('assets/img/album/') . $row->photo_name ?>" class="card-img" alt="<?= $row->photo_name ?>">
+                                        <img src="<?= base_url('assets/img/album/thumbs/') . $row->photo_name ?>" class="card-img" alt="<?= $row->photo_name ?>">
                                     </a>
+                                    <div class="div-hapus">
+                                        <a class="btn-hapusfoto btn btn-danger" href="<?= base_url('admin/albums/deletePhoto/') . $row->id ?>"><i class="fas fa-trash-alt"></i></a>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                         </div>

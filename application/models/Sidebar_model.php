@@ -3,7 +3,6 @@ defined('BASEPATH') or exit('No direct script access allowed.');
 
 class Sidebar_model extends CI_Model
 {
-
     // Arsip
     function archiveYear()
     {
@@ -24,34 +23,34 @@ class Sidebar_model extends CI_Model
     // Photos
     function photosYear()
     {
-        $this->db->select('year(tanggal) as tahun, count(*) as jumlah');
+        $this->db->select('year(created_at) as tahun, count(*) as jumlah');
         $this->db->from('photos');
-        $this->db->group_by('year(tanggal)');
+        $this->db->group_by('year(created_at)');
         return $this->db->get()->result();
     }
 
     function photosMonth()
     {
-        $this->db->select('month(tanggal) as bulan, count(*) as jumlah');
-        $this->db->from('post');
-        $this->db->group_by('month(tanggal)');
+        $this->db->select('month(created_at) as bulan, count(*) as jumlah');
+        $this->db->from('photos');
+        $this->db->group_by('month(created_at)');
         return $this->db->get()->result();
     }
 
     // Videos
     function videosYear()
     {
-        $this->db->select('year(tanggal) as tahun, count(*) as jumlah');
-        $this->db->from('post');
-        $this->db->group_by('year(tanggal)');
+        $this->db->select('year(diupload) as tahun, count(*) as jumlah');
+        $this->db->from('video');
+        $this->db->group_by('year(diupload)');
         return $this->db->get()->result();
     }
 
     function videosMonth()
     {
-        $this->db->select('month(tanggal) as bulan, count(*) as jumlah');
-        $this->db->from('post');
-        $this->db->group_by('month(tanggal)');
+        $this->db->select('month(diupload) as bulan, count(*) as jumlah');
+        $this->db->from('video');
+        $this->db->group_by('month(diupload)');
         return $this->db->get()->result();
     }
 }

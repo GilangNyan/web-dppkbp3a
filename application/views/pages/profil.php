@@ -28,7 +28,7 @@
                                 <label for="provinsi">Provinsi</label>
                                 <select class="form-control select2" name="provinsi" id="provinsi" style="width: 100%;" required>
                                     <?php foreach ($provinsi->semuaprovinsi as $prov) : ?>
-                                        <option value="<?= $prov->id ?>" <?= $profil->provinsi != null ? ($profil->provinsi == $prov->id ? 'selected' : '') : ''; ?>><?= $prov->nama ?></option>
+                                        <option value="<?= $prov->id ?>" <?= $profil != null ? ($profil->provinsi == $prov->id ? 'selected' : '') : ''; ?>><?= $prov->nama ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>

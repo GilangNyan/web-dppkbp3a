@@ -38,7 +38,7 @@ class Preferences_model extends CI_Model
             'nama' => $nama
         );
 
-        return $this->db->update('kepala_dinas', $data, ['id' => '123456']);
+        return $this->db->update('kepala_dinas', $data, ['id' => '1']);
     }
 
     public function editJabatan($jabatan)
@@ -47,7 +47,7 @@ class Preferences_model extends CI_Model
             'jabatan' => $jabatan
         );
 
-        return $this->db->update('kepala_dinas', $data, ['id' => '123456']);
+        return $this->db->update('kepala_dinas', $data, ['id' => '1']);
     }
 
     public function editSambutan($sambutan)
@@ -56,7 +56,7 @@ class Preferences_model extends CI_Model
             'sambutan' => $sambutan
         );
 
-        return $this->db->update('kepala_dinas', $data, ['id' => '123456']);
+        return $this->db->update('kepala_dinas', $data, ['id' => '1']);
     }
 
     public function updateFoto($id)

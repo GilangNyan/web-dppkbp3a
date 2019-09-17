@@ -84,4 +84,72 @@ $(document).ready(function () {
 			}
 		});
 	});
+
+	$('#provinsi').on('change', function () {
+		var selectedProv = $(this).find('option:selected').val();
+		console.log(selectedProv);
+		$.ajax({
+			url: 'preferences/getKabupaten',
+			type: 'POST',
+			data: {
+				idprov: selectedProv
+			},
+			success: function (res) {
+				console.log('Berhasil mendapatkan data kabupaten');
+				$('#kabupaten').html(res);
+			},
+			error: function (xhr, status, error) {
+				console.log(error);
+			}
+		});
+	});
+
+	$('#kabupaten').on('change', function () {
+		var selectedKab = $(this).find('option:selected').val();
+		console.log(selectedKab);
+		$.ajax({
+			url: 'preferences/getKecamatan',
+			type: 'POST',
+			data: {
+				idkab: selectedKab
+			},
+			success: function (res) {
+				console.log('Berhasil mendapatkan data kecamatan');
+				$('#kecamatan').html(res);
+			},
+			error: function (xhr, status, error) {
+				console.log(error);
+			}
+		});
+	});
+
+	$('#kecamatan').on('change', function () {
+		var selectedKec = $(this).find('option:selected').val();
+		console.log(selectedKec);
+		$.ajax({
+			url: 'preferences/getDesa',
+			type: 'POST',
+			data: {
+				idkec: selectedKec
+			},
+			success: function (res) {
+				console.log('Berhasil mendapatkan data desa');
+				$('#desa').html(res);
+			},
+			error: function (xhr, status, error) {
+				console.log(error);
+			}
+		});
+	});
+});
+
+$(function () {
+	$('.select2').select2();
+});
+
+$(document).ready(function () {
+	$("#telepon").inputmask("(9999) 999999", {
+		removeMaskOnSubmit: true
+	});
+	$("#postal").inputmask("99999");
 });

@@ -127,6 +127,7 @@ class Preferences_model extends CI_Model
     public function updateProfil()
     {
         $data = array(
+            'id' => 1,
             'namadinas' => htmlspecialchars($this->input->post('namadinas')),
             'alamat' => htmlspecialchars($this->input->post('alamat')),
             'provinsi' => htmlspecialchars($this->input->post('provinsi')),

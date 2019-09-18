@@ -94,9 +94,6 @@ class Home_model extends CI_Model
         $kepala = $this->db->get_where('kepala_dinas', ['id' => 1])->row();
         $profil = $this->db->get_where('profil', ['id' => 1])->row();
         $dataprov = json_decode($this->curl->simple_get($this->API . 'provinsi'));
-        $datakab = json_decode($this->curl->simple_get($this->API . 'provinsi/' . $profil->provinsi . '/kabupaten'));
-        $datakec = json_decode($this->curl->simple_get($this->API . 'provinsi/kabupaten/' . $profil->kabupaten . '/kecamatan'));
-        $datades = json_decode($this->curl->simple_get($this->API . 'provinsi/kabupaten/kecamatan/' . $profil->kecamatan . '/desa'));
 
         $provinsi = '';
         $kabupaten = '';
@@ -108,6 +105,9 @@ class Home_model extends CI_Model
         $kodepos = '';
 
         if ($profil != null) {
+            $datakab = json_decode($this->curl->simple_get($this->API . 'provinsi/' . $profil->provinsi . '/kabupaten'));
+            $datakec = json_decode($this->curl->simple_get($this->API . 'provinsi/kabupaten/' . $profil->kabupaten . '/kecamatan'));
+            $datades = json_decode($this->curl->simple_get($this->API . 'provinsi/kabupaten/kecamatan/' . $profil->kecamatan . '/desa'));
             foreach ($dataprov->semuaprovinsi as $row) {
                 if ($profil->provinsi == $row->id) {
                     $provinsi .= $row->nama;

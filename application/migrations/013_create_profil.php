@@ -21,19 +21,23 @@ class Migration_create_profil extends CI_Migration
             ),
             'provinsi' => array(
                 'type' => 'INT',
-                'unsigned' => true
+                'unsigned' => true,
+                'null' => true
             ),
             'kabupaten' => array(
                 'type' => 'INT',
-                'unsigned' => true
+                'unsigned' => true,
+                'null' => true
             ),
             'kecamatan' => array(
                 'type' => 'INT',
-                'unsigned' => true
+                'unsigned' => true,
+                'null' => true
             ),
             'desa' => array(
                 'type' => 'INT',
-                'unsigned' => true
+                'unsigned' => true,
+                'null' => true
             ),
             'telepon' => array(
                 'type' => 'VARCHAR',

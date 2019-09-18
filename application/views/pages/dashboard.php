@@ -7,26 +7,26 @@
 		<div class="container-fluid">
 			<!-- Info boxes -->
 			<div class="row">
-				<div class="col-12 col-sm-6 col-md-3">
+				<div class="col-12 col-sm-6 col-md-4">
 					<div class="info-box">
-						<span class="info-box-icon bg-info elevation-1"><i class="fas fa-user-friends"></i></span>
+						<span class="info-box-icon bg-info elevation-1"><i class="fas fa-pen-fancy"></i></span>
 
 						<div class="info-box-content">
-							<span class="info-box-text">Pengunjung Hari Ini</span>
-							<span class="info-box-number"><?= $todayvisitor ?></span>
+							<span class="info-box-text">Tulisan</span>
+							<span class="info-box-number"><?= $totalpages ?></span>
 						</div>
 						<!-- /.info-box-content -->
 					</div>
 					<!-- /.info-box -->
 				</div>
 				<!-- /.col -->
-				<div class="col-12 col-sm-6 col-md-3">
+				<div class="col-12 col-sm-6 col-md-4">
 					<div class="info-box mb-3">
-						<span class="info-box-icon bg-danger elevation-1"><i class="fas fa-user-check"></i></span>
+						<span class="info-box-icon bg-danger elevation-1"><i class="fas fa-inbox"></i></span>
 
 						<div class="info-box-content">
-							<span class="info-box-text">Pengunjung Online</span>
-							<span class="info-box-number"><?= $onlinevisitor ?></span>
+							<span class="info-box-text">Pesan Masuk</span>
+							<span class="info-box-number"><?= $totalmessages ?></span>
 						</div>
 						<!-- /.info-box-content -->
 					</div>
@@ -37,9 +37,35 @@
 				<!-- fix for small devices only -->
 				<div class="clearfix hidden-md-up"></div>
 
-				<div class="col-12 col-sm-6 col-md-3">
+				<div class="col-12 col-sm-6 col-md-4">
 					<div class="info-box mb-3">
-						<span class="info-box-icon bg-success elevation-1"><i class="fas fa-users"></i></span>
+						<span class="info-box-icon bg-success elevation-1"><i class="fas fa-comments"></i></span>
+
+						<div class="info-box-content">
+							<span class="info-box-text">Komentar</span>
+							<span class="info-box-number"><?= $totalcomments ?></span>
+						</div>
+						<!-- /.info-box-content -->
+					</div>
+					<!-- /.info-box -->
+				</div>
+				<!-- /.col -->
+				<div class="col-12 col-sm-6 col-md-4">
+					<div class="info-box mb-3">
+						<span class="info-box-icon bg-warning elevation-1"><i class="fas fa-user-plus"></i></span>
+
+						<div class="info-box-content">
+							<span class="info-box-text">Pengunjung Hari Ini</span>
+							<span class="info-box-number"><?= $todayvisitor ?></span>
+						</div>
+						<!-- /.info-box-content -->
+					</div>
+					<!-- /.info-box -->
+				</div>
+				<!-- /.col -->
+				<div class="col-12 col-sm-6 col-md-4">
+					<div class="info-box mb-3">
+						<span class="info-box-icon bg-primary elevation-1"><i class="fas fa-users"></i></span>
 
 						<div class="info-box-content">
 							<span class="info-box-text">Total Pengunjung</span>
@@ -50,13 +76,13 @@
 					<!-- /.info-box -->
 				</div>
 				<!-- /.col -->
-				<div class="col-12 col-sm-6 col-md-3">
+				<div class="col-12 col-sm-6 col-md-4">
 					<div class="info-box mb-3">
-						<span class="info-box-icon bg-warning elevation-1"><i class="fas fa-paper-plane"></i></span>
+						<span class="info-box-icon bg-secondary elevation-1"><i class="fas fa-signal"></i></span>
 
 						<div class="info-box-content">
-							<span class="info-box-text">Artikel Diterbitkan</span>
-							<span class="info-box-number"><?= $totalpages ?></span>
+							<span class="info-box-text">Pengunjung Online</span>
+							<span class="info-box-number"><?= $onlinevisitor ?></span>
 						</div>
 						<!-- /.info-box-content -->
 					</div>
@@ -188,7 +214,7 @@
 						<div class="card-header d-flex p-0">
 							<h3 class="card-title p-3">
 								<i class="fas fa-file mr-1"></i>
-								Tayangan Artikel
+								Tulisan Terbaru
 							</h3>
 							<div class="card-tools">
 								<button type="button" class="btn btn-tool pt-2" data-widget="collapse">

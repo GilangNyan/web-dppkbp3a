@@ -23,6 +23,8 @@ class Home extends CI_Controller
         $data['onlinevisitor'] = $this->home_model->getOnlineVisitor();
         $data['totalvisitor'] = $this->home_model->getTotalVisitor();
         $data['totalpages'] = $this->home_model->getTotalPost();
+        $data['totalcomments'] = $this->home_model->getTotalComments();
+        $data['totalmessages'] = $this->home_model->getTotalMessages();
         $data['postperf'] = $this->home_model->postPerformance();
         $data['profil'] = $this->home_model->profil();
 

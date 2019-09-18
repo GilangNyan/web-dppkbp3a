@@ -75,6 +75,20 @@ class Home_model extends CI_Model
         return $this->db->get()->result();
     }
 
+    public function getTotalComments()
+    {
+        $this->db->select('*');
+        $this->db->from('komentar');
+        return $this->db->count_all_results();
+    }
+
+    public function getTotalMessages()
+    {
+        $this->db->select('*');
+        $this->db->from('pesan');
+        return $this->db->count_all_results();
+    }
+
     public function profil()
     {
         $kepala = $this->db->get_where('kepala_dinas', ['id' => 1])->row();

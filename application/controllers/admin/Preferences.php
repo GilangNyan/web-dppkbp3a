@@ -77,7 +77,7 @@ class Preferences extends CI_Controller
 
     public function updateFoto()
     {
-        $id = '123456';
+        $id = '1';
         $foto = $this->input->post('foto');
         $this->preferences_model->updateFoto($id);
         redirect('admin/preferences');

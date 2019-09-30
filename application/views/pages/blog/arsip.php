@@ -100,8 +100,8 @@
         <?php $this->load->view('templates/_partials/blog/backtotop') ?>
     </section>
 
-    <?php $this->load->view('templates/_partials/blog/javascript') ?>
     <?php $this->load->view('templates/_partials/blog/footer') ?>
+    <?php $this->load->view('templates/_partials/blog/javascript') ?>
 </body>
 
 </html>

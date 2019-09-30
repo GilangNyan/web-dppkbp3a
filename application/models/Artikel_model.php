@@ -91,7 +91,7 @@ class Artikel_model extends CI_Model
         return $this->db->insert('komentar', $data);
     }
 
-    function getArchive($tahun, $bulan)
+    function getArchive($tahun, $bulan, $limit, $start)
     {
         $this->db->select('post.*, user.username, user.nama, user.role');
         $this->db->from('post');
@@ -100,7 +100,18 @@ class Artikel_model extends CI_Model
         $this->db->where('year(tanggal)', $tahun);
         $this->db->where('month(tanggal)', $bulan);
         $this->db->order_by('tanggal', 'DESC');
+        $this->db->limit($limit, $start);
         return $this->db->get()->result();
+    }
+
+    function countArchive($tahun, $bulan)
+    {
+        $this->db->select('*');
+        $this->db->from('post');
+        $this->db->where('post.status', 1);
+        $this->db->where('year(tanggal)', $tahun);
+        $this->db->where('month(tanggal)', $bulan);
+        return $this->db->count_all_results();
     }
 
     function searchPost($title)

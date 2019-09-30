@@ -80,7 +80,7 @@
                                                 $nbulan = "Desember";
                                                 break;
                                         } ?>
-                                        <a name="bulan" id="bulan" class="btn btn-block btn-outline-secondary" href="<?= base_url('arsip/') . $year->tahun . '/' . $month->bulan ?>" role="button"><?= $nbulan ?></a>
+                                        <a name="bulan" id="bulan" class="btn btn-block btn-outline-secondary" href="<?= base_url('arsip/') . $year->tahun . '/' . $month->bulan . '/0' ?>" role="button"><?= $nbulan ?></a>
                                     <?php endforeach; ?>
                             </div>
                         </div>

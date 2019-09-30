@@ -130,7 +130,8 @@ class Home_model extends CI_Model
             }
             $namadinas .= $profil->namadinas;
             $alamat .= $profil->alamat;
-            $telepon .= $profil->telepon;
+            $split = str_split($profil->telepon, 4);
+            $telepon .= '(' . $split[0] . ') ' . $split[1] . $split[2];
             $kodepos .= $profil->kodepos;
         }
 

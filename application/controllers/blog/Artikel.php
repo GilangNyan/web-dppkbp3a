@@ -200,7 +200,12 @@ class Artikel extends CI_Controller
 
     public function sambutan()
     {
+        $data['archiveyear'] = $this->sidebar_model->archiveYear();
         $data['archivemonth'] = $this->sidebar_model->archiveMonth();
+        $data['photoyear'] = $this->sidebar_model->photosYear();
+        $data['photomonth'] = $this->sidebar_model->photosMonth();
+        $data['videoyear'] = $this->sidebar_model->videosYear();
+        $data['videomonth'] = $this->sidebar_model->videosMonth();
         $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['sub_pages'] = $this->halaman_model->get_sub_pages();
         $data['kepala'] = $this->preferences_model->getKepala();

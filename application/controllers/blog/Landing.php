@@ -27,7 +27,7 @@ class Landing extends CI_Controller
         // Pagination Start
         // Pagination
         $config['base_url'] = base_url();
-        $config['total_rows'] = $this->landing_model->published();
+        $config['total_rows'] = $this->landing_model->published() - 5;
         $config['per_page'] = 5;
 
         // Styling
@@ -67,5 +67,12 @@ class Landing extends CI_Controller
 
         $this->landing_model->countVisitor();
         $this->load->view('pages/blog/home', $data);
+    }
+
+    public function pesan()
+    {
+        $email = $this->input->post('email');
+        $isi = $this->input->post('pesan');
+        $this->landing_model->submitPesan($email, $isi);
     }
 }

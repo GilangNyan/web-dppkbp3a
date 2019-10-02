@@ -111,3 +111,7 @@
 	pointer-events: none;
 	color: #aaa;
 }
+
+.btn-secondary.back-to-top {
+	background-color: #AAAAAA !important;
+}

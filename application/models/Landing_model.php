@@ -57,7 +57,7 @@ class Landing_model extends CI_Model
         $this->db->join('user', 'post.author = user.id', 'LEFT');
         $this->db->where('post.status', 1);
         $this->db->order_by('tanggal', 'DESC');
-        $this->db->limit($limit, $start + 5  );
+        $this->db->limit($limit, $start + 5);
         return $this->db->get()->result();
     }
 
@@ -100,5 +100,15 @@ class Landing_model extends CI_Model
         $this->db->select('*');
         $this->db->from('kepala_dinas');
         return $this->db->get()->result();
+    }
+
+    public function submitPesan($email, $pesan)
+    {
+        $data = array(
+            'id' => uniqid('msg-'),
+            'email' => $email,
+            'isi' => $pesan
+        );
+        $this->db->insert('pesan', $data);
     }
 }

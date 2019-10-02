@@ -49,3 +49,53 @@ $('#cari').on('keyup', function () {
 		})
 	}
 });
+
+// Post Pesan
+$(document).ready(function () {
+	$('#formpesan').validate({
+		rules: {
+			email: {
+				required: true,
+				email: true
+			},
+			pesan: {
+				required: true
+			}
+		},
+		submitHandler: function (form) {
+			// form.submit();
+			$.ajax({
+				url: form.action,
+				type: form.method,
+				data: $(form).serialize(),
+				success: function (response) {
+					Swal.fire({
+						position: 'top-end',
+						type: 'success',
+						title: 'Pesan berhasil dikirim',
+						toast: true,
+						showConfirmButton: false,
+						timer: 3000
+					});
+					$('#formpesan').each(function () {
+						this.reset();
+					});
+				},
+				error: function (error) {
+					console.log('Error: ' + error);
+					Swal.fire({
+						position: 'top-end',
+						type: 'error',
+						title: 'Pesan gagal dikirim karena kesalahan',
+						toast: true,
+						showConfirmButton: false,
+						timer: 3000
+					});
+					$('#formpesan').each(function () {
+						this.reset();
+					});
+				}
+			})
+		}
+	});
+});

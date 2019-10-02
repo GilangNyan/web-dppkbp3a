@@ -34,16 +34,16 @@
                  <h6 class="text-uppercase font-weight-bold">Kirim Pesan</h6>
                  <hr class="bg-primary accent-2 mb-3 mt-0 d-inline-block mx-auto" style="width: 100%;">
                  <!-- Form -->
-                 <form>
+                 <form action="<?= base_url('blog/landing/pesan') ?>" method="post" id="formpesan">
                      <div class="form-group">
                          <!-- <label for="exampleInputEmail1">Email</label> -->
-                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukan Email Anda">
+                         <input type="email" name="email" class="form-control" id="email" placeholder="Masukan Email Anda">
                      </div>
                      <div class="form-group">
                          <!-- <label for="exampleInputPassword1">Pesan</label> -->
                          <textarea name="pesan" class="form-control" id="pesan" cols="30" rows="5" placeholder="Masukan Pesan"></textarea>
                      </div>
-                     <a class="btn btn-info" href="#" role="button"><i class="fas fa-paper-plane"></i> Kirim</a>
+                     <button class="btn btn-info btnpesan" type="submit"><i class="fas fa-paper-plane mr-1"></i>Kirim</button>
                  </form>
                  <!-- Form -->
              </div>

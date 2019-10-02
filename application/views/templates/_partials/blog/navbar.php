@@ -38,7 +38,7 @@
                 <div class="form-group has-search">
                     <i class="fas fa-search form-control-feedback"></i>
                     <input type="text" class="form-control" name="cari" id="cari" placeholder="Cari..." aria-label="Cari..." aria-describedby="basic-addon">
-                    <div class="list-group mt-5" id="searchData" style="position: absolute; z-index-100; width: 226px;"></div>
+                    <div class="list-group mt-5" id="searchData" style="position: absolute; z-index-1; width: 226px;"></div>
                 </div>
             </form>
         </div>

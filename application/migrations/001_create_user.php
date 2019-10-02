@@ -48,7 +48,7 @@ class Migration_create_user extends CI_Migration
         // Tambah user awal
         $this->db->empty_table('user');
         $this->db->set('id', 1);
-        $this->db->set('nama', 'Super Admin');
+        $this->db->set('nama', 'Administrator');
         $this->db->set('username', 'admin');
         $this->db->set('email', 'admin@gmail.com');
         $this->db->set('password', password_hash('123456', PASSWORD_DEFAULT));

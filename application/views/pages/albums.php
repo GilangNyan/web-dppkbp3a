@@ -6,11 +6,11 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header d-flex p-0">
-                        <h3 class="card-title p-3">
+                        <!-- <h3 class="card-title p-3">
                             <i class="fas fa-image mr-1"></i>
                             List Album
-                        </h3>
-                        <div class="sisi ml-auto p-2">
+                        </h3> -->
+                        <div class="sisi mr-auto p-2">
                             <a href="<?= base_url('admin/albums/add') ?>" class="btn btn-primary">
                                 Buat Album
                             </a>
@@ -22,7 +22,7 @@
                                 <tr>
                                     <th>Judul</th>
                                     <th>Keterangan</th>
-                                    <th>Dibuat Pada</th>
+                                    <th>Tanggal</th>
                                     <th>Opsi</th>
                                 </tr>
                             </thead>

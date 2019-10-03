@@ -32,13 +32,17 @@ $(document).ready(function () {
 });
 
 // Live Search
+// $(document).ready(function () {
+// 	var cariurl = $("#formsearch").attr("action");
+// 	console.log(cariurl);
+// });
 $('#cari').on('keyup', function () {
 	var cari = $('#cari').val();
 	if (cari == '') {
 		$('#searchData').empty();
 	} else {
 		$.ajax({
-			url: 'blog/artikel/liveSearch',
+			url: window.location.origin + '/web-dppkbp3a/blog/artikel/liveSearch', // 'blog/artikel/liveSearch'
 			type: 'POST',
 			data: {
 				searchval: cari

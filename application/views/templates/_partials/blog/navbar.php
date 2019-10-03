@@ -37,8 +37,14 @@
             <form class="form-inline my-2 my-lg-0">
                 <div class="form-group has-search">
                     <i class="fas fa-search form-control-feedback"></i>
-                    <input type="text" class="form-control" name="cari" id="cari" placeholder="Cari..." aria-label="Cari..." aria-describedby="basic-addon">
-                    <div class="list-group mt-5" id="searchData" style="position: absolute; z-index-1; width: 226px;"></div>
+                    <div class="holder">
+                        <form action="<?= base_url('blog/artikel/liveSearch') ?>" method="post" id="formsearch">
+                            <input type="text" class="form-control" name="cari" id="cari" placeholder="Cari..." aria-label="Cari..." aria-describedby="basic-addon">
+                        </form>
+                        <div class="drop">
+                            <div class="list-group" id="searchData"></div>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>

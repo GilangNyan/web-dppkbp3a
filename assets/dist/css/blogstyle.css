@@ -112,6 +112,17 @@
 	color: #aaa;
 }
 
+.holder {
+	position: relative;
+}
+
+.drop {
+	position: absolute;
+	z-index: 100;
+	width: 226px;
+	display: block;
+}
+
 .btn-secondary.back-to-top {
 	background-color: #AAAAAA !important;
 }

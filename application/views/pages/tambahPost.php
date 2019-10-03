@@ -5,12 +5,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header d-flex p-0">
+                    <!-- <div class="card-header d-flex p-0">
                         <h3 class="card-title p-3">
-                            <i class="fas fa-user-plus mr-1"></i>
+                            <i class="far fa-sticky-note mr-1"></i>
                             Tambahkan Tulisan
                         </h3>
-                    </div>
+                    </div> -->
                     <div class="card-body">
                         <form action="<?= base_url('admin/post/addPost') ?>" method="post" name="formtambah" id="formtambah" enctype="multipart/form-data">
                             <div class="form-group">

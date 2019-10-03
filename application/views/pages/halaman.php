@@ -6,19 +6,19 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header d-flex p-0">
-                        <h3 class="card-title p-3">
+                        <!-- <h3 class="card-title p-3">
                             <i class="fas fa-folder-open mr-1"></i>
                             Manajemen Halaman
-                        </h3>
-                        <div class="sisi ml-auto p-2">
+                        </h3> -->
+                        <div class="sisi mr-auto p-2">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPage">
                                 Tambah Halaman
                             </button>
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="alert alert-primary" role="alert">
-                            Halaman yang dibuat di sini akan menjadi sub menu pada menu yang dibuat di halaman Pengaturan Menu. Jika menu dihapus, maka halaman yang terkait juga akan ikut terhapus.
+                        <div class="alert alert-success" role="alert">
+                            Kumaha lamun menu cukup 1 menu utama. jadi teu aya sub menu. karna percuma sub na ge ngan bisa 1.
                         </div>
                         <table class="table table-bordered table-hover" id="allPages" width="100%">
                             <thead>

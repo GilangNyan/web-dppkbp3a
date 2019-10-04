@@ -17,8 +17,8 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="alert alert-success" role="alert">
-                            Kumaha lamun menu cukup 1 menu utama. jadi teu aya sub menu. karna percuma sub na ge ngan bisa 1.
+                        <div class="alert alert-info" role="alert">
+                            Menu terdiri dari level 1 dan level 2. Level 1 merupakan menu utama dan level 2 merupakan sub-menu.
                         </div>
                         <table class="table table-bordered table-hover" id="allPages" width="100%">
                             <thead>

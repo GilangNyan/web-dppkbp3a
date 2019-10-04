@@ -73,10 +73,7 @@
                 </a>
             </li>
             <?php if ($this->session->userdata('role') == 'ADMIN' || $this->session->userdata('role') == 'GOD') : ?>
-                </li>
         </ul>
-        </li>
-
 
         <li class="nav-item has-treeview <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' || $pagename == 'Halaman' ? 'menu-open' : ''; ?>">
             <a href="#" class="nav-link <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' || $pagename == 'Halaman' ? 'active' : ''; ?>">
@@ -110,9 +107,9 @@
                 <li class="nav-item has-treeview <?= $pagename == 'Halaman' ? 'menu-open' : ''; ?>">
                     <a href="#" class="nav-link <?= $pagename == 'Halaman' ? 'active' : ''; ?>">
                         <i class="nav-icon fas fa-bars"></i>
-                        <p>Menu</p>
+                        <p>Menu<i class="fas fa-angle-left right"></i></p>
                     </a>
-                    <ul class="nav nav-treevview">
+                    <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="<?= base_url('admin/halaman') ?>" class="nav-link <?= $pagename == 'Halaman' ? 'active' : ''; ?>">
                                 <i class="nav-icon fas fa-sign-out-alt"></i>

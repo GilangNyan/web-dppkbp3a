@@ -89,7 +89,7 @@ class Post extends CI_Controller
         if ($this->form_validation->run() == false) {
             $data['parent_pages'] = $this->halaman_model->get_parent_pages();
             $data['user'] = $this->user_model->get_current_user();
-            $data['pagename'] = 'Edit Artikel';
+            $data['pagename'] = 'Edit Tulisan';
             $data['posting'] = $this->post_model->getSpecificPost($postId);
             $this->load->view('templates/header', $data);
             $this->load->view('pages/editPost', $data);

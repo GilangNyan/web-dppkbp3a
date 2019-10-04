@@ -3,7 +3,8 @@
 
 <head>
     <?php $this->load->view('templates/_partials/blog/head') ?>
-    <link rel="stylesheet" href="<?= base_url('assets/dist/css/navbartransparent.css') ?>">
+    <!-- <link rel="stylesheet" href="<?= base_url('assets/dist/css/navbartransparent.css') ?>"> -->
+    <link rel="stylesheet" href="<?= base_url('assets/dist/css/postingstyle.css') ?>">
 </head>
 
 <body>
@@ -112,7 +113,7 @@
 
     <?php $this->load->view('templates/_partials/blog/javascript') ?>
     <!-- Nav Shrink -->
-    <script src="<?= base_url('assets/dist/js/navshrink.js') ?>"></script>
+    <!-- <script src="<?= base_url('assets/dist/js/navshrink.js') ?>"></script> -->
 </body>
 
 </html>

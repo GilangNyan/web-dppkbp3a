@@ -32,7 +32,7 @@
                     <div class="card-header d-flex p-0">
                         <h3 class="card-title p-3">
                             <i class="fas fa-image mr-1"></i>
-                            List Foto Album
+                            <?= $album->album_title ?>
                         </h3>
                     </div>
                     <div class="card-body">

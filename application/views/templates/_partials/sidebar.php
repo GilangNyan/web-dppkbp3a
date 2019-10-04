@@ -103,22 +103,12 @@
                 <!-- DROPDOWN MEDIA END -->
             </ul>
             <ul class="nav nav-treeview">
-                <!-- DROPDOWN MENU START -->
-                <li class="nav-item has-treeview <?= $pagename == 'Halaman' ? 'menu-open' : ''; ?>">
-                    <a href="#" class="nav-link <?= $pagename == 'Halaman' ? 'active' : ''; ?>">
+                <li class="nav-item">
+                    <a href="<?= base_url('admin/halaman') ?>" class="nav-link <?= $pagename == 'Halaman' ? 'active' : ''; ?>">
                         <i class="nav-icon fas fa-bars"></i>
-                        <p>Menu<i class="fas fa-angle-left right"></i></p>
+                        <p>Menu</p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="<?= base_url('admin/halaman') ?>" class="nav-link <?= $pagename == 'Halaman' ? 'active' : ''; ?>">
-                                <i class="nav-icon fas fa-sign-out-alt"></i>
-                                <p>Halaman</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
-                <!-- DROPDOWN MENU END -->
             </ul>
 
         <li class="nav-item">

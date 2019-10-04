@@ -12,7 +12,7 @@
 						<span class="info-box-icon bg-info elevation-1"><i class="fas fa-pen-fancy"></i></span>
 
 						<div class="info-box-content">
-							<span class="info-box-text">Tulisan</span>
+							<span class="info-box-text"><a href="<?= base_url('admin/post') ?>" class="stretched-link text-dark">Tulisan</a></span>
 							<span class="info-box-number"><?= $totalpages ?></span>
 						</div>
 						<!-- /.info-box-content -->
@@ -25,7 +25,7 @@
 						<span class="info-box-icon bg-danger elevation-1"><i class="fas fa-inbox"></i></span>
 
 						<div class="info-box-content">
-							<span class="info-box-text">Pesan Masuk</span>
+							<span class="info-box-text"><a href="<?= base_url('admin/pesan') ?>" class="stretched-link text-dark">Pesan Masuk</a></span>
 							<span class="info-box-number"><?= $totalmessages ?></span>
 						</div>
 						<!-- /.info-box-content -->
@@ -42,7 +42,7 @@
 						<span class="info-box-icon bg-success elevation-1"><i class="fas fa-comments"></i></span>
 
 						<div class="info-box-content">
-							<span class="info-box-text">Komentar</span>
+							<span class="info-box-text"><a href="<?= base_url('admin/komentar') ?>" class="stretched-link text-dark">Komentar</a></span>
 							<span class="info-box-number"><?= $totalcomments ?></span>
 						</div>
 						<!-- /.info-box-content -->

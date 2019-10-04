@@ -27,15 +27,15 @@
                 </a>
             </li>
 
-            <li class="nav-item has-treeview <?= $pagename == 'Semua Tulisan' || $pagename == 'Tulisan Diterbitkan' || $pagename == 'Tambah Tulisan' || $pagename == 'Komentar' || $pagename == 'Pesan Masuk' ? 'menu-open' : ''; ?>">
-                <a href="#" class="nav-link <?= $pagename == 'Semua Tulisan' || $pagename == 'Tulisan Diterbitkan' || $pagename == 'Tambah Tulisan' || $pagename == 'Komentar' || $pagename == 'Pesan Masuk' ? 'active' : ''; ?>">
+            <li class="nav-item has-treeview <?= $pagename == 'Semua Tulisan' || $pagename == 'Tulisan Diterbitkan' || $pagename == 'Tambah Tulisan' || $pagename == 'Edit Tulisan' || $pagename == 'Komentar' || $pagename == 'Pesan Masuk' ? 'menu-open' : ''; ?>">
+                <a href="#" class="nav-link <?= $pagename == 'Semua Tulisan' || $pagename == 'Tulisan Diterbitkan' || $pagename == 'Tambah Tulisan' || $pagename == 'Edit Tulisan' || $pagename == 'Komentar' || $pagename == 'Pesan Masuk' ? 'active' : ''; ?>">
                     <i class="nav-icon fas fa-edit"></i>
                     <p>Blog<i class="fas fa-angle-left right"></i></p>
                 </a>
                 <ul class="nav nav-treeview">
                     <!-- dropdown tulisan -->
-                    <li class="nav-item has-treeview <?= $pagename == 'Semua Tulisan' || $pagename == 'Tulisan Diterbitkan' || $pagename == 'Tambah Tulisan' ? 'menu-open' : ''; ?>">
-                        <a href="#" class="nav-link <?= $pagename == 'Semua Tulisan' || $pagename == 'Tulisan Diterbitkan' || $pagename == 'Tambah Tulisan' ? 'active' : ''; ?>">
+                    <li class="nav-item has-treeview <?= $pagename == 'Semua Tulisan' || $pagename == 'Tulisan Diterbitkan' || $pagename == 'Tambah Tulisan' || $pagename == 'Edit Tulisan' ? 'menu-open' : ''; ?>">
+                        <a href="#" class="nav-link <?= $pagename == 'Semua Tulisan' || $pagename == 'Tulisan Diterbitkan' || $pagename == 'Tambah Tulisan' || $pagename == 'Edit Tulisan' ? 'active' : ''; ?>">
                             <i class="nav-icon fas fa-file-alt"></i>
                             <p>Tulisan<i class="fas fa-angle-left right"></i></p>
                         </a>
@@ -53,7 +53,7 @@
                                 </a>
                             </li>
                             <li class="nav-item ml-4">
-                                <a href="<?= base_url('admin/post/addpost') ?>" class="nav-link <?= $pagename == 'Tambah Tulisan' ? 'active' : ''; ?>">
+                                <a href="<?= base_url('admin/post/addpost') ?>" class="nav-link <?= $pagename == 'Tambah Tulisan' || $pagename == 'Edit Tulisan' ? 'active' : ''; ?>">
                                     <i class="nav-icon fas fa-sign-out-alt"></i>
                                     <p>Tambah Baru</p>
                                 </a>

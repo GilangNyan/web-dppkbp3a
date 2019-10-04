@@ -76,8 +76,8 @@
             <?php if ($this->session->userdata('role') == 'ADMIN' || $this->session->userdata('role') == 'GOD') : ?>
         </ul>
 
-        <li class="nav-item has-treeview <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' || $pagename == 'Menu' ? 'menu-open' : ''; ?>">
-            <a href="#" class="nav-link <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' || $pagename == 'Menu' ? 'active' : ''; ?>">
+        <li class="nav-item has-treeview <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' || $pagename == 'Halaman' ? 'menu-open' : ''; ?>">
+            <a href="#" class="nav-link <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' || $pagename == 'Halaman' ? 'active' : ''; ?>">
                 <i class="nav-icon fas fa-paint-brush"></i>
                 <p>Tampilan<i class="fas fa-angle-left right"></i></p>
             </a>
@@ -105,11 +105,19 @@
             </ul>
             <ul class="nav nav-treeview">
                 <!-- DROPDOWN MENU START -->
-                <li class="nav-item ml-3">
-                    <a href="<?= base_url('admin/halaman') ?>" class="nav-link <?= $pagename == 'Menu' ? 'active' : ''; ?>">
+                <li class="nav-item has-treeview ml-3 <?= $pagename == 'Halaman' ? 'menu-open' : ''; ?>">
+                    <a href="#" class="nav-link <?= $pagename == 'Halaman' ? 'active' : ''; ?>">
                         <i class="nav-icon fas fa-bars"></i>
-                        <p>Menu</p>
+                        <p>Menu<i class="fas fa-angle-left right"></i></p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item ml-3">
+                            <a href="<?= base_url('admin/halaman') ?>" class="nav-link <?= $pagename == 'Halaman' ? 'active' : ''; ?>">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                <p>Halaman</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <!-- DROPDOWN MENU END -->
             </ul>

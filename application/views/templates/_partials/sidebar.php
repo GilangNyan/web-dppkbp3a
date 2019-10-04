@@ -34,39 +34,40 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <!-- dropdown tulisan -->
-                    <li class="nav-item has-treeview <?= $pagename == 'Semua Tulisan' || $pagename == 'Tulisan Diterbitkan' || $pagename == 'Tambah Tulisan' ? 'menu-open' : ''; ?>">
+                    <li class="nav-item has-treeview ml-3 <?= $pagename == 'Semua Tulisan' || $pagename == 'Tulisan Diterbitkan' || $pagename == 'Tambah Tulisan' ? 'menu-open' : ''; ?>">
                         <a href="#" class="nav-link <?= $pagename == 'Semua Tulisan' || $pagename == 'Tulisan Diterbitkan' || $pagename == 'Tambah Tulisan' ? 'active' : ''; ?>">
                             <i class="nav-icon fas fa-file-alt"></i>
                             <p>Tulisan<i class="fas fa-angle-left right"></i></p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item ml-4">
+                            <li class="nav-item ml-3">
                                 <a href="<?= base_url('admin/post') ?>" class="nav-link <?= $pagename == 'Semua Tulisan' ? 'active' : ''; ?>">
                                     <i class="nav-icon fas fa-sign-out-alt"></i>
                                     <p>Semua Tulisan</p>
                                 </a>
                             </li>
-                            <li class="nav-item ml-4">
+                            <li class="nav-item ml-3">
                                 <a href="<?= base_url('admin/post/published') ?>" class="nav-link <?= $pagename == 'Tulisan Diterbitkan' ? 'active' : ''; ?>">
                                     <i class="nav-icon fas fa-sign-out-alt"></i>
                                     <p>Tulisan Diterbitkan</p>
                                 </a>
                             </li>
-                            <li class="nav-item ml-4">
+                            <li class="nav-item ml-3">
                                 <a href="<?= base_url('admin/post/addpost') ?>" class="nav-link <?= $pagename == 'Tambah Tulisan' ? 'active' : ''; ?>">
                                     <i class="nav-icon fas fa-sign-out-alt"></i>
                                     <p>Tambah Baru</p>
                                 </a>
                             </li>
+                            <li class="nav-item ml-3">
+                                <a href="<?= base_url('admin/komentar') ?>" class="nav-link <?= $pagename == 'Komentar' ? 'active' : ''; ?>">
+                                    <i class="nav-icon fas fa-sign-out-alt"></i>
+                                    <p>Komentar</p>
+                                </a>
+                            </li>
                     </li>
                 </ul>
-            <li class="nav-item">
-                <a href="<?= base_url('admin/komentar') ?>" class="nav-link <?= $pagename == 'Komentar' ? 'active' : ''; ?>">
-                    <i class="nav-icon fas fa-comment"></i>
-                    <p>Komentar</p>
-                </a>
-            </li>
-            <li class="nav-item">
+
+            <li class="nav-item ml-3">
                 <a href="<?= base_url('admin/pesan') ?>" class="nav-link <?= $pagename == 'Pesan Masuk' ? 'active' : ''; ?>">
                     <i class="nav-icon fas fa-envelope"></i>
                     <p>Pesan Masuk</p>
@@ -82,13 +83,13 @@
             </a>
             <ul class="nav nav-treeview">
                 <!-- DROPDOWN MEDIA START -->
-                <li class="nav-item has-treeview <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' ? 'menu-open' : ''; ?>">
+                <li class="nav-item has-treeview ml-3 <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' ? 'menu-open' : ''; ?>">
                     <a href="#" class="nav-link <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' ? 'active' : ''; ?>">
                         <i class="nav-icon fas fa-photo-video"></i>
                         <p>Media<i class="fas fa-angle-left right"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item ml-4">
+                        <li class="nav-item ml-3">
                             <a href="<?= base_url('admin/albums') ?>" class="nav-link <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' ? 'active' : ''; ?>">
                                 <i class="nav-icon fas fa-sign-out-alt"></i>
                                 <p>Album Foto</p>
@@ -104,13 +105,13 @@
             </ul>
             <ul class="nav nav-treeview">
                 <!-- DROPDOWN MENU START -->
-                <li class="nav-item has-treeview <?= $pagename == 'Halaman' ? 'menu-open' : ''; ?>">
+                <li class="nav-item has-treeview ml-3 <?= $pagename == 'Halaman' ? 'menu-open' : ''; ?>">
                     <a href="#" class="nav-link <?= $pagename == 'Halaman' ? 'active' : ''; ?>">
                         <i class="nav-icon fas fa-bars"></i>
                         <p>Menu<i class="fas fa-angle-left right"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
+                        <li class="nav-item ml-3">
                             <a href="<?= base_url('admin/halaman') ?>" class="nav-link <?= $pagename == 'Halaman' ? 'active' : ''; ?>">
                                 <i class="nav-icon fas fa-sign-out-alt"></i>
                                 <p>Halaman</p>
@@ -133,13 +134,13 @@
                 <p>Pengaturan<i class="fas fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
-                <li class="nav-item ml-4">
+                <li class="nav-item ml-3">
                     <a href="<?= base_url('admin/profil') ?>" class="nav-link <?= $pagename == 'Profil Dinas' ? 'active' : ''; ?>">
                         <i class="nav-icon fas fa-sign-out-alt"></i>
                         <p>Profil Dinas</p>
                     </a>
                 </li>
-                <li class="nav-item ml-4">
+                <li class="nav-item ml-3">
                     <a href="<?= base_url('admin/kepala') ?>" class="nav-link <?= $pagename == 'Kepala Dinas' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-sign-out-alt"></i>
                         <p>Kepala Dinas</p>
@@ -153,7 +154,7 @@
                 <p>Pemeliharaan<i class="fas fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
-                <li class="nav-item ml-4">
+                <li class="nav-item ml-3">
                     <a href="<?= base_url('admin/pemeliharaan/backupDB') ?>" class="nav-link">
                         <i class="nav-icon fas fa-database"></i>
                         <p>Backup Database</p>

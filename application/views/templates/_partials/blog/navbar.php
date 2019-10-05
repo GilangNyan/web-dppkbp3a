@@ -1,6 +1,7 @@
+<!-- Navigation Menu -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <a class="navbar-brand ml-lg-3" href="<?= base_url() ?>">
-        <img src="<?= base_url('assets/dist/img/Logo_Kota_Tasikmalaya.png') ?>" width="30" height="30" class="d-inline-block align-top" alt="Logo Kota Tasik">
+        <img src="<?= base_url('assets/dist/img/Logo_Kota_Tasikmalaya.png') ?>" width="40" height="40" class="d-inline-block align-top" alt="Logo Kota Tasik">
         <span class="text-warning">DPPKBP3A</span> Tasikmalaya
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

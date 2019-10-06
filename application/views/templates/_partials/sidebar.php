@@ -157,6 +157,10 @@
                                 <i class="nav-icon fas fa-window-restore"></i>
                                 <p>Restore Database</p>
                             </a>
+                            <a href="<?= base_url('admin/pemeliharaan/backup_Apps') ?>" class="nav-link">
+                                <i class="nav-icon fas fa-download"></i>
+                                <p>Backup Apps</p>
+                            </a>
                         </li>
                     </ul>
                 </li>

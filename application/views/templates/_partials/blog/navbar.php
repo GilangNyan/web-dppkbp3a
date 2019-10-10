@@ -1,18 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand ml-lg-3" href="<?= base_url() ?>">
-        <img src="<?= base_url('assets/dist/img/Logo_Kota_Tasikmalaya.png') ?>" width="30" height="30" class="d-inline-block align-top" alt="Logo Kota Tasik">
-        <span class="text-warning">DPPKBP3A</span> Tasikmalaya
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse navbar-left" id="navbarSupportedContent">
-        <div class="row ml-auto mr-sm-2">
-            <?php if ($parent_pages->num_rows() > 0) : ?>
-                <ul class="navbar-nav mt-2 mt-lg-0 mr-2">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url() ?>"><i class="fas fa-home"></i> <span class="sr-only">(current)</span></a>
-                    </li>
+<div class="container-fluid nav-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1">
+                <img src="<?= base_url('assets/dist/img/Logo_Kota_Tasikmalaya.png') ?>" width="70" height="70" alt="Logo Kota Tasik">
+            </div>
+            <div class="col-md-11">
+                <span class="text-warning font-weight-bolder">Dinas PPKBP3A</span>
+                <p class="text-white">Kota Tasikmalaya</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+        <!-- <a class="navbar-brand ml-lg-3" href="<?= base_url() ?>">
+            <img src="<?= base_url('assets/dist/img/Logo_Kota_Tasikmalaya.png') ?>" width="30" height="30" class="d-inline-block align-top" alt="Logo Kota Tasik">
+            <span class="text-warning">DPPKBP3A</span> Tasikmalaya
+        </a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-left" id="navbarSupportedContent">
+            <ul class="navbar-nav mt-2 mt-lg-0 mr-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url() ?>"><i class="fas fa-home"></i> <span class="sr-only">(current)</span></a>
+                </li>
+                <?php if ($parent_pages->num_rows() > 0) : ?>
                     <?php foreach ($parent_pages->result() as $parent_page) :
                             $sub_pages = $this->halaman_model->get_sub_pages($parent_page->id_halaman);
                             if ($sub_pages->num_rows() > 0) : ?>
@@ -32,21 +46,23 @@
                             </li>
                         <?php endif; ?>
                     <?php endforeach; ?>
-                </ul>
-            <?php endif; ?>
-            <form class="form-inline my-2 my-lg-0">
-                <div class="form-group has-search">
-                    <i class="fas fa-search form-control-feedback"></i>
-                    <div class="holder">
-                        <form action="<?= base_url('blog/artikel/liveSearch') ?>" method="post" id="formsearch">
-                            <input type="text" class="form-control" name="cari" id="cari" placeholder="Cari..." aria-label="Cari..." aria-describedby="basic-addon">
-                        </form>
-                        <div class="drop">
-                            <div class="list-group" id="searchData"></div>
+                <?php endif; ?>
+            </ul>
+            <div class="row ml-auto mr-sm-2">
+                <form class="form-inline my-2 my-lg-0">
+                    <div class="form-group has-search">
+                        <i class="fas fa-search form-control-feedback"></i>
+                        <div class="holder">
+                            <form action="<?= base_url('blog/artikel/liveSearch') ?>" method="post" id="formsearch">
+                                <input type="text" class="form-control" name="cari" id="cari" placeholder="Cari..." aria-label="Cari..." aria-describedby="basic-addon">
+                            </form>
+                            <div class="drop">
+                                <div class="list-group" id="searchData"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </nav>

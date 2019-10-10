@@ -18,10 +18,6 @@
                 <!-- CONTENT -->
                 <div class="col-lg-8 col-sm-12">
                     <!-- TULISAN POPULER -->
-                    <!-- <h5 class="page-title mb-3">
-                        Tulisan Terbaru
-                        <hr>
-                    </h5> -->
                     <div class="card mb-3">
                         <div class="card-header bg-primary text-light">
                             <h5 class="card-title mb-0">

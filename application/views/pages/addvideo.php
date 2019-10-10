@@ -6,10 +6,6 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header d-flex p-0">
-                        <h3 class="card-title p-3">
-                            <i class="fas fa-image mr-1"></i>
-                            Tambahkan Detail Video
-                        </h3>
                     </div>
                     <div class="card-body">
                         <form action="<?= base_url('admin/videos/add/') ?>" method="post" name="uploadvideo" id="uploadvideo" enctype="multipart/form-data">

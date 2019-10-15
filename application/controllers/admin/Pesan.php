@@ -24,7 +24,7 @@ class Pesan extends CI_Controller
 
     public function detail($id)
     {
-        if ($id == null) show_404();
+        if (!isset($id)) show_404();
         $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['user'] = $this->user_model->get_current_user();
         $data['pagename'] = 'Pesan Masuk';
@@ -33,5 +33,15 @@ class Pesan extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('pages/detailpesan', $data);
         $this->load->view('templates/footer');
+    }
+
+    public function delete($id)
+    {
+        if (!isset($id)) show_404();
+
+        if ($this->pesan_model->delete($id)) {
+            $this->session->set_flashdata('message', 'Pesan berhasil dihapus!');
+            redirect('admin/pesan');
+        }
     }
 }

@@ -16,4 +16,9 @@ class Pesan_model extends CI_Model
         }
         return $pesan;
     }
+
+    function delete($id)
+    {
+        return $this->db->delete('pesan', ['id' => $id]);
+    }
 }

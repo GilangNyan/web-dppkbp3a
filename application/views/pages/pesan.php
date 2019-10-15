@@ -16,18 +16,20 @@
                             <thead>
                                 <tr>
                                     <th>Pengirim</th>
-                                    <th>Pesan</th>
+                                    <th style="width: 65%;">Pesan</th>
+                                    <th>Tanggal</th>
                                     <th>Opsi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach ($pesan as $row) : ?>
-                                    <tr style="transform: rotate(0);">
-                                        <td><a href="<?= base_url('admin/pesan/detail/') . $row->id ?>" class="stretched-link text-muted"><?= $row->email ?></a></td>
-                                        <td>
-                                            <p class="crop-text"><?= $row->isi ?></p>
+                                    <tr class="<?= $row->dibaca == 0 ? '' : 'table-secondary' ?>">
+                                        <td style="transform: rotate(0);"><a href="<?= base_url('admin/pesan/detail/') . $row->id ?>" class="stretched-link"></a><?= $row->email ?></td>
+                                        <td style="transform: rotate(0);">
+                                            <p class="crop-text"><?= $row->isi ?><a href="<?= base_url('admin/pesan/detail/') . $row->id ?>" class="stretched-link"></p>
                                         </td>
-                                        <td><a href="<?= base_url('admin/pesan/delete/') . $row->id ?>" class="btn btn-sm text-danger"><i class="fas fa-trash-alt"></i></a></td>
+                                        <td style="transform: rotate(0);"><?= date('d-m-Y H:i', strtotime($row->tanggal)) ?><a href="<?= base_url('admin/pesan/detail/') . $row->id ?>" class="stretched-link"></td>
+                                        <td><a href="<?= base_url('admin/pesan/delete/') . $row->id ?>" class="btn btn-sm text-danger btn-hapuspesan"><i class="fas fa-trash-alt"></i></a></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

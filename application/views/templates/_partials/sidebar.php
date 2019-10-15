@@ -69,7 +69,11 @@
                     <li class="nav-item ml-3">
                         <a href="<?= base_url('admin/pesan') ?>" class="nav-link <?= $pagename == 'Pesan Masuk' ? 'active' : ''; ?>">
                             <i class="nav-icon fas fa-envelope"></i>
-                            <p>Pesan Masuk</p>
+                            <p>Pesan Masuk
+                                <?php if ($notifications != 0) : ?>
+                                    <span class="badge badge-info right"><?= $notifications ?></span>
+                                <?php endif; ?>
+                            </p>
                         </a>
                     </li>
                 </ul>
@@ -77,15 +81,15 @@
 
             <?php if ($this->session->userdata('role') == 'ADMIN' || $this->session->userdata('role') == 'GOD') : ?>
 
-                <li class="nav-item has-treeview <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' || $pagename == 'Menu' ? 'menu-open' : ''; ?>">
-                    <a href="#" class="nav-link <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' || $pagename == 'Menu' ? 'active' : ''; ?>">
+                <li class="nav-item has-treeview <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' || $pagename == 'Tambah Video' || $pagename == 'Menu' ? 'menu-open' : ''; ?>">
+                    <a href="#" class="nav-link <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' || $pagename == 'Tambah Video' || $pagename == 'Menu' ? 'active' : ''; ?>">
                         <i class="nav-icon fas fa-paint-brush"></i>
                         <p>Tampilan<i class="fas fa-angle-left right"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
                         <!-- DROPDOWN MEDIA START -->
-                        <li class="nav-item has-treeview ml-3 <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' ? 'menu-open' : ''; ?>">
-                            <a href="#" class="nav-link <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' ? 'active' : ''; ?>">
+                        <li class="nav-item has-treeview ml-3 <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' || $pagename == 'Tambah Video' ? 'menu-open' : ''; ?>">
+                            <a href="#" class="nav-link <?= $pagename == 'Album Foto' || $pagename == 'Detail Album' || $pagename == 'Video' || $pagename == 'Tambah Video' ? 'active' : ''; ?>">
                                 <i class="nav-icon fas fa-photo-video"></i>
                                 <p>Media<i class="fas fa-angle-left right"></i></p>
                             </a>
@@ -95,7 +99,7 @@
                                         <i class="nav-icon fas fa-sign-out-alt"></i>
                                         <p>Album Foto</p>
                                     </a>
-                                    <a href="<?= base_url('admin/videos') ?>" class="nav-link <?= $pagename == 'Video' ? 'active' : ''; ?>">
+                                    <a href="<?= base_url('admin/videos') ?>" class="nav-link <?= $pagename == 'Video' || $pagename == 'Tambah Video' ? 'active' : ''; ?>">
                                         <i class="nav-icon fas fa-sign-out-alt"></i>
                                         <p>Video</p>
                                     </a>

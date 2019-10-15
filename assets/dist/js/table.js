@@ -38,7 +38,7 @@ $(document).ready(function () {
 			"sEmptyTable": "Tidads"
 		},
 		"order": [
-			[1, "desc"]
+			[2, "desc"]
 		]
 	});
 });

@@ -257,4 +257,9 @@ class User_model extends CI_Model
             return "default.jpg";
         }
     }
+
+    public function notifications()
+    {
+        return $this->db->get_where('pesan', ['dibaca' => 0])->num_rows();
+    }
 }

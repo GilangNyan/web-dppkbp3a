@@ -22,10 +22,12 @@
                             </thead>
                             <tbody>
                                 <?php foreach ($pesan as $row) : ?>
-                                    <tr>
-                                        <td><?= $row->email ?></td>
-                                        <td><?= $row->isi ?></td>
-                                        <td><a href="<?= base_url('admin/pesan/delete/') . $row->id ?>" class="btn btn-sm text-danger"><i class="fas fa-trash-alt"></i> Hapus</a></td>
+                                    <tr style="transform: rotate(0);">
+                                        <td><a href="<?= base_url('admin/pesan/detail/') . $row->id ?>" class="stretched-link text-muted"><?= $row->email ?></a></td>
+                                        <td>
+                                            <p class="crop-text"><?= $row->isi ?></p>
+                                        </td>
+                                        <td><a href="<?= base_url('admin/pesan/delete/') . $row->id ?>" class="btn btn-sm text-danger"><i class="fas fa-trash-alt"></i></a></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

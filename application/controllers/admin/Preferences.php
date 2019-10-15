@@ -22,6 +22,7 @@ class Preferences extends CI_Controller
         $data['kepala'] = $this->preferences_model->getKepala();
         $data['sambutan'] = $this->preferences_model->getSambutan();
         $data['pagename'] = 'Kepala Dinas';
+        $data['notifications'] = $this->user_model->notifications();
         $this->load->view('templates/header', $data);
         $this->load->view('pages/kepaladinas', $data);
         $this->load->view('templates/footer');
@@ -40,6 +41,7 @@ class Preferences extends CI_Controller
             $data['provinsi'] = $this->preferences_model->getProvinsi();
             $data['profil'] = $this->preferences_model->getProfil();
             $data['pagename'] = 'Profil Dinas';
+            $data['notifications'] = $this->user_model->notifications();
             $this->load->view('templates/header', $data);
             $this->load->view('pages/profil', $data);
             $this->load->view('templates/footer');

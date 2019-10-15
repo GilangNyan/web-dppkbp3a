@@ -15,9 +15,23 @@ class Pesan extends CI_Controller
         $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['user'] = $this->user_model->get_current_user();
         $data['pagename'] = 'Pesan Masuk';
+        $data['notifications'] = $this->user_model->notifications();
         $data['pesan'] = $this->pesan_model->getPesan();
         $this->load->view('templates/header', $data);
         $this->load->view('pages/pesan', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function detail($id)
+    {
+        if ($id == null) show_404();
+        $data['parent_pages'] = $this->halaman_model->get_parent_pages();
+        $data['user'] = $this->user_model->get_current_user();
+        $data['pagename'] = 'Pesan Masuk';
+        $data['notifications'] = $this->user_model->notifications();
+        $data['pesan'] = $this->pesan_model->getPesanById($id);
+        $this->load->view('templates/header', $data);
+        $this->load->view('pages/detailpesan', $data);
         $this->load->view('templates/footer');
     }
 }

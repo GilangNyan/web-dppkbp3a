@@ -29,9 +29,9 @@
                                         <td><?= $row->deskripsi ?></td>
                                         <td><?= $row->diupload ?></td>
                                         <td>
-                                            <a href="<?= base_url('assets/videos/') . $row->filename ?>" class="btn btn-sm text-success" data-lity><i class="fas fa-eye"></i> Lihat</a>
-                                            <a href="<?= base_url('admin/videos/update/') . $row->id ?>" class="btn btn-sm text-primary"><i class="fas fa-edit"></i> Edit</a>
-                                            <a href="<?= base_url('admin/videos/delete/') . $row->id ?>" class="btn-hapus btn btn-sm text-danger"><i class="fas fa-trash-alt"></i> Hapus</a>
+                                            <a href="<?= base_url('assets/videos/') . $row->filename ?>" class="btn btn-sm text-success" data-lity><i class="fas fa-eye"></i></a>
+                                            <a href="<?= base_url('admin/videos/update/') . $row->id ?>" class="btn btn-sm text-primary"><i class="fas fa-edit"></i></a>
+                                            <a href="<?= base_url('admin/videos/delete/') . $row->id ?>" class="btn-hapus btn btn-sm text-danger"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

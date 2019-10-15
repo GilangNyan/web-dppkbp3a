@@ -19,6 +19,7 @@ class Albums extends CI_Controller
         $data['user'] = $this->user_model->get_current_user();
         $data['query'] = $this->albums_model->getAlbums();
         $data['pagename'] = 'Album Foto';
+        $data['notifications'] = $this->user_model->notifications();
         $this->load->view('templates/header', $data);
         $this->load->view('pages/albums', $data);
         $this->load->view('templates/footer');
@@ -31,6 +32,7 @@ class Albums extends CI_Controller
             $data['user'] = $this->user_model->get_current_user();
             $data['query'] = $this->albums_model->getAlbums();
             $data['pagename'] = 'Album Foto';
+            $data['notifications'] = $this->user_model->notifications();
             $this->load->view('templates/header', $data);
             $this->load->view('pages/addalbums', $data);
             $this->load->view('templates/footer');
@@ -49,6 +51,7 @@ class Albums extends CI_Controller
             $data['parent_pages'] = $this->halaman_model->get_parent_pages();
             $data['user'] = $this->user_model->get_current_user();
             $data['pagename'] = 'Album Foto';
+            $data['notifications'] = $this->user_model->notifications();
             $data['query'] = $this->albums_model->getAlbumsById($id);
             if (!$data['query']) show_404();
             $this->load->view('templates/header', $data);
@@ -98,6 +101,7 @@ class Albums extends CI_Controller
             $data['album'] = $this->albums_model->getAlbumsById($id);
             $data['foto'] = $this->albums_model->showPhoto($id);
             $data['pagename'] = 'Detail Album';
+            $data['notifications'] = $this->user_model->notifications();
             $this->load->view('templates/header', $data);
             $this->load->view('pages/detailalbum', $data);
             $this->load->view('templates/footer');

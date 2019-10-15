@@ -30,18 +30,18 @@
                             </thead>
                             <tbody>
                                 <?php foreach ($listuser as $row) : ?>
-                                <tr>
-                                    <td><?= $row->username ?></td>
-                                    <td><?= $row->email ?></td>
-                                    <td><?= $row->nama ?></td>
-                                    <td><?= $row->role ?></td>
-                                    <td><?= $row->dibuat_pada ?></td>
-                                    <td>
-                                        <!-- <a href="<?= base_url() ?>" class="btn btn-sm text-success"><i class="fas fa-eye"></i> Lihat</a> -->
-                                        <a href="<?= base_url('admin/user/edit/') . $row->id ?>" class="btn btn-sm text-primary"><i class="fas fa-edit"></i> Edit</a>
-                                        <a href="<?= base_url('admin/user/delete/') . $row->id ?>" class="btn-hapususer btn btn-sm text-danger"><i class="fas fa-trash-alt"></i> Hapus</a>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td><?= $row->username ?></td>
+                                        <td><?= $row->email ?></td>
+                                        <td><?= $row->nama ?></td>
+                                        <td><?= $row->role ?></td>
+                                        <td><?= $row->dibuat_pada ?></td>
+                                        <td>
+                                            <!-- <a href="<?= base_url() ?>" class="btn btn-sm text-success"><i class="fas fa-eye"></i> Lihat</a> -->
+                                            <a href="<?= base_url('admin/user/edit/') . $row->id ?>" class="btn btn-sm text-primary"><i class="fas fa-edit"></i></a>
+                                            <a href="<?= base_url('admin/user/delete/') . $row->id ?>" class="btn-hapususer btn btn-sm text-danger"><i class="fas fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>

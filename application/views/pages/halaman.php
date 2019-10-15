@@ -36,9 +36,9 @@
                                         <td><?= $page->sub_page ?></td>
                                         <td><?= $page->tanggal ?></td>
                                         <td>
-                                            <a href="<?= base_url('pages/') . $page->slug ?>" class="btn btn-sm text-success" target="_blank"><i class="fas fa-eye"></i> Lihat</a>
-                                            <a href="<?= base_url('admin/halaman/getPage/') . $page->id_halaman ?>" class="btn-edithal btn btn-sm text-primary" data-toggle="modal" data-target="#modalPageUpdate" data-postid="<?= $page->id_halaman ?>" data-judulhal="<?= $page->judul ?>" data-isihal="<?= htmlspecialchars($page->isi) ?>" data-parent="<?= $page->parent ?>"><i class="fas fa-edit"></i> Edit</a>
-                                            <a href="<?= base_url('admin/halaman/deletePage/') . $page->id_halaman ?>" class="btn-hapus btn btn-sm text-danger"><i class="fas fa-trash-alt"></i> Hapus</a>
+                                            <a href="<?= base_url('pages/') . $page->slug ?>" class="btn btn-sm text-success" target="_blank"><i class="fas fa-eye"></i></a>
+                                            <a href="<?= base_url('admin/halaman/getPage/') . $page->id_halaman ?>" class="btn-edithal btn btn-sm text-primary" data-toggle="modal" data-target="#modalPageUpdate" data-postid="<?= $page->id_halaman ?>" data-judulhal="<?= $page->judul ?>" data-isihal="<?= htmlspecialchars($page->isi) ?>" data-parent="<?= $page->parent ?>"><i class="fas fa-edit"></i></a>
+                                            <a href="<?= base_url('admin/halaman/deletePage/') . $page->id_halaman ?>" class="btn-hapus btn btn-sm text-danger"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

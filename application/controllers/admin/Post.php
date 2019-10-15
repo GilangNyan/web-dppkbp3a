@@ -22,6 +22,7 @@ class Post extends CI_Controller
         $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['user'] = $this->user_model->get_current_user();
         $data['pagename'] = 'Semua Tulisan';
+        $data['notifications'] = $this->user_model->notifications();
         $data['posting'] = $this->post_model->getAllPost();
         $this->load->view('templates/header', $data);
         $this->load->view('pages/posting', $data);
@@ -33,6 +34,7 @@ class Post extends CI_Controller
         $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['user'] = $this->user_model->get_current_user();
         $data['pagename'] = 'Tulisan Diterbitkan';
+        $data['notifications'] = $this->user_model->notifications();
         $data['posting'] = $this->post_model->getPublishedPost();
         $this->load->view('templates/header', $data);
         $this->load->view('pages/posting', $data);
@@ -54,6 +56,7 @@ class Post extends CI_Controller
             $data['parent_pages'] = $this->halaman_model->get_parent_pages();
             $data['user'] = $this->user_model->get_current_user();
             $data['pagename'] = 'Tambah Tulisan';
+            $data['notifications'] = $this->user_model->notifications();
             $this->load->view('templates/header', $data);
             $this->load->view('pages/tambahPost', $data);
             $this->load->view('templates/footer');
@@ -90,6 +93,7 @@ class Post extends CI_Controller
             $data['parent_pages'] = $this->halaman_model->get_parent_pages();
             $data['user'] = $this->user_model->get_current_user();
             $data['pagename'] = 'Edit Tulisan';
+            $data['notifications'] = $this->user_model->notifications();
             $data['posting'] = $this->post_model->getSpecificPost($postId);
             $this->load->view('templates/header', $data);
             $this->load->view('pages/editPost', $data);

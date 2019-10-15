@@ -24,7 +24,7 @@
                                         <td><?= $comment->komentar ?></td>
                                         <td><?= $comment->judul ?></td>
                                         <td>
-                                            <a href="<?= base_url('admin/komentar/delete/') . $comment->id ?>" class="btn-hapuskomentar btn btn-sm text-danger"><i class="fas fa-trash-alt"></i> Hapus</a>
+                                            <a href="<?= base_url('admin/komentar/delete/') . $comment->id ?>" class="btn-hapuskomentar btn btn-sm text-danger"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

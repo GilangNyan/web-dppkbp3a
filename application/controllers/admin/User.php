@@ -20,6 +20,7 @@ class User extends CI_Controller
         $data['user'] = $this->user_model->get_current_user();
         $data['listuser'] = $this->user_model->getUser();
         $data['pagename'] = 'Kelola Pengguna';
+        $data['notifications'] = $this->user_model->notifications();
         $this->load->view('templates/header', $data);
         $this->load->view('pages/user', $data);
         $this->load->view('templates/footer');
@@ -34,6 +35,7 @@ class User extends CI_Controller
             $data['user'] = $this->user_model->get_current_user();
             $data['listuser'] = $this->user_model->getUser();
             $data['pagename'] = 'Kelola Pengguna';
+            $data['notifications'] = $this->user_model->notifications();
             $this->load->view('templates/header', $data);
             $this->load->view('pages/adduser', $data);
             $this->load->view('templates/footer');
@@ -54,6 +56,7 @@ class User extends CI_Controller
             $data['user'] = $this->user_model->get_current_user();
             $data['listuser'] = $this->user_model->getUser();
             $data['pagename'] = 'Kelola Pengguna';
+            $data['notifications'] = $this->user_model->notifications();
             $data['edituser'] = $this->user_model->getUserById($id);
             if (!$data['edituser']) show_404();
             $this->load->view('templates/header', $data);
@@ -91,6 +94,7 @@ class User extends CI_Controller
             $data['parent_pages'] = $this->halaman_model->get_parent_pages();
             $data['user'] = $this->user_model->get_current_user();
             $data['pagename'] = 'Setelan Akun';
+            $data['notifications'] = $this->user_model->notifications();
             $this->load->view('templates/header', $data);
             $this->load->view('pages/setelan', $data);
             $this->load->view('templates/footer');

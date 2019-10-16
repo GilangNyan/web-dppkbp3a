@@ -105,28 +105,36 @@ class Home_model extends CI_Model
         $kodepos = '';
 
         if ($profil != null) {
-            $datakab = json_decode($this->curl->simple_get($this->API . 'provinsi/' . $profil->provinsi . '/kabupaten'));
-            $datakec = json_decode($this->curl->simple_get($this->API . 'provinsi/kabupaten/' . $profil->kabupaten . '/kecamatan'));
-            $datades = json_decode($this->curl->simple_get($this->API . 'provinsi/kabupaten/kecamatan/' . $profil->kecamatan . '/desa'));
-            foreach ($dataprov->semuaprovinsi as $row) {
-                if ($profil->provinsi == $row->id) {
-                    $provinsi .= $row->nama;
+            $connected = $this->_checkConnection();
+            if ($connected == true) {
+                $datakab = json_decode($this->curl->simple_get($this->API . 'provinsi/' . $profil->provinsi . '/kabupaten'));
+                $datakec = json_decode($this->curl->simple_get($this->API . 'provinsi/kabupaten/' . $profil->kabupaten . '/kecamatan'));
+                $datades = json_decode($this->curl->simple_get($this->API . 'provinsi/kabupaten/kecamatan/' . $profil->kecamatan . '/desa'));
+                foreach ($dataprov->semuaprovinsi as $row) {
+                    if ($profil->provinsi == $row->id) {
+                        $provinsi .= $row->nama;
+                    }
                 }
-            }
-            foreach ($datakab->kabupatens as $row) {
-                if ($profil->kabupaten == $row->id) {
-                    $kabupaten .= $row->nama;
+                foreach ($datakab->kabupatens as $row) {
+                    if ($profil->kabupaten == $row->id) {
+                        $kabupaten .= $row->nama;
+                    }
                 }
-            }
-            foreach ($datakec->kecamatans as $row) {
-                if ($profil->kecamatan == $row->id) {
-                    $kecamatan .= $row->nama;
+                foreach ($datakec->kecamatans as $row) {
+                    if ($profil->kecamatan == $row->id) {
+                        $kecamatan .= $row->nama;
+                    }
                 }
-            }
-            foreach ($datades->desas as $row) {
-                if ($profil->desa == $row->id) {
-                    $desa .= $row->nama;
+                foreach ($datades->desas as $row) {
+                    if ($profil->desa == $row->id) {
+                        $desa .= $row->nama;
+                    }
                 }
+            } else {
+                $provinsi = 'Jawa Barat';
+                $kabupaten = 'Kota Tasikmalaya';
+                $kecamatan = 'Cihideung';
+                $desa = 'Yudanagara';
             }
             $namadinas .= $profil->namadinas;
             $alamat .= $profil->alamat;
@@ -148,5 +156,18 @@ class Home_model extends CI_Model
         ];
 
         return $data;
+    }
+
+    private function _checkConnection()
+    {
+        $connected = @fsockopen("www.google.com", 80);
+
+        if ($connected) {
+            $is_conn = true;
+            fclose($connected);
+        } else {
+            $is_conn = false;
+        }
+        return $is_conn;
     }
 }

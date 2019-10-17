@@ -15,21 +15,21 @@ class Preferences_model extends CI_Model
     {
         $this->db->select('foto');
         $this->db->from('kepala_dinas');
-        return $this->db->get()->result();
+        return $this->db->get()->row();
     }
 
     public function getKepala()
     {
         $this->db->select('nama, jabatan');
         $this->db->from('kepala_dinas');
-        return $this->db->get()->result();
+        return $this->db->get()->row();
     }
 
     public function getSambutan()
     {
         $this->db->select('sambutan');
         $this->db->from('kepala_dinas');
-        return $this->db->get()->result();
+        return $this->db->get()->row();
     }
 
     public function editKepala($nama, $jabatan)

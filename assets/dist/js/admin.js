@@ -48,13 +48,14 @@ $(document).ready(function () {
 	$('#btnKepala').click(function () {
 		var nama = $('#namakadis').val();
 		var jabatan = $('#jabatan').val();
+		console.log(nama);
 		$.ajax({
 			url: 'preferences/editNama',
 			method: 'POST',
 			dataType: 'text',
 			data: {
 				nama: nama,
-				jabatan: jabatna
+				jabatan: jabatan
 			},
 			success: function (response) {
 				Swal.fire({

@@ -1,49 +1,73 @@
 // Atur Kepala Dinas
 $(document).ready(function () {
-	$('#namakadis').blur(function () {
+	// $('#namakadis').blur(function () {
+	// 	var nama = $('#namakadis').val();
+	// 	$.ajax({
+	// 		url: 'preferences/editNama',
+	// 		method: 'POST',
+	// 		dataType: 'text',
+	// 		data: {
+	// 			nama: nama
+	// 		},
+	// 		success: function (response) {
+	// 			console.log('Nama: ' + nama);
+	// 			Swal.fire({
+	// 				position: 'top-end',
+	// 				type: 'success',
+	// 				title: 'Nama Kepala Dinas berhasil diubah',
+	// 				toast: true,
+	// 				showConfirmButton: false,
+	// 				timer: 3000
+	// 			});
+	// 		}
+	// 	});
+	// });
+	// $('#jabatan').blur(function () {
+	// 	var jabatan = $('#jabatan').val();
+	// 	$.ajax({
+	// 		url: 'preferences/editJabatan',
+	// 		method: 'POST',
+	// 		dataType: 'text',
+	// 		data: {
+	// 			jabatan: jabatan
+	// 		},
+	// 		success: function (response) {
+	// 			console.log('Jabatan: ' + jabatan);
+	// 			Swal.fire({
+	// 				position: 'top-end',
+	// 				type: 'success',
+	// 				title: 'Jabatan Kepala Dinas berhasil diubah',
+	// 				toast: true,
+	// 				showConfirmButton: false,
+	// 				timer: 3000
+	// 			});
+	// 		}
+	// 	});
+	// });
+
+	$('#btnKepala').click(function () {
 		var nama = $('#namakadis').val();
+		var jabatan = $('#jabatan').val();
 		$.ajax({
 			url: 'preferences/editNama',
 			method: 'POST',
 			dataType: 'text',
 			data: {
-				nama: nama
+				nama: nama,
+				jabatan: jabatna
 			},
 			success: function (response) {
-				console.log('Nama: ' + nama);
 				Swal.fire({
 					position: 'top-end',
 					type: 'success',
-					title: 'Nama Kepala Dinas berhasil diubah',
+					title: 'Data Kepala Dinas berhasil diubah',
 					toast: true,
 					showConfirmButton: false,
 					timer: 3000
 				});
 			}
 		});
-	});
-	$('#jabatan').blur(function () {
-		var jabatan = $('#jabatan').val();
-		$.ajax({
-			url: 'preferences/editJabatan',
-			method: 'POST',
-			dataType: 'text',
-			data: {
-				jabatan: jabatan
-			},
-			success: function (response) {
-				console.log('Jabatan: ' + jabatan);
-				Swal.fire({
-					position: 'top-end',
-					type: 'success',
-					title: 'Jabatan Kepala Dinas berhasil diubah',
-					toast: true,
-					showConfirmButton: false,
-					timer: 3000
-				});
-			}
-		});
-	});
+	})
 
 	$('#btnfoto').click(function () {
 		$('#foto').click();
@@ -152,4 +176,8 @@ $(document).ready(function () {
 		removeMaskOnSubmit: true
 	});
 	$("#postal").inputmask("99999");
+});
+
+$(document).on('lity:ready', function (event, lightbox) {
+	$(event.currentTarget.activeElement).find('.lity-content').prepend('<h2>' + lightbox.opener().data('title') + '</h2>');
 });

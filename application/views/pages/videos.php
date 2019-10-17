@@ -18,7 +18,7 @@
                                 <tr>
                                     <th>Judul Video</th>
                                     <th>Deskripsi</th>
-                                    <th>Diupload</th>
+                                    <th>Tanggal</th>
                                     <th style="width: 25%">Opsi</th>
                                 </tr>
                             </thead>
@@ -29,6 +29,7 @@
                                         <td><?= $row->deskripsi ?></td>
                                         <td><?= $row->diupload ?></td>
                                         <td>
+                                            <div class="lity-content" data-title="<?= $row->judul ?>"></div>
                                             <a href="<?= base_url('assets/videos/') . $row->filename ?>" class="btn btn-sm text-success" data-lity><i class="fas fa-eye"></i></a>
                                             <a href="<?= base_url('admin/videos/update/') . $row->id ?>" class="btn btn-sm text-primary"><i class="fas fa-edit"></i></a>
                                             <a href="<?= base_url('admin/videos/delete/') . $row->id ?>" class="btn-hapus btn btn-sm text-danger"><i class="fas fa-trash-alt"></i></a>

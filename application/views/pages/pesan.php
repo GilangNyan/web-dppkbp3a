@@ -16,7 +16,7 @@
                             <thead>
                                 <tr>
                                     <th>Pengirim</th>
-                                    <th style="width: 65%;">Pesan</th>
+                                    <th style="width: 55%;">Pesan</th>
                                     <th>Tanggal</th>
                                     <th>Opsi</th>
                                 </tr>

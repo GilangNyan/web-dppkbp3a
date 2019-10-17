@@ -13,9 +13,6 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-12 alert alert-primary" role="alert">
-                                Data Kepala Dinas akan otomatis diperbaharui ketika selesai mengetik dan fokus sudah berpindah dari form.
-                            </div>
                             <div class="col-sm-12 col-md-2 text-center" id="divfoto">
                                 <?php foreach ($fotokepala as $foto) : ?>
                                     <img class="img-fluid mb-2" src="<?= base_url('assets/dist/img/') . $foto->foto ?>" alt="Foto Kepala Dinas">
@@ -37,6 +34,9 @@
                                             <input type="text" class="form-control" name="jabatan" id="jabatan" aria-describedby="jabatan" value="<?= $row->jabatan ?>" placeholder="Masukkan Jabatan">
                                         </div>
                                     <?php endforeach; ?>
+                                    <div class="d-flex justify-content-end">
+                                        <button id="btnKepala" class="btn btn-primary">Simpan</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -50,9 +50,6 @@
                         </h3>
                     </div>
                     <div class="card-body">
-                        <div class="alert alert-primary" role="alert">
-                            Sambutan akan otomatis diperbaharui ketika selesai mengetik dan fokus sudah berpindah dari form.
-                        </div>
                         <form action="<?= base_url('admin/preferences/editSambutan') ?>" method="post">
                             <?php foreach ($sambutan as $speech) : ?>
                                 <div class="form-group">
@@ -60,6 +57,9 @@
                                     <textarea class="form-control" name="sambutan" id="sambutan" row="10"><?= $speech->sambutan ?></textarea>
                                 </div>
                             <?php endforeach; ?>
+                            <div class="d-flex justify-content-end">
+                                <button id="btnSambutan" class="btn btn-primary">Simpan</button>
+                            </div>
                         </form>
                     </div>
                 </div>

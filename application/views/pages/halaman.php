@@ -25,7 +25,7 @@
                                 <tr>
                                     <th>Judul Halaman</th>
                                     <th>Parent</th>
-                                    <th style="width: 20%">Tanggal Dibuat</th>
+                                    <th style="width: 20%">Tanggal</th>
                                     <th style="width: 25%">Opsi</th>
                                 </tr>
                             </thead>

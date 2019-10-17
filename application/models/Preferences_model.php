@@ -32,6 +32,16 @@ class Preferences_model extends CI_Model
         return $this->db->get()->result();
     }
 
+    public function editKepala($nama, $jabatan)
+    {
+        $data = array(
+            'nama' => $nama,
+            'jabatan' => $jabatan
+        );
+
+        return $this->db->update('kepala_dinas', $data, ['id' => '1']);
+    }
+
     public function editNama($nama)
     {
         $data = array(

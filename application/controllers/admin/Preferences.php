@@ -56,6 +56,14 @@ class Preferences extends CI_Controller
         }
     }
 
+    public function editKepala()
+    {
+        $nama = $this->input->post('nama');
+        $jabatan = $this->input->post('jabatan');
+        $this->preferences_model->editKepala($nama, $jabatan);
+        redirect('admin/preferences');
+    }
+
     public function editNama()
     {
         $nama = $this->input->post('nama');

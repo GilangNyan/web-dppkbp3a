@@ -8,6 +8,9 @@ class Pesan extends CI_Controller
         parent::__construct();
         $this->load->model('halaman_model');
         $this->load->model('pesan_model');
+        if ($this->session->userdata('username') == null) {
+            redirect('login');
+        }
     }
 
     public function index()

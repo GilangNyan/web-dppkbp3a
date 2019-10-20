@@ -15,9 +15,9 @@
                 <div class="col-lg-8 col-sm-12">
                     <div class="card mb-3">
                         <div class="card-body">
-                            <img class="card-img-top w-25" src=" <?= base_url('assets/dist/img/') . $photo_kepala[0]->foto ?> " alt="Potret Kepala Dinas">
-                            <h5 class="card-title font-weight-bold mt-2"><?= $kepala[0]->nama ?></h5>
-                            <p class="card-text"><?= $sambutan[0]->sambutan ?></p>
+                            <img class="card-img-top w-25" src=" <?= base_url('assets/dist/img/') . $photo_kepala->foto ?> " alt="Potret Kepala Dinas">
+                            <h5 class="card-title font-weight-bold mt-2"><?= $kepala->nama ?></h5>
+                            <p class="card-text"><?= $sambutan->sambutan ?></p>
                         </div>
                     </div>
                 </div>

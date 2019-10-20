@@ -6,11 +6,11 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header d-flex p-0">
-                        <h3 class="card-title p-3">
+                        <!-- <h3 class="card-title p-3">
                             <i class="fas fa-project-diagram mr-1"></i>
                             Profil Dinas
-                        </h3>
-                    </div>
+                        </h3> -->
+                  </div>
                     <div class="card-body">
                         <form action="<?= base_url('admin/preferences/profil') ?>" method="post" name="formprofil" id="formprofil">
                             <input type="hidden" name="mode" id="mode" value="<?= $profil == null ? 'tambah' : 'edit' ?>">

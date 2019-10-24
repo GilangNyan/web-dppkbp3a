@@ -1,11 +1,11 @@
 <div class="container-fluid nav-header">
     <div class="container">
-        <div class="row">
+        <div class="row pt-3">
             <div class="col-md-1">
                 <img src="<?= base_url('assets/dist/img/Logo_Kota_Tasikmalaya.png') ?>" width="70" height="70" alt="Logo Kota Tasik">
             </div>
             <div class="col-md-11">
-                <span class="text-warning font-weight-bolder">Dinas PPKBP3A</span>
+                <span class="text-warning font-weight-bolder">DINAS PPKBP3A</span>
                 <p class="text-white">Kota Tasikmalaya</p>
             </div>
         </div>

@@ -24,7 +24,7 @@
                                     <th>Email</th>
                                     <th>Nama</th>
                                     <th>Role</th>
-                                    <th>Dibuat Pada</th>
+                                    <th>Tanggal</th>
                                     <th>Opsi</th>
                                 </tr>
                             </thead>

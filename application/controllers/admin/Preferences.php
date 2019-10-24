@@ -56,6 +56,15 @@ class Preferences extends CI_Controller
         }
     }
 
+    public function editKepala()
+    {
+        $nama = $this->input->post('namakadis');
+        $jabatan = $this->input->post('jabatan');
+        $this->preferences_model->editKepala($nama, $jabatan);
+        $this->session->set_flashdata('message', 'Data Kepala Dinas berhasil diubah');
+        redirect('admin/preferences');
+    }
+
     public function editNama()
     {
         $nama = $this->input->post('nama');
@@ -74,6 +83,7 @@ class Preferences extends CI_Controller
     {
         $sambutan = $this->input->post('sambutan');
         $this->preferences_model->editSambutan($sambutan);
+        $this->session->set_flashdata('message', 'Data Sambutan berhasil diubah');
         redirect('admin/preferences');
     }
 

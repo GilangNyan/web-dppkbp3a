@@ -5,7 +5,7 @@ CKEDITOR.replace('konten');
 CKEDITOR.replace('kontenedit');
 var sambutan = CKEDITOR.replace('sambutan');
 
-sambutan.on('blur', function (evt) {
+$('#btnSambutan').on('click', function () {
 	var data = CKEDITOR.instances.sambutan.getData();
 	$.ajax({
 		url: 'preferences/editSambutan',

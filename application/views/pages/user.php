@@ -35,7 +35,7 @@
                                         <td><?= $row->email ?></td>
                                         <td><?= $row->nama ?></td>
                                         <td><?= $row->role ?></td>
-                                        <td><?= $row->dibuat_pada ?></td>
+                                        <td><?= $row->tanggal ?></td>
                                         <td>
                                             <!-- <a href="<?= base_url() ?>" class="btn btn-sm text-success"><i class="fas fa-eye"></i> Lihat</a> -->
                                             <a href="<?= base_url('admin/user/edit/') . $row->id ?>" class="btn btn-sm text-primary"><i class="fas fa-edit"></i></a>

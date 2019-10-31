@@ -76,3 +76,4 @@ $route['arsip/(:num)/(:num)/(:num)'] = "blog/artikel/getarchive/$1/$2/index/$3";
 $route['pages/(:any)'] = "blog/artikel/readmore/$1/$2";
 $route['sambutan'] = "blog/artikel/sambutan";
 $route['album/(:num)/(:num)'] = "blog/album/index/$1/$2";
+$route['video/(:num)/(:num)'] = "blog/video/index/$1/$2";

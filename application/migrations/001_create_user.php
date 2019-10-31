@@ -37,7 +37,7 @@ class Migration_create_user extends CI_Migration
                 'constraint' => '10',
                 'default' => 'USER'
             ),
-            'dibuat_pada' => array(
+            'tanggal' => array(
                 'type' => 'TIMESTAMP',
                 'default' => 'CURRENT_TIMESTAMP'
             ),

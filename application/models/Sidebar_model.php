@@ -40,17 +40,17 @@ class Sidebar_model extends CI_Model
     // Videos
     function videosYear()
     {
-        $this->db->select('year(diupload) as tahun, count(*) as jumlah');
+        $this->db->select('year(tanggal) as tahun, count(*) as jumlah');
         $this->db->from('video');
-        $this->db->group_by('year(diupload)');
+        $this->db->group_by('year(tanggal)');
         return $this->db->get()->result();
     }
 
     function videosMonth()
     {
-        $this->db->select('month(diupload) as bulan, count(*) as jumlah');
+        $this->db->select('month(tanggal) as bulan, count(*) as jumlah');
         $this->db->from('video');
-        $this->db->group_by('month(diupload)');
+        $this->db->group_by('month(tanggal)');
         return $this->db->get()->result();
     }
 }

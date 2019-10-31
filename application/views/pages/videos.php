@@ -16,9 +16,9 @@
                         <table class="table table-bordered table-hover" id="allPost" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Judul Video</th>
+                                    <th style="width: 20%">Judul Video</th>
                                     <th>Deskripsi</th>
-                                    <th>Tanggal</th>
+                                    <th style="width: 20%">Tanggal</th>
                                     <th style="width: 25%">Opsi</th>
                                 </tr>
                             </thead>
@@ -26,8 +26,8 @@
                                 <?php foreach ($video as $row) : ?>
                                     <tr>
                                         <td><?= $row->judul ?></td>
-                                        <td><?= $row->deskripsi ?></td>
-                                        <td><?= $row->diupload ?></td>
+                                        <td class="crop-text"><?= $row->deskripsi ?></td>
+                                        <td><?= $row->tanggal ?></td>
                                         <td>
                                             <div class="lity-content" data-title="<?= $row->judul ?>"></div>
                                             <a href="<?= base_url('assets/videos/') . $row->filename ?>" class="btn btn-sm text-success" data-lity><i class="fas fa-eye"></i></a>

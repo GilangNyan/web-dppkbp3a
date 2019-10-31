@@ -127,14 +127,16 @@ class Auth extends CI_Controller
             $messagehtml = $this->load->view('emailpemulihan', $data, TRUE);
 
             $config['mailtype'] = 'html';
+            $config['charset'] = 'utf-8';
             $config['protocol'] = 'smtp';
-            $config['smtp_host'] = 'smtp.mailtrap.io';
-            $config['smtp_user'] = '8866148ddd2a30';
-            $config['smtp_pass'] = 'f07ae3f322554d';
-            $config['smtp_port'] = 2525;
+            $config['smtp_host'] = 'ssl://smtp.gmail.com';
+            $config['smtp_user'] = 'sagilang@gmail.com';
+            $config['smtp_pass'] = 'ShitYouScammer';
+            $config['smtp_port'] = 465;
             $config['newline'] = "\r\n";
 
             $this->email->initialize($config);
+            $this->email->set_newline("\r\n");
             $this->email->from('noreply@dppkbp3a.com', 'Admin DPPKBP3A');
             $this->email->to($clean);
             $this->email->subject('Reset password akun DPPKBP3A untuk akun ' . $userinfo->nama);

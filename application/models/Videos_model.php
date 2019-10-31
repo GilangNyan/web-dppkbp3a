@@ -8,7 +8,7 @@ class Videos_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('video');
-        $this->db->order_by('diupload', 'DESC');
+        $this->db->order_by('tanggal', 'DESC');
         return $this->db->get()->result();
     }
 

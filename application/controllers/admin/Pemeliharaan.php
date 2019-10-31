@@ -58,13 +58,4 @@ class Pemeliharaan extends CI_Controller
         unlink('./backup/database/db_dppkbp3a.sql');
         $this->session->set_flashdata('message', 'Proses restore database berhasil!');
     }
-
-    public function backup_Apps()
-    {
-        $zip = new ZipArchive;
-        $this->load->library('zip');
-        $this->zip->read_dir(FCPATH, false);
-        $file_name = 'backup-apps-on-'. date("Y-m-d-H-i-s") .'.zip';
-        $this->zip->download($file_name);
-    }
 }

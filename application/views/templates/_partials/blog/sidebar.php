@@ -13,7 +13,7 @@
                     </p>
                 </div>
             <?php endforeach; ?>
-            <div class="footer text-center">
+            <div class="footer text-center mb-3">
                 <small class="text-muted text-uppercase">
                     <a href="<?= site_url('sambutan') ?>">Selengkapnya</a>
                 </small>

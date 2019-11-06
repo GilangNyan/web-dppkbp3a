@@ -97,9 +97,9 @@ class Artikel_model extends CI_Model
         $this->db->from('post');
         $this->db->join('user', 'post.author = user.id', 'inner');
         $this->db->where('post.status', 1);
-        $this->db->where('year(tanggal)', $tahun);
-        $this->db->where('month(tanggal)', $bulan);
-        $this->db->order_by('tanggal', 'DESC');
+        $this->db->where('year(post.tanggal)', $tahun);
+        $this->db->where('month(post.tanggal)', $bulan);
+        $this->db->order_by('post.tanggal', 'DESC');
         $this->db->limit($limit, $start);
         return $this->db->get()->result();
     }

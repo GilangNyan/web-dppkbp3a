@@ -18,7 +18,7 @@ class Home extends CI_Controller
     {
         $data['parent_pages'] = $this->halaman_model->get_parent_pages();
         $data['user'] = $this->user_model->get_current_user();
-        $data['pagename'] = 'Dashboard';
+        $data['pagename'] = 'Beranda';
         $data['notifications'] = $this->user_model->notifications();
         $data['todayvisitor'] = $this->home_model->getTodayVisitor();
         $data['onlinevisitor'] = $this->home_model->getOnlineVisitor();

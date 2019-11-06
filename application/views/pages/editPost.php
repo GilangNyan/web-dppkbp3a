@@ -18,12 +18,18 @@
                                 <textarea class="form-control" name="isi2" id="isi2" row="10"><?= $posting->isi ?></textarea>
                                 <?= form_error('isi2', '<small id="isi2" class="text-danger">', '</small>') ?>
                             </div>
-                            <div class="form-group">
+                            <h6 class="font-weight-bold">Gambar Cover</h6>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="gambar" name="gambar" accept="image/*" aria-describedby="image">
+                                <label class="custom-file-label" for="gambar">Jika tidak mengupload gambar, maka gambar sebelumnya akan digunakan.</label>
+                                <input type="hidden" name="gambarlama" id="gambarlama" value="<?= $posting->image ?>">
+                            </div>
+                            <!-- <div class="form-group">
                                 <label for="image">Gambar Cover</label>
                                 <input type="file" class="form-control-file" name="gambar" id="gambar" placeholder="" accept="image/*" aria-describedby="image">
                                 <small id="image" class="form-text text-muted">Jika tidak mengupload gambar, maka gambar sebelumnya akan digunakan.</small>
                                 <input type="hidden" name="gambarlama" id="gambarlama" value="<?= $posting->image ?>">
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="status">Status</label>
                                 <select class="form-control" name="status" id="status">

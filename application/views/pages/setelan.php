@@ -84,10 +84,15 @@
                             <div class="col-10">
                                 <form action="<?= base_url('admin/user/editFoto/') . $user->id ?>" method="post" name="setelanfoto" id="setelanfoto" enctype="multipart/form-data">
                                     <input type="hidden" name="formname" value="setelanfoto">
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label for="fotoprofil">Upload Foto Baru</label>
                                         <input type="file" name="fotoprofil" id="fotoprofil" class="form-control" placeholder="Upload foto profil baru" accept="image/*" aria-describedby="fotoprofil">
                                         <small id="fotoprofil" class="text-muted">Ukuran file maksimal 2mb.</small>
+                                    </div> -->
+                                    <h6 class="font-weight-bold">Upload Foto baru</h6>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="fotoprofil" name="fotoprofil" accept="image/*" aria-describedby="fotoprofil">
+                                        <label class="custom-file-label" for="fotoprofil">Upload foto dengan ukuran maksimal 5MB.</label>
                                     </div>
                                 </form>
                             </div>

@@ -182,3 +182,21 @@ $(document).ready(function () {
 $(document).on('lity:ready', function (event, lightbox) {
 	$(event.currentTarget.activeElement).find('.lity-content').prepend('<h2>' + lightbox.opener().data('title') + '</h2>');
 });
+
+$('#upload').on('change', function () {
+	var filename = $(this).val().replace('C:\\fakepath\\', "");
+
+	$(this).next('.custom-file-label').html(filename);
+});
+
+$('#gambar').on('change', function () {
+	var filename = $(this).val().replace('C:\\fakepath\\', "");
+
+	$(this).next('.custom-file-label').html(filename);
+});
+
+$('#fotoprofil').on('change', function () {
+	var filename = $(this).val().replace('C:\\fakepath\\', "");
+
+	$(this).next('.custom-file-label').html(filename);
+});

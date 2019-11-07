@@ -19,3 +19,6 @@ php_value display_errors 1
 <IfModule !mod_rewrite.c>
 	ErrorDocument 404 /index.php
 </IfModule>
+php_flag display_errors On
+php_value upload_max_filesize 2000M
+php_value post_max_size 2000M

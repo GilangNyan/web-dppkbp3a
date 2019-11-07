@@ -123,59 +123,59 @@ $(document).ready(function () {
 	});
 
 	// Upload Progress Bar
-	$('#uploadvideo').on('submit', function (event) {
-		event.preventDefault();
-
-		var posturl = $(this).attr("action");
-		var reqmethod = $(this).attr("method");
-		// var formdata = $(this).serialize();
-
-		var judul = $('#judul').val();
-		var deskripsi = $('#deskripsi').val();
-		var upload = $('#upload').val();
-
-		$.ajax({
-			xhr: function () {
-				var xhr = new window.XMLHttpRequest();
-				xhr.upload.addEventListener('progress', function (e) {
-					if (e.lengthComputable) {
-						var percent = Math.round((e.loaded / e.total) * 100);
-						$('#progressBar').attr('aria-valuenow', percent).css('width', percent + '%').text(percent + '%');
-					}
-				});
-				return xhr;
-			},
-			url: posturl,
-			type: reqmethod,
-			data: {
-				judul: judul,
-				deskripsi: deskripsi,
-				upload: upload
-			},
-			success: function (response) {
-				if (response == "") {
-					Swal.fire({
-						position: 'top-end',
-						type: 'error',
-						title: 'Video gagal diupload',
-						toast: true,
-						showConfirmButton: false,
-						timer: 3000
-					});
-				} else {
-					Swal.fire({
-						position: 'top-end',
-						type: 'success',
-						title: 'Video berhasil diupload',
-						toast: true,
-						showConfirmButton: false,
-						timer: 3000
-					});
-				}
-			}
-		});
-	});
-});
+// 	$('#uploadvideo').on('submit', function (event) {
+// 		event.preventDefault();
+//
+// 		var posturl = $(this).attr("action");
+// 		var reqmethod = $(this).attr("method");
+// 		// var formdata = $(this).serialize();
+//
+// 		var judul = $('#judul').val();
+// 		var deskripsi = $('#deskripsi').val();
+// 		var upload = $('#upload').val();
+//
+// 		$.ajax({
+// 			xhr: function () {
+// 				var xhr = new window.XMLHttpRequest();
+// 				xhr.upload.addEventListener('progress', function (e) {
+// 					if (e.lengthComputable) {
+// 						var percent = Math.round((e.loaded / e.total) * 100);
+// 						$('#progressBar').attr('aria-valuenow', percent).css('width', percent + '%').text(percent + '%');
+// 					}
+// 				});
+// 				return xhr;
+// 			},
+// 			url: posturl,
+// 			type: reqmethod,
+// 			data: {
+// 				judul: judul,
+// 				deskripsi: deskripsi,
+// 				upload: upload
+// 			},
+// 			success: function (response) {
+// 				if (response == "") {
+// 					Swal.fire({
+// 						position: 'top-end',
+// 						type: 'error',
+// 						title: 'Video gagal diupload',
+// 						toast: true,
+// 						showConfirmButton: false,
+// 						timer: 3000
+// 					});
+// 				} else {
+// 					Swal.fire({
+// 						position: 'top-end',
+// 						type: 'success',
+// 						title: 'Video berhasil diupload',
+// 						toast: true,
+// 						showConfirmButton: false,
+// 						timer: 3000
+// 					});
+// 				}
+// 			}
+// 		});
+// 	});
+// });
 
 $(function () {
 	$('.select2').select2();

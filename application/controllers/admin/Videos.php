@@ -49,6 +49,18 @@ class Videos extends CI_Controller
         }
     }
 
+    public function addjq()
+    {
+        $this->videos_model->addvideo();
+        // if ($this->videos_model->addvideo() != false) {
+        //     $this->session->set_flashdata('message', 'Berhasil mengupload video');
+        //     redirect('admin/videos');
+        // } else {
+        //     $this->session->set_flashdata('message', 'Upload video gagal');
+        //     redirect('admin/videos');
+        // }
+    }
+
     public function update($id = null)
     {
         if (!isset($id)) {

@@ -24,7 +24,7 @@
                                 <label class="custom-file-label" for="upload">Pilih video maks. 2gb</label>
                             </div>
                         </form>
-                        <div class="progress progress-sm">
+                        <div class="progress progress-sm" style="display: none;">
                             <div id="progressBar" class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                                 <span class="sr-only">0%</span>
                             </div>

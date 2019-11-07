@@ -124,16 +124,9 @@ $(document).ready(function () {
 
 	// Upload Progress Bar
 	$('#uploadvideo').on('submit', function (event) {
-		event.preventDefault();
-
-		var posturl = $(this).attr("action");
-		var reqmethod = $(this).attr("method");
-		// var formdata = $(this).serialize();
-
-		var judul = $('#judul').val();
-		var deskripsi = $('#deskripsi').val();
-		var upload = $('#upload').val();
-
+		$('.progress').show();
+		var formaction = (this).attr('action');
+		var formdata = $(this).serialize();
 		$.ajax({
 			xhr: function () {
 				var xhr = new window.XMLHttpRequest();
@@ -141,37 +134,17 @@ $(document).ready(function () {
 					if (e.lengthComputable) {
 						var percent = Math.round((e.loaded / e.total) * 100);
 						$('#progressBar').attr('aria-valuenow', percent).css('width', percent + '%').text(percent + '%');
+						if (e.loaded == e.total) {
+							$('.progress').hide();
+						}
 					}
-				});
-				return xhr;
+				}, false);
 			},
-			url: posturl,
-			type: reqmethod,
-			data: {
-				judul: judul,
-				deskripsi: deskripsi,
-				upload: upload
-			},
-			success: function (response) {
-				if (response == "") {
-					Swal.fire({
-						position: 'top-end',
-						type: 'error',
-						title: 'Video gagal diupload',
-						toast: true,
-						showConfirmButton: false,
-						timer: 3000
-					});
-				} else {
-					Swal.fire({
-						position: 'top-end',
-						type: 'success',
-						title: 'Video berhasil diupload',
-						toast: true,
-						showConfirmButton: false,
-						timer: 3000
-					});
-				}
+			type: 'POST',
+			url: formaction,
+			data: formdata,
+			success: function (response, error) {
+				console.log(error);
 			}
 		});
 	});

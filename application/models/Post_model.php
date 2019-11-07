@@ -25,7 +25,7 @@ class Post_model extends CI_Model
         $this->db->select('post.*, user.username, user.nama, user.role');
         $this->db->from('post');
         $this->db->join('user', 'post.author = user.id', 'LEFT');
-        $this->db->order_by('tanggal', 'DESC');
+        $this->db->order_by('post.tanggal', 'DESC');
         return $this->db->get()->result();
     }
 

@@ -1,50 +1,5 @@
 // Atur Kepala Dinas
 $(document).ready(function () {
-	// $('#namakadis').blur(function () {
-	// 	var nama = $('#namakadis').val();
-	// 	$.ajax({
-	// 		url: 'preferences/editNama',
-	// 		method: 'POST',
-	// 		dataType: 'text',
-	// 		data: {
-	// 			nama: nama
-	// 		},
-	// 		success: function (response) {
-	// 			console.log('Nama: ' + nama);
-	// 			Swal.fire({
-	// 				position: 'top-end',
-	// 				type: 'success',
-	// 				title: 'Nama Kepala Dinas berhasil diubah',
-	// 				toast: true,
-	// 				showConfirmButton: false,
-	// 				timer: 3000
-	// 			});
-	// 		}
-	// 	});
-	// });
-	// $('#jabatan').blur(function () {
-	// 	var jabatan = $('#jabatan').val();
-	// 	$.ajax({
-	// 		url: 'preferences/editJabatan',
-	// 		method: 'POST',
-	// 		dataType: 'text',
-	// 		data: {
-	// 			jabatan: jabatan
-	// 		},
-	// 		success: function (response) {
-	// 			console.log('Jabatan: ' + jabatan);
-	// 			Swal.fire({
-	// 				position: 'top-end',
-	// 				type: 'success',
-	// 				title: 'Jabatan Kepala Dinas berhasil diubah',
-	// 				toast: true,
-	// 				showConfirmButton: false,
-	// 				timer: 3000
-	// 			});
-	// 		}
-	// 	});
-	// });
-
 	$('#btnKepala').click(function () {
 		var nama = $('#namakadis').val();
 		var jabatan = $('#jabatan').val();
@@ -163,6 +118,60 @@ $(document).ready(function () {
 			},
 			error: function (xhr, status, error) {
 				console.log(error);
+			}
+		});
+	});
+
+	// Upload Progress Bar
+	$('#uploadvideo').on('submit', function (event) {
+		event.preventDefault();
+
+		var posturl = $(this).attr("action");
+		var reqmethod = $(this).attr("method");
+		// var formdata = $(this).serialize();
+
+		var judul = $('#judul').val();
+		var deskripsi = $('#deskripsi').val();
+		var upload = $('#upload').val();
+
+		$.ajax({
+			xhr: function () {
+				var xhr = new window.XMLHttpRequest();
+				xhr.upload.addEventListener('progress', function (e) {
+					if (e.lengthComputable) {
+						var percent = Math.round((e.loaded / e.total) * 100);
+						$('#progressBar').attr('aria-valuenow', percent).css('width', percent + '%').text(percent + '%');
+					}
+				});
+				return xhr;
+			},
+			url: posturl,
+			type: reqmethod,
+			data: {
+				judul: judul,
+				deskripsi: deskripsi,
+				upload: upload
+			},
+			success: function (response) {
+				if (response == "") {
+					Swal.fire({
+						position: 'top-end',
+						type: 'error',
+						title: 'Video gagal diupload',
+						toast: true,
+						showConfirmButton: false,
+						timer: 3000
+					});
+				} else {
+					Swal.fire({
+						position: 'top-end',
+						type: 'success',
+						title: 'Video berhasil diupload',
+						toast: true,
+						showConfirmButton: false,
+						timer: 3000
+					});
+				}
 			}
 		});
 	});

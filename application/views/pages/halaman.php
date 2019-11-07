@@ -4,6 +4,10 @@
     <section class="content">
         <div class="row">
             <div class="col-12">
+                <div class="callout callout-info">
+                    <h4>Info</h4>
+                    Menu terdiri dari level 1 dan level 2. Level 1 merupakan menu utama dan level 2 merupakan sub-menu.
+                </div>
                 <div class="card">
                     <div class="card-header d-flex p-0">
                         <!-- <h3 class="card-title p-3">
@@ -17,9 +21,6 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="alert alert-info" role="alert">
-                            Menu terdiri dari level 1 dan level 2. Level 1 merupakan menu utama dan level 2 merupakan sub-menu.
-                        </div>
                         <table class="table table-bordered table-hover" id="allPages" width="100%">
                             <thead>
                                 <tr>

@@ -9,7 +9,7 @@ class Artikel_model extends CI_Model
         $this->db->from('post');
         $this->db->join('user', 'post.author = user.id', 'inner');
         $this->db->where('post.status', 1);
-        $this->db->order_by('tanggal', 'DESC');
+        $this->db->order_by('post.tanggal', 'DESC');
         $this->db->limit($limit, $start);
         return $this->db->get()->result();
     }
@@ -27,7 +27,7 @@ class Artikel_model extends CI_Model
         $this->db->select('post.*, user.username, user.nama, user.role');
         $this->db->from('post');
         $this->db->join('user', 'post.author = user.id', 'inner');
-        $where = "YEAR(tanggal) = $tahun AND MONTH(tanggal) = $bulan AND slug = '$slug'";
+        $where = "YEAR(post.tanggal) = $tahun AND MONTH(post.tanggal) = $bulan AND slug = '$slug'";
         $this->db->where($where);
         // $this->db->where('YEAR(tanggal)', $tahun);
         // $this->db->where('MONTH(tanggal)', $bulan);

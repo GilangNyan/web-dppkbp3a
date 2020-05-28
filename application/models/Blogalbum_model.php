@@ -12,4 +12,14 @@ class Blogalbum_model extends CI_Model
     {
         return $this->db->get_where('photos', ['year(created_at)' => $tahun, 'month(created_at)' => $bulan])->result();
     }
+
+    public function getAlbumById($id)
+    {
+        return $this->db->get_where('albums', ['id' => $id])->row();
+    }
+
+    public function getPhotosByAlbumId($id)
+    {
+        return $this->db->get_where('photos', ['photo_album_id' => $id])->result();
+    }
 }

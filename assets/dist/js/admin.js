@@ -161,8 +161,8 @@ $(document).ready(function () {
 	$("#postal").inputmask("99999");
 });
 
-$(document).on('lity:ready', function (event, lightbox) {
-	$(event.currentTarget.activeElement).find('.lity-content').prepend('<h2>' + lightbox.opener().data('title') + '</h2>');
+$(document).on('lity:ready', function (event, $lightbox, $triggeringElement) {
+	$lightbox.find('.lity-content').append('<h2>' + $triggeringElement.data('title') + '</h2>');
 });
 
 $('#upload').on('change', function () {

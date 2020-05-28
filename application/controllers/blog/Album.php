@@ -31,6 +31,25 @@ class Album extends CI_Controller
         $this->load->view('pages/blog/album', $data);
     }
 
+    public function detail($idalbum)
+    {
+        $data['menu'] = $this->landing_model->getMenu();
+        $data['submenu'] = $this->landing_model->getSubMenu();
+        $data['kepala'] = $this->landing_model->getKepala();
+        $data['parent_pages'] = $this->halaman_model->get_parent_pages();
+        $data['sub_pages'] = $this->halaman_model->get_sub_pages();
+        $data['archiveyear'] = $this->sidebar_model->archiveYear();
+        $data['archivemonth'] = $this->sidebar_model->archiveMonth();
+        $data['photoyear'] = $this->sidebar_model->photosYear();
+        $data['photomonth'] = $this->sidebar_model->photosMonth();
+        $data['videoyear'] = $this->sidebar_model->videosYear();
+        $data['videomonth'] = $this->sidebar_model->videosMonth();
+        $data['album'] = $this->blogalbum_model->getAlbumById($idalbum);
+        $data['foto'] = $this->blogalbum_model->getPhotosByAlbumId($idalbum);
+
+        $this->load->view('pages/blog/albumdetail', $data);
+    }
+
     private function namacard($tahun, $bulan)
     {
         switch ($bulan) {

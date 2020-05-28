@@ -37,7 +37,7 @@ class Videos_model extends CI_Model
         }
     }
 
-    function editVideo()
+    function editVideo($id)
     {
         $judul = htmlspecialchars($this->input->post('judul'));
         $deskripsi = htmlspecialchars($this->input->post('deskripsi'));
@@ -45,7 +45,7 @@ class Videos_model extends CI_Model
             'judul' => $judul,
             'deskripsi' => $deskripsi
         );
-        if ($this->db->update('video', $data)) {
+        if ($this->db->update('video', $data, ['id' => $id])) {
             return true;
         } else {
             return false;

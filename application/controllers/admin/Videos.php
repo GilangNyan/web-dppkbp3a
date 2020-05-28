@@ -79,7 +79,7 @@ class Videos extends CI_Controller
             $this->load->view('pages/editvideo', $data);
             $this->load->view('templates/footer');
         } else {
-            if ($this->videos_model->editVideo() == true) {
+            if ($this->videos_model->editVideo($id) == true) {
                 $this->session->set_flashdata('message', 'Edit berhasil');
                 redirect('admin/videos');
             } else {

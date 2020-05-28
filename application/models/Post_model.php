@@ -74,10 +74,10 @@ class Post_model extends CI_Model
     private function _uploadImage($id)
     {
         $config['upload_path'] = './assets/img/'; //'./assets/img/';
-        $config['allowed_types'] = 'gif|jpg|png';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
         $config['file_name'] = $id;
         $config['overwrite'] = true;
-        $config['max_size']  = '2048000';
+        $config['max_size']  = '4096';
         // $config['max_width']  = '1024';
         // $config['max_height']  = '768';
 

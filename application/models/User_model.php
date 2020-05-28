@@ -65,7 +65,7 @@ class User_model extends CI_Model
             [
                 'field' => 'namalengkap',
                 'label' => 'Nama',
-                'rules' => 'trim|required'
+                'rules' => 'trim|required|max_length[40]'
             ],
             [
                 'field' => 'username',
@@ -111,7 +111,7 @@ class User_model extends CI_Model
             [
                 'field' => 'namalengkap',
                 'label' => 'Nama',
-                'rules' => 'trim|required'
+                'rules' => 'trim|required|max_length[40]'
             ],
             [
                 'field' => 'username',
